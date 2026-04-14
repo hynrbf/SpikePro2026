@@ -1,6 +1,6 @@
 from wheelcontroller import WheelController
 from pybricks import version
-from pybricks.tools import run_task, wait
+from pybricks.tools import run_task
 
 
 async def test_wheel():
