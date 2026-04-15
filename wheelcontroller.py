@@ -53,7 +53,8 @@ class WheelController:
         speed = Speed.Medium
         lm = speed
         rm = speed
-        correction = 30
+        kp = 0.12
+        correction = round(speed * kp, 0)
 
         while True:
             color_int = await ColorController.get_mat_color()
