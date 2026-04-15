@@ -7,9 +7,6 @@ from colorcontroller import ColorController
 from shared import Shared, Speed
 
 
-# from colorcontroller import ColorController
-
-
 class WheelController:
     __wheel_diameter_in_mm = float(56)
     __axle_track_in_mm = float(145)
