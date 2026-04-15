@@ -53,11 +53,14 @@ class WheelController:
 
     @staticmethod
     async def follow_the_line():
-        color_int = await ColorController.get_mat_color()
+        while True:
+            color_int = await ColorController.get_mat_color()
 
-        WheelController.__left_motor.run(Speed.Fast)
-        WheelController.__right_motor.run(Speed.Fast)
-        await wait(500)
+            if color_int == 0:
+                WheelController.__left_motor.run(Speed.Medium)
+                WheelController.__right_motor.run(Speed.Medium)
+
+            await wait(10)
 
     @staticmethod
     async def move_backward(distance_in_mm: float, speed: float = Speed.Fast,

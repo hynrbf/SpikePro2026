@@ -5,7 +5,7 @@ from pybricks.tools import wait
 
 
 async def test_wheel():
-    WheelController.follow_the_line()
+    await WheelController.follow_the_line()
     await wait(1000)
     # await WheelController.move_forward(float(400))
     # await WheelController.left_turn()
