@@ -1,11 +1,14 @@
 from wheelcontroller import WheelController
 from pybricks import version
-from pybricks.tools import run_task, wait
+from pybricks.tools import run_task
+from pybricks.tools import wait
 
 
 async def test_wheel():
-    await WheelController.move_forward(float(400))
-    await WheelController.left_turn()
+    await WheelController.follow_the_line()
+    await wait(1000)
+    # await WheelController.move_forward(float(400))
+    # await WheelController.left_turn()
     # await wait(1000)
     # await WheelController.right_turn()
     # await wait(1000)
