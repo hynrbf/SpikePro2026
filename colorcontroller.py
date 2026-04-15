@@ -2,6 +2,12 @@ from pybricks.pupdevices import ColorSensor
 from pybricks.parameters import Port
 
 
+class MatColor:
+    White = 0
+    Black = 1
+    Others = -1
+
+
 class ColorController:
     __mat_sensor = ColorSensor(Port.C)
 
@@ -13,11 +19,11 @@ class ColorController:
 
         # when it detects white then 0, which is center
         if 200 <= color_int <= 205:
-            return 0
+            return MatColor.White
 
         # when it detects black return 1, swerving to the right
-        if color_int <= 199:
-            return 1
+        if 165 <= color_int <= 199:
+            return MatColor.Black
 
         # when detects other color return -1, swerving to the left
-        return -1
+        return MatColor.Others

@@ -3,7 +3,7 @@ from pybricks.parameters import Port, Direction, Icon, Color, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 
-from colorcontroller import ColorController
+from colorcontroller import ColorController, MatColor
 from shared import Shared, Speed
 
 
@@ -50,13 +50,30 @@ class WheelController:
 
     @staticmethod
     async def follow_the_line():
+        speed = Speed.Medium
+        lm = speed
+        rm = speed
+        correction = 30
+
         while True:
             color_int = await ColorController.get_mat_color()
+            print("follow line color: ", color_int)
 
-            if color_int == 0:
-                WheelController.__left_motor.run(Speed.Medium)
-                WheelController.__right_motor.run(Speed.Medium)
+            if color_int == MatColor.White:
+                lm = speed
+                rm = speed
+            # Drifted right → steer left
+            elif color_int == MatColor.Black:
+                lm = speed - correction
+                rm = speed + correction
+                # Drifted left → steer right
+            elif color_int == MatColor.Others:
+                lm = speed + correction
+                rm = speed - correction
 
+            print(f"lm {lm}, rm {rm}")
+            WheelController.__left_motor.run(lm)
+            WheelController.__right_motor.run(rm)
             await wait(10)
 
     @staticmethod
