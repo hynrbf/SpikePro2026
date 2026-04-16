@@ -53,7 +53,8 @@ class WheelController:
         speed = Speed.Medium
         lm = speed
         rm = speed
-        kp = 0.12
+        #at speed 250 the fastest is 0.05
+        kp = 0.20
         correction = round(speed * kp, 0)
 
         while True:
