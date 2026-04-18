@@ -50,12 +50,12 @@ class WheelController:
 
     @staticmethod
     async def follow_the_line():
-        speed = Speed.Medium
+        speed = Speed.Fast
         lm = speed
         rm = speed
         #at speed 250 the fastest is 0.05
         #at speed 400 the fastest is 0.08
-        kp = 0.20
+        kp = 0.08
         correction = round(speed * kp, 0)
 
         while True:
