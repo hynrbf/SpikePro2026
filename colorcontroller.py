@@ -18,11 +18,11 @@ class ColorController:
         print("mat color: ", color_int)
 
         # when it detects white then 0, which is center
-        if 200 <= color_int <= 205:
+        if 200 <= color_int <= 206:
             return MatColor.White
 
         # when it detects black return 1, swerving to the right
-        if 165 <= color_int <= 199:
+        if 207 <= color_int <= 211:
             return MatColor.Black
 
         # when detects other color return -1, swerving to the left

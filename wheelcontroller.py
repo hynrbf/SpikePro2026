@@ -65,14 +65,14 @@ class WheelController:
             if color_int == MatColor.White:
                 lm = speed
                 rm = speed
-            # Drifted right → steer left
+            # Drifted left → steer right
             elif color_int == MatColor.Black:
-                lm = speed - correction
-                rm = speed + correction
-                # Drifted left → steer right
-            elif color_int == MatColor.Others:
                 lm = speed + correction
                 rm = speed - correction
+                # Drifted right → steer left
+            elif color_int == MatColor.Others:
+                lm = speed - correction
+                rm = speed + correction
 
             print(f"lm {lm}, rm {rm}")
             WheelController.__left_motor.run(lm)

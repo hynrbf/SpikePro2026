@@ -10,8 +10,8 @@ async def main():
     await WheelController.move_forward(float(180))
     await WheelController.right_turn()
     await WheelController.move_backward(float(500))
-    await WheelController.move_forward(float(375))
-    await WheelController.left_turn()
+    await WheelController.move_forward(float(380))
+    await WheelController.left_turn(float(85))
     await WheelController.follow_the_line()
 
     # done only, do not remove
