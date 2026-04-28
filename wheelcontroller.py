@@ -49,34 +49,41 @@ class WheelController:
         # print("Travelled distance in mm: ", travelled_distance)
 
     @staticmethod
-    async def follow_the_line():
-        speed = Speed.Medium
+    async def follow_the_line(count: int):
+        speed = Speed.Fast
         lm = speed
         rm = speed
-        #at speed 250 the fastest is 0.05
-        #at speed 400 the fastest is 0.08
-        kp = 0.20
+        # at speed 250 the fastest is 0.05
+        # at speed 400 the fastest is 0.08
+        kp = 0.08
         correction = round(speed * kp, 0)
+        local_count = 0
 
         while True:
+            if local_count > count:
+                WheelController.__left_motor.stop()
+                WheelController.__right_motor.stop()
+                break
+
             color_int = await ColorController.get_mat_color()
             print("follow line color: ", color_int)
 
             if color_int == MatColor.White:
                 lm = speed
                 rm = speed
-            # Drifted right → steer left
+            # Drifted left → steer right
             elif color_int == MatColor.Black:
-                lm = speed - correction
-                rm = speed + correction
-                # Drifted left → steer right
-            elif color_int == MatColor.Others:
                 lm = speed + correction
                 rm = speed - correction
+                # Drifted right → steer left
+            elif color_int == MatColor.Others:
+                lm = speed - correction
+                rm = speed + correction
 
             print(f"lm {lm}, rm {rm}")
             WheelController.__left_motor.run(lm)
             WheelController.__right_motor.run(rm)
+            local_count += 1
             await wait(10)
 
     @staticmethod
