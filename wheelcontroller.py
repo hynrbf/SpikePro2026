@@ -11,13 +11,13 @@ class WheelController:
     __wheel_diameter_in_mm = float(56)
     __axle_track_in_mm = float(145)
 
-    left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
-    right_motor = Motor(Port.B)
+    __left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+    __right_motor = Motor(Port.B)
 
     @staticmethod
     async def reset():
-        await WheelController.left_motor.run_target(Speed.Fast, 0)
-        await WheelController.right_motor.run_target(Speed.Fast, 0)
+        await WheelController.__left_motor.run_target(Speed.Fast, 0)
+        await WheelController.__right_motor.run_target(Speed.Fast, 0)
         await wait(100)
 
         state = WheelController.__object().state()
@@ -61,8 +61,8 @@ class WheelController:
 
         while True:
             if local_count > count:
-                WheelController.left_motor.stop()
-                WheelController.right_motor.stop()
+                WheelController.__left_motor.stop()
+                WheelController.__right_motor.stop()
                 break
 
             color_int = await ColorController.get_mat_color()
@@ -81,8 +81,8 @@ class WheelController:
                 rm = speed + correction
 
             print(f"lm {lm}, rm {rm}")
-            WheelController.left_motor.run(lm)
-            WheelController.right_motor.run(rm)
+            WheelController.__left_motor.run(lm)
+            WheelController.__right_motor.run(rm)
             local_count += 1
             await wait(10)
 
@@ -185,12 +185,12 @@ class WheelController:
 
     @staticmethod
     def __object() -> DriveBase:
-        return Shared.wheels_with_gyro(WheelController.left_motor, WheelController.right_motor,
+        return Shared.wheels_with_gyro(WheelController.__left_motor, WheelController.__right_motor,
                                        WheelController.__wheel_diameter_in_mm,
                                        WheelController.__axle_track_in_mm)
 
     @staticmethod
     def __object_slow_turn() -> DriveBase:
-        return Shared.wheels_with_gyro(WheelController.left_motor, WheelController.right_motor,
+        return Shared.wheels_with_gyro(WheelController.__left_motor, WheelController.__right_motor,
                                        WheelController.__wheel_diameter_in_mm,
                                        WheelController.__axle_track_in_mm, 90)
