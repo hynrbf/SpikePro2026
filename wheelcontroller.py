@@ -49,14 +49,14 @@ class WheelController:
         # print("Travelled distance in mm: ", travelled_distance)
 
     @staticmethod
-    async def follow_the_line(count: int):
-        speed = Speed.Fast
+    async def follow_the_line(count: int, kp: float = 0.30):
+        speed = Speed.Medium
         lm = speed
         rm = speed
-        # at speed 250 the fastest is 0.05
+        # at speed 250 the fastest is 0.30, but in the part of very curvy is 0.90
         # at speed 400 the fastest is 0.08
-        kp = 0.08
-        correction = round(speed * kp, 0)
+        local_kp = kp
+        correction = round(speed * local_kp, 0)
         local_count = 0
 
         while True:
@@ -72,11 +72,11 @@ class WheelController:
                 lm = speed
                 rm = speed
             # Drifted left → steer right
-            elif color_int == MatColor.Black:
+            elif color_int == MatColor.Others:
                 lm = speed + correction
                 rm = speed - correction
-                # Drifted right → steer left
-            elif color_int == MatColor.Others:
+            # Drifted right → steer left
+            elif color_int == MatColor.Black:
                 lm = speed - correction
                 rm = speed + correction
 
