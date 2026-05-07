@@ -18,15 +18,15 @@ class ColorController:
         print("mat color: ", color_int)
 
         # when it detects white then 0, which is center
-        if 223 <= color_int <= 224:
+        if 10 <= color_int <= 99:
             return MatColor.White
 
         # when it detects black return 1, swerving to the right
-        if 209 <= color_int <= 221:
+        if 111 <= color_int <= 280:
             return MatColor.Black
 
         # when detects other color return -1, swerving to the left
-        if color_int <= 204:
+        if 100 <= color_int <= 110:
             return MatColor.Others
 
         # when it detects outside the above, just treat it as White so wheels move straight
