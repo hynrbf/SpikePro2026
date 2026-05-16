@@ -12,7 +12,15 @@ ruff check . --fix
 winget search --id Microsoft.PowerShell
 winget install --id Microsoft.PowerShell --source winget
 
-5. basic test in actual mat
+5. Ports from back view or button at below
+    A=left motor
+    B=right motor
+    C=
+    D=
+    E=front grip
+    F=back lifter
+
+6. basic test in actual mat
 a. color values
     if 200 <= color_int <= 205:
 
@@ -22,6 +30,3 @@ a. color values
  == ToDo==
  1. to polish the up and grip
  2. to remove the wires sabit
- 3 . porte=matsesonsor, portc=gilidsensor
-     porta=frongrip, portd=backlift
-
