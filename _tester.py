@@ -10,8 +10,6 @@ async def test_wheel():
     await wait(1000)
     await WheelController.left_turn()
     await wait(1000)
-    await WheelController.right_turn()
-    await wait(1000)
     await WheelController.move_backward(float(100))
 
 

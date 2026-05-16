@@ -3,7 +3,7 @@ from pybricks.parameters import Port, Direction, Icon, Color, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 
-from colorcontroller import ColorController, MatColor
+# from colorcontroller import ColorController, MatColor
 from shared import Shared, Speed
 
 
@@ -48,43 +48,43 @@ class WheelController:
         # travelled_distance = WheelController.__get_distance_in_mm()
         # print("Travelled distance in mm: ", travelled_distance)
 
-    @staticmethod
-    async def follow_the_line(count: int, kp: float = 0.30):
-        speed = Speed.Medium
-        lm = speed
-        rm = speed
-        # at speed 250 the fastest is 0.30, but in the part of very curvy is 0.90
-        # at speed 400 the fastest is 0.08
-        local_kp = kp
-        correction = round(speed * local_kp, 0)
-        local_count = 0
-
-        while True:
-            if local_count > count:
-                WheelController.__left_motor.stop()
-                WheelController.__right_motor.stop()
-                break
-
-            color_int = await ColorController.get_mat_color()
-            print("follow line color: ", color_int)
-
-            if color_int == MatColor.White:
-                lm = speed
-                rm = speed
-            # Drifted left → steer right
-            elif color_int == MatColor.Others:
-                lm = speed + correction
-                rm = speed - correction
-            # Drifted right → steer left
-            elif color_int == MatColor.Black:
-                lm = speed - correction
-                rm = speed + correction
-
-            print(f"lm {lm}, rm {rm}")
-            WheelController.__left_motor.run(lm)
-            WheelController.__right_motor.run(rm)
-            local_count += 1
-            await wait(10)
+    # @staticmethod
+    # async def follow_the_line(count: int, kp: float = 0.30):
+    #     speed = Speed.Medium
+    #     lm = speed
+    #     rm = speed
+    #     # at speed 250 the fastest is 0.30, but in the part of very curvy is 0.90
+    #     # at speed 400 the fastest is 0.08
+    #     local_kp = kp
+    #     correction = round(speed * local_kp, 0)
+    #     local_count = 0
+    #
+    #     while True:
+    #         if local_count > count:
+    #             WheelController.__left_motor.stop()
+    #             WheelController.__right_motor.stop()
+    #             break
+    #
+    #         color_int = await ColorController.get_mat_color()
+    #         print("follow line color: ", color_int)
+    #
+    #         if color_int == MatColor.White:
+    #             lm = speed
+    #             rm = speed
+    #         # Drifted left → steer right
+    #         elif color_int == MatColor.Others:
+    #             lm = speed + correction
+    #             rm = speed - correction
+    #         # Drifted right → steer left
+    #         elif color_int == MatColor.Black:
+    #             lm = speed - correction
+    #             rm = speed + correction
+    #
+    #         print(f"lm {lm}, rm {rm}")
+    #         WheelController.__left_motor.run(lm)
+    #         WheelController.__right_motor.run(rm)
+    #         local_count += 1
+    #         await wait(10)
 
     @staticmethod
     async def move_backward(distance_in_mm: float, speed: float = Speed.Fast,
