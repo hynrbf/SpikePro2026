@@ -23,4 +23,5 @@ a. color values
     if 165 <= color_int <= 199:
 
  == ToDo==
- 1. Grachi experiment with kp
+ 1. to polish the up and grip
+ 2. to remove the wires sabit
