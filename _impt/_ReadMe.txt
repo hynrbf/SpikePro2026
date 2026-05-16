@@ -4,18 +4,15 @@ C:\Program Files\Python313
 2. sensors spike
 https://education.lego.com/en-us/product-resources/spike-prime/downloads/technical-specifications/
 
-3. version of pybricks we use
-https://beta.pybricks.com/
-
-4. checking wrong code
+3. checking wrong code
 ruff check .
 ruff check . --fix
 
-5. pycharm powershell
+4. pycharm powershell
 winget search --id Microsoft.PowerShell
 winget install --id Microsoft.PowerShell --source winget
 
-6. basic test in actual mat
+5. basic test in actual mat
 a. color values
     if 200 <= color_int <= 205:
 
@@ -25,3 +22,6 @@ a. color values
  == ToDo==
  1. to polish the up and grip
  2. to remove the wires sabit
+ 3 . porte=matsesonsor, portc=gilidsensor
+     porta=frongrip, portd=backlift
+
