@@ -12,29 +12,24 @@ class GripperController:
     __grip_turn_angle = 200
 
     @staticmethod
-    async def close():
-        cur_val = GripperController.__grip_turn_angle + 30
-        await GripperController.__front_motor.run_target(Speed.Slow, cur_val, Stop.COAST)
-
-    @staticmethod
-    async def opening():
-        cur_val = GripperController.__grip_turn_angle - 30
-        await GripperController.__front_motor.run_target(Speed.Slow, cur_val, Stop.COAST)
-
-    @staticmethod
     async def reset():
-        cur_val = GripperController.__grip_turn_angle * -1
-        print(cur_val)
-        GripperController.__grip_turn_angle = cur_val
-        await GripperController.__front_motor.run_target(Speed.Slow, cur_val, Stop.COAST)
+        await GripperController.__back_motor.run_target(Speed.Fast, 0, Stop.COAST)
 
     @staticmethod
-    async def up():
-        await GripperController.__back_motor.run_angle(Speed.Medium, 60, Stop.COAST)
+    async def lift():
+        await GripperController.__back_motor.run_target(Speed.Slow, 60, Stop.HOLD)
 
     @staticmethod
     async def down():
-        await GripperController.__back_motor.run_target(Speed.Slow, -600, Stop.COAST)
+        await GripperController.reset()
+
+    @staticmethod
+    async def close():
+        pass
+
+    @staticmethod
+    async def opening():
+        pass
 
     # @staticmethod
     # async def reset():
@@ -47,23 +42,6 @@ class GripperController:
     #     await multitask(GripperController.__front_motor.run_target(Speed.Fast, 0, Stop.COAST),
     #                     GripperController.__back_motor.run_target(Speed.Fast, -45, Stop.COAST)
     #                     )
-
-    @staticmethod
-    async def front_hook(angle_degrees: float = 110, speed: int = Speed.Medium):
-        await GripperController.__front_motor.run_target(speed, angle_degrees, Stop.HOLD)
-
-    @staticmethod
-    async def front_hook_down(angle_degrees: float = 0, speed: int = Speed.Slow):
-        await GripperController.__front_motor.run_target(speed, angle_degrees, Stop.HOLD)
-
-    @staticmethod
-    async def back_grip():
-        await GripperController.__back_motor.run_target(Speed.Fast, 0, Stop.BRAKE)
-
-    @staticmethod
-    async def back_grip_up(angle_degrees: float = 90):
-        angle_degrees = angle_degrees * -1
-        await GripperController.__back_motor.run_target(Speed.Fast, angle_degrees, Stop.COAST)
 
     @staticmethod
     def __get_right_arm_angle() -> int:
