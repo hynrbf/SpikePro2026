@@ -28,5 +28,5 @@ a. color values
     if 165 <= color_int <= 199:
 
  == ToDo==
- 1. to polish the up and grip
+ 1. to polish the up and grip - make the motor at 0 position so we can run target
  2. to remove the wires sabit

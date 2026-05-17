@@ -30,7 +30,7 @@ class GripperController:
 
     @staticmethod
     async def up():
-        await GripperController.__back_motor.run_angle(Speed.Medium, 200, Stop.COAST)
+        await GripperController.__back_motor.run_angle(Speed.Medium, 60, Stop.COAST)
 
     @staticmethod
     async def down():
