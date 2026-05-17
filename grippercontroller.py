@@ -17,11 +17,11 @@ class GripperController:
 
     @staticmethod
     async def lift():
-        await GripperController.__back_motor.run_target(Speed.Slow, 60, Stop.HOLD)
+        await GripperController.__back_motor.run_target(Speed.Fast, 50, Stop.HOLD)
 
     @staticmethod
     async def down():
-        await GripperController.reset()
+        await GripperController.__back_motor.run_target(Speed.Fast, 20, Stop.HOLD)
 
     @staticmethod
     async def close():

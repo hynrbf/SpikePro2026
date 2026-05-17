@@ -7,6 +7,8 @@ from pybricks.tools import run_task, wait
 async def test_gripper():
     await GripperController.reset()
     await wait(1000)
+    await GripperController.down()
+    await wait(1000)
     await GripperController.lift()
     await wait(2000)
     await GripperController.down()
