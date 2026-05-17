@@ -6,7 +6,7 @@ from pybricks.parameters import Port, Stop
 
 
 class GripperController:
-    # __front_motor = Motor(Port.E)
+    __front_motor = Motor(Port.E)
     __back_motor = Motor(Port.F)
 
     # 88 to 90
@@ -15,6 +15,7 @@ class GripperController:
     @staticmethod
     async def reset():
         await GripperController.__back_motor.run_target(400, 0, Stop.COAST)
+        await GripperController.__front_motor.run_target(400, 0, Stop.COAST)
 
     @staticmethod
     async def lift():
@@ -22,15 +23,15 @@ class GripperController:
 
     @staticmethod
     async def down():
-        await GripperController.reset()
+        await GripperController.__back_motor.run_target(400, 0, Stop.HOLD)
 
     @staticmethod
     async def close():
-        pass
+        await GripperController.__front_motor.run_target(400, 0, Stop.HOLD)
 
     @staticmethod
     async def opening():
-        pass
+        await GripperController.__front_motor.run_target(400, 60, Stop.HOLD)
 
     # @staticmethod
     # async def reset():
