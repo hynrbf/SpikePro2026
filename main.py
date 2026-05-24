@@ -1,6 +1,6 @@
 from pybricks.tools import run_task
 from pybricks import version
-from pybricks.tools import wait, multitask
+from pybricks.tools import multitask  # wait
 
 from grippercontroller import GripperController
 from wheelcontroller import WheelController

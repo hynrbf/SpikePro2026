@@ -28,4 +28,6 @@ a. color values
     if 165 <= color_int <= 199:
 
  == ToDo==
- 1. coach m, to make front and back able to bangga
+ 1. coach Mike, to make front to bangga
+    likod to check if ok
+ 2. to tidy up
