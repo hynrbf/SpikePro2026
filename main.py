@@ -1,31 +1,43 @@
 from pybricks.tools import run_task
 from pybricks import version
-# from pybricks.tools import wait
+from pybricks.tools import wait, multitask
 
-# from grippercontroller import GripperController
+from grippercontroller import GripperController
 from wheelcontroller import WheelController
 
 
 async def main():
     print("\nStart, pb version: ", version)
 
-    await WheelController.move_forward(float(180))
-    await WheelController.right_turn()
-    # await WheelController.move_backward(float(500))
-    # await WheelController.move_forward(float(390))
-    # await WheelController.left_turn(float(83))
-    # await WheelController.follow_the_line(120)
-    # await WheelController.follow_the_line(150, 0.90)
-    # await GripperController.reset()
-    # await GripperController.up()
-    # await wait(100)
-    # await GripperController.down()
+    try:
+        await WheelController.move_backward(380, with_brake=True)
+        await WheelController.move_forward(220)
+        await multitask(WheelController.left_turn(), GripperController.close())
+        await multitask(WheelController.move_forward(350, with_brake=True), GripperController.down(20))
+        await GripperController.opening()
+        await WheelController.move_backward(200)
 
-    # await GripperController.close()
-    # await wait(100)
-    # await GripperController.opening()
+        # await WheelController.move_backward(float(500))
+        # await WheelController.move_forward(float(390))
+        # await WheelController.left_turn(float(83))
+        # await WheelController.follow_the_line(120)
+        # await WheelController.follow_the_line(150, 0.90)
+        # await GripperController.reset()
+        # await GripperController.up()
+        # await wait(100)
+        # await GripperController.down()
 
-    # done only, do not remove
+        # await GripperController.close()
+        # await wait(100)
+        # await GripperController.opening()
+
+        # done only, do not remove
+    finally:
+        await wait(2000)
+        await GripperController.reset()
+        await WheelController.reset()
+        pass
+
     print("DONE!")
 
 
