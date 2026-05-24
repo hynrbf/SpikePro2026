@@ -4,16 +4,21 @@ C:\Program Files\Python313
 2. sensors spike
 https://education.lego.com/en-us/product-resources/spike-prime/downloads/technical-specifications/
 
-3. version of pybricks we use
-https://beta.pybricks.com/
-
-4. checking wrong code
+3. checking wrong code
 ruff check .
 ruff check . --fix
 
-5. pycharm powershell
+4. pycharm powershell
 winget search --id Microsoft.PowerShell
 winget install --id Microsoft.PowerShell --source winget
+
+5. Ports from back view or button at below
+    A=left motor
+    B=right motor
+    C=
+    D=
+    E=front grip
+    F=back lifter
 
 6. basic test in actual mat
 a. color values
@@ -23,4 +28,4 @@ a. color values
     if 165 <= color_int <= 199:
 
  == ToDo==
- 1. Grachi experiment with kp
+ 1. coach m, to make front and back able to bangga
