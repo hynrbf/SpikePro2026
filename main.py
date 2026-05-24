@@ -13,9 +13,11 @@ async def main():
         await WheelController.move_backward(380, with_brake=True)
         await WheelController.move_forward(220)
         await multitask(WheelController.left_turn(), GripperController.close())
-        await multitask(WheelController.move_forward(350, with_brake=True), GripperController.down(20))
+        await multitask(WheelController.move_forward(370, with_brake=True), GripperController.down(20))
         await GripperController.opening()
-        await WheelController.move_backward(200)
+        await WheelController.move_backward(355)
+        await WheelController.right_turn()
+        await WheelController.move_forward(330)
 
         # await WheelController.move_backward(float(500))
         # await WheelController.move_forward(float(390))
@@ -33,9 +35,9 @@ async def main():
 
         # done only, do not remove
     finally:
-        await wait(2000)
-        await GripperController.reset()
-        await WheelController.reset()
+        # await wait(2000)
+        # await GripperController.reset()
+        # await WheelController.reset()
         pass
 
     print("DONE!")
