@@ -6,14 +6,15 @@ from pybricks.tools import run_task, wait  # , multitask
 
 async def test_gripper():
     await GripperController.reset()
-    # await wait(1000)
-    # await GripperController.lift()
-    # await wait(1000)
-    # await GripperController.down()
-    # await wait(2000)
-    await GripperController.opening()
     await wait(1000)
     await GripperController.close()
+    await wait(1000)
+    await GripperController.lift()
+    await wait(1000)
+    await GripperController.down()
+    await wait(1000)
+    await GripperController.opening()
+    await wait(1000)
 
 
 # async def test_wheel():
@@ -27,10 +28,13 @@ async def main():
     print("Start, pb version: ", version)
     # await GripperController.reset_both_arms()
 
-    await test_gripper()
-    # await test_wheel()
-    # await test_color()
-    # await WheelController.move_towards_white_floor()
+    try:
+        await test_gripper()
+        # await test_wheel()
+        # await test_color()
+        # await WheelController.move_towards_white_floor()
+    finally:
+        await GripperController.reset()
 
     print("DONE!")
 
