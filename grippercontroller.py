@@ -17,8 +17,9 @@ class GripperController:
         await GripperController.__back_motor.run_target(Speed.Fast, 160, Stop.HOLD)
 
     @staticmethod
-    async def down():
-        await GripperController.__back_motor.run_target(Speed.Fast, 0, Stop.HOLD)
+    async def down(degree: float = 0):
+        degree = degree if degree <= 0 else degree * -1
+        await GripperController.__back_motor.run_target(Speed.Fast, degree, Stop.HOLD)
 
     @staticmethod
     async def close():
