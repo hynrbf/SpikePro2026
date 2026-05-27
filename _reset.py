@@ -9,8 +9,7 @@ async def main():
 
     await GripperController.reset()
     await WheelController.reset()
+    print("DONE!")
 
-
-print("DONE!")
 
 run_task(main())
