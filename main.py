@@ -24,9 +24,9 @@ async def main():
         await WheelController.right_turn()
         await WheelController.move_forward(258)
         await WheelController.right_turn()
-        await WheelController.move_forward(270, Speed.Slow)
-        await WheelController.move_backward(10)
-        await multitask(GripperController.lift_left(speed=Speed.Slow), GripperController.lift_right(speed=Speed.Slow))
+        await WheelController.move_forward(260, Speed.Slow, with_brake=True)
+        await multitask(WheelController.move_backward(30), GripperController.lift_left(speed=Speed.Slow),
+                        GripperController.lift_right(speed=Speed.Slow))
         await WheelController.move_backward(200)
         await WheelController.left_turn()
         await WheelController.move_backward(120)
