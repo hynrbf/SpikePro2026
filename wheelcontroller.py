@@ -9,9 +9,9 @@ from shared import Shared, Speed
 
 class WheelController:
     __wheel_diameter_in_mm = float(60)  # float(56)
-    __axle_track_in_mm = float(175)  # float(145)
+    __axle_track_in_mm = float(160)  # float(145)
 
-    __left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+    __left_motor = Motor(Port.F, Direction.COUNTERCLOCKWISE)
     __right_motor = Motor(Port.B)
 
     @staticmethod

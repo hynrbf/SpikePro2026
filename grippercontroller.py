@@ -4,8 +4,8 @@ from shared import Speed
 
 
 class GripperController:
-    __right_motor = Motor(Port.A)
     __left_motor = Motor(Port.E)
+    __right_motor = Motor(Port.A)
 
     @staticmethod
     async def reset():
