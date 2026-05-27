@@ -31,7 +31,7 @@ async def main():
         await WheelController.reset()
 
         await test_gripper()
-        #await test_wheel()
+        # await test_wheel()
         # await test_color()
     finally:
         await GripperController.reset()
