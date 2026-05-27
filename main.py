@@ -2,7 +2,7 @@ from pybricks.tools import run_task
 from pybricks import version
 from pybricks.tools import multitask  # wait
 
-from grippercontroller import GripperController
+from handcontroller import HandsController
 from shared import Speed
 from wheelcontroller import WheelController
 
@@ -25,8 +25,8 @@ async def main():
         await WheelController.move_forward(258)
         await WheelController.right_turn()
         await WheelController.move_forward(260, Speed.Slow, with_brake=True)
-        await multitask(WheelController.move_backward(30), GripperController.lift_left(speed=Speed.Slow),
-                        GripperController.lift_right(speed=Speed.Slow))
+        await multitask(WheelController.move_backward(30), HandsController.lift_left(speed=Speed.Slow),
+                        HandsController.lift_right(speed=Speed.Slow))
         await WheelController.move_backward(200)
         await WheelController.left_turn()
         await WheelController.move_backward(120)

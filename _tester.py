@@ -1,5 +1,5 @@
 from colorcontroller import ColorController
-from grippercontroller import GripperController
+from handcontroller import HandsController
 from shared import Speed
 from wheelcontroller import WheelController
 from pybricks import version
@@ -7,13 +7,13 @@ from pybricks.tools import run_task, wait  # , multitask
 
 
 async def test_gripper():
-    await GripperController.lift_right()
+    await HandsController.lift_right()
     await wait(1000)
-    await GripperController.lift_left()
+    await HandsController.lift_left()
     await wait(1000)
-    await GripperController.lift_right(30)
+    await HandsController.lift_right(30)
     await wait(1000)
-    await GripperController.lift_left(30)
+    await HandsController.lift_left(30)
     await wait(1000)
 
 
@@ -33,14 +33,14 @@ async def main():
     print("Start, pb version: ", version)
 
     try:
-        await GripperController.reset()
+        await HandsController.reset()
         await WheelController.reset()
 
         # await test_gripper()
         # await test_wheel()
         await test_color()
     finally:
-        await GripperController.reset()
+        await HandsController.reset()
         await WheelController.reset()
         pass
 
