@@ -1,8 +1,9 @@
 from pybricks.tools import run_task
 from pybricks import version
-#from pybricks.tools import multitask  # wait
+# from pybricks.tools import multitask  # wait
 
 from grippercontroller import GripperController
+from shared import Speed
 from wheelcontroller import WheelController
 
 
@@ -16,6 +17,20 @@ async def main():
         await WheelController.move_forward(180)
         await WheelController.right_turn()
         await WheelController.move_forward(230)
+        await WheelController.move_forward(125)
+        await WheelController.move_backward(355)
+        await WheelController.left_turn()
+        await WheelController.move_forward(120)
+        await WheelController.right_turn()
+        await WheelController.move_forward(258)
+        await WheelController.right_turn()
+        await WheelController.move_forward(270, Speed.Slow)
+        await WheelController.move_backward(10)
+        await GripperController.lift_left()
+        await GripperController.lift_right()
+        await WheelController.move_backward(200)
+        await WheelController.left_turn()
+        await WheelController.move_backward(120)
         # await WheelController.move_backward(float(500))
         # await WheelController.move_forward(float(390))
         # await WheelController.left_turn(float(83))
@@ -33,8 +48,8 @@ async def main():
         # done only, do not remove
     finally:
         # await wait(2000)
-        #await GripperController.reset()
-        #await WheelController.reset()
+        # await GripperController.reset()
+        # await WheelController.reset()
         pass
 
     print("DONE!")
