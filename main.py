@@ -13,7 +13,7 @@ async def main():
     try:
         await WheelController.move_forward(450)
         await WheelController.left_turn()
-        await WheelController.move_backward(515)
+        await WheelController.move_backward(520, with_brake=True)
         await WheelController.move_forward(180)
         await WheelController.right_turn()
         await WheelController.move_forward(230)
