@@ -84,7 +84,7 @@ class WheelController:
         await wheel_controller.turn(angle_degrees)
 
     @staticmethod
-    async def move_towards_mat_color(mat_color_range: int):
+    async def move_towards_mat_color(mat_color_range: int, speed: float = Speed.Slow):
         wheel_controller = WheelController.__object()
         count = 1
 
@@ -97,7 +97,7 @@ class WheelController:
                 break
             else:
                 # you can be fast here otherwise bump the element, same as Medium Fast
-                wheel_controller.drive(Speed.Medium, 0)
+                wheel_controller.drive(speed, 0)
 
             # print("moving: ", count)
             count = count + 1
