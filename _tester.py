@@ -1,3 +1,4 @@
+from colorcontroller import ColorController
 from grippercontroller import GripperController
 from shared import Speed
 from wheelcontroller import WheelController
@@ -23,6 +24,11 @@ async def test_wheel():
     await WheelController.move_backward(float(100), Speed.Fast)
 
 
+async def test_color():
+    await ColorController.get_element_color()
+    pass
+
+
 async def main():
     print("Start, pb version: ", version)
 
@@ -30,9 +36,9 @@ async def main():
         await GripperController.reset()
         await WheelController.reset()
 
-        await test_gripper()
-        await test_wheel()
-        # await test_color()
+        # await test_gripper()
+        # await test_wheel()
+        await test_color()
     finally:
         await GripperController.reset()
         await WheelController.reset()

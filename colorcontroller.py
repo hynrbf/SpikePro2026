@@ -17,8 +17,8 @@ class ElementColor:
 
 
 class ColorController:
-    __side_sensor = ColorSensor(Port.C)
-    __mat_sensor = ColorSensor(Port.D)
+    __mat_sensor = ColorSensor(Port.C)
+    __side_sensor = ColorSensor(Port.D)
 
     @staticmethod
     async def get_mat_color() -> int:
