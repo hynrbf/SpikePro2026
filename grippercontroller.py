@@ -13,8 +13,9 @@ class GripperController:
         await GripperController.__right_motor.run_target(Speed.Fast, 0, Stop.COAST)
 
     @staticmethod
-    async def lift_left():
-        await GripperController.__left_motor.run_target(Speed.Fast, 80, Stop.HOLD)
+    async def lift_left(degree: float = 80):
+        degree = degree if degree >= 0 else 0
+        await GripperController.__left_motor.run_target(Speed.Fast, degree, Stop.HOLD)
 
     @staticmethod
     async def down_left(degree: float = 0):
@@ -22,8 +23,9 @@ class GripperController:
         await GripperController.__left_motor.run_target(Speed.Fast, degree, Stop.HOLD)
 
     @staticmethod
-    async def lift_right():
-        await GripperController.__right_motor.run_target(Speed.Fast, 20, Stop.HOLD)
+    async def lift_right(degree: float = 0):
+        degree = degree if degree >= 0 else 0
+        await GripperController.__right_motor.run_target(Speed.Fast, degree, Stop.HOLD)
 
     @staticmethod
     async def down_right(degree: float = 0):

@@ -6,16 +6,13 @@ from pybricks.tools import run_task, wait  # , multitask
 
 
 async def test_gripper():
-    await wait(1000)
-    await GripperController.down_left(20)
-    await wait(1000)
     await GripperController.lift_right()
     await wait(1000)
     await GripperController.lift_left()
-    await wait(2000)
-    await GripperController.down_left()
     await wait(1000)
-    await GripperController.down_right()
+    await GripperController.lift_right(30)
+    await wait(1000)
+    await GripperController.lift_left(30)
     await wait(1000)
 
 
