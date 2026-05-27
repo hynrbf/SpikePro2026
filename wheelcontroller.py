@@ -3,7 +3,7 @@ from pybricks.parameters import Port, Direction, Icon, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 
-# from colorcontroller import ColorController, MatColor
+from colorcontroller import ColorController
 from shared import Shared, Speed
 
 
@@ -82,6 +82,28 @@ class WheelController:
         Shared.hub().display.icon(Icon.ARROW_RIGHT)
         wheel_controller = WheelController.__object()
         await wheel_controller.turn(angle_degrees)
+
+    @staticmethod
+    async def move_towards_mat_color(mat_color_range: int):
+        wheel_controller = WheelController.__object()
+        count = 1
+
+        while True:
+            color = await ColorController.mat_sensor.hsv()
+            color_int = color.h
+
+            if ((mat_color_range - 5) <= color_int <= (mat_color_range + 5)) or count > 1000:
+                wheel_controller.stop()
+                break
+            else:
+                # you can be fast here otherwise bump the element, same as Medium Fast
+                wheel_controller.drive(Speed.Medium, 0)
+
+            # print("moving: ", count)
+            count = count + 1
+            await wait(10)
+
+        wheel_controller.stop()
 
     # @staticmethod
     # async def follow_the_line(count: int, kp: float = 0.30):

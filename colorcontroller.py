@@ -17,12 +17,12 @@ class ElementColor:
 
 
 class ColorController:
-    __mat_sensor = ColorSensor(Port.C)
+    mat_sensor = ColorSensor(Port.C)
     __side_sensor = ColorSensor(Port.D)
 
     @staticmethod
     async def get_mat_color() -> int:
-        color = await ColorController.__mat_sensor.hsv()
+        color = await ColorController.mat_sensor.hsv()
         color_int = color.h
         print("mat color: ", color_int)
 
