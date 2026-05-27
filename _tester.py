@@ -30,7 +30,6 @@ async def test_element_color():
 
 async def test_mat_color():
     await WheelController.move_towards_mat_color(175)
-    await wait(1000)
 
 
 async def main():
@@ -40,9 +39,9 @@ async def main():
         await HandController.reset()
         await WheelController.reset()
 
-        # await test_gripper()
-        # await test_wheel()
-        # await test_element_color()
+        await test_gripper()
+        await test_wheel()
+        await test_element_color()
         await test_mat_color()
     finally:
         await HandController.reset()
