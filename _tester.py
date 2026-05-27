@@ -17,10 +17,10 @@ async def test_gripper():
 
 
 async def test_wheel():
-    await WheelController.move_forward(float(100), Speed.Slow)
+    await WheelController.move_forward(float(100), Speed.Fast)
     await WheelController.right_turn()
     await WheelController.left_turn()
-    await WheelController.move_backward(float(100), Speed.Slow)
+    await WheelController.move_backward(float(100), Speed.Fast)
 
 
 async def main():
