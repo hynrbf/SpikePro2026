@@ -21,3 +21,8 @@ getting artifact, bad
     await wait(1000)
     await WheelController.move_backward(float(110), speed=Speed.Slow)
 
+issues:
+1. yung rubber pag kuha yellow, sasabit sa gilid ng rubber
+2. yung red sakto. so mas maige sa red and yellow wala rubber. if me rubber sa taas lang
+3. yung artefact yung distance to each item iba, so hirap kunin
+   kahit patalikod
