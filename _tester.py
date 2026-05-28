@@ -25,6 +25,7 @@ async def test_wheel():
 
     await multitask(HandController.lift_left(speed=Speed.Slow), HandController.lift_right(speed=Speed.Slow))
     await WheelController.move_forward(float(200), Speed.Fast)
+    await WheelController.left_turn(turn_speed=Speed.Slow)
     await wait(2000)
 
 

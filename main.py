@@ -28,13 +28,21 @@ async def main():
         await WheelController.right_turn()
         await WheelController.move_backward(900, with_brake=True)
         await WheelController.move_forward(200)
-        await multitask(WheelController.right_turn(), HandController.lift_left(0),
-                        HandController.lift_right(0))
+        await multitask(WheelController.right_turn(), HandController.lift_left(50),
+                        HandController.lift_right(50))
         await WheelController.move_forward(200, speed=Speed.Slow)
-        await WheelController.left_turn(180)
+        await multitask(HandController.lift_left(80, speed=Speed.Slow),
+                        HandController.lift_right(80, speed=Speed.Slow))
+        await WheelController.left_turn(180, turn_speed=Speed.Slow)
+        await multitask(HandController.lift_left(50, speed=Speed.Slow),
+                        HandController.lift_right(50, speed=Speed.Slow))
         await WheelController.move_forward(700)
         await WheelController.move_towards_mat_color(210, speed=Speed.Slow)
-        await WheelController.move_forward
+        await WheelController.move_forward(250)
+        await multitask(HandController.lift_left(80, speed=Speed.Slow),
+                        HandController.lift_right(80, speed=Speed.Slow))
+        await WheelController.right_turn(turn_speed=Speed.Slow)
+        await WheelController.move_backward(200, with_brake=True)
 
 
     finally:
