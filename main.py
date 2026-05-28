@@ -23,6 +23,19 @@ async def main():
         # await MissionRandomized.exec_mission()
         # await MissionYellowTower.exec_mission()
         pass
+        await WheelController.move_backward(1600, with_brake=True)
+        await WheelController.move_forward(300)
+        await WheelController.right_turn()
+        await WheelController.move_backward(900, with_brake=True)
+        await WheelController.move_forward(200)
+        await multitask(WheelController.right_turn(), HandController.lift_left(0),
+                        HandController.lift_right(0))
+        await WheelController.move_forward(200, speed=Speed.Slow)
+        await WheelController.left_turn(180)
+        await WheelController.move_forward(700)
+        await WheelController.move_towards_mat_color(210, speed=Speed.Slow)
+        await WheelController.move_forward
+
 
     finally:
         # await wait(2000)
