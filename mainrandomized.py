@@ -56,3 +56,4 @@ class MissionRandomized:
         await multitask(HandController.lift_left(speed=Speed.Slow),
                         HandController.lift_right(speed=Speed.Slow))
         await WheelController.move_forward(275, speed=Speed.Slow)
+        await wait(500)
