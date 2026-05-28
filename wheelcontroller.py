@@ -68,19 +68,19 @@ class WheelController:
             await wheel_controller.straight(distance_in_mm)
 
     @staticmethod
-    async def right_turn(angle_degrees: float = 90):
+    async def right_turn(angle_degrees: float = 90, turn_speed: int = Speed.Fast):
         if angle_degrees < 0:
             angle_degrees = angle_degrees * -1
 
         Shared.hub().display.icon(Icon.ARROW_LEFT)
-        wheel_controller = WheelController.__object()
+        wheel_controller = WheelController.__object() if turn_speed == Speed.Fast else WheelController.__object_slow_turn()
         await wheel_controller.turn(angle_degrees)
 
     @staticmethod
-    async def left_turn(angle_degrees: float = 90):
+    async def left_turn(angle_degrees: float = 90, turn_speed: int = Speed.Fast):
         angle_degrees = angle_degrees * -1
         Shared.hub().display.icon(Icon.ARROW_RIGHT)
-        wheel_controller = WheelController.__object()
+        wheel_controller = WheelController.__object() if turn_speed == Speed.Fast else WheelController.__object_slow_turn()
         await wheel_controller.turn(angle_degrees)
 
     @staticmethod
@@ -148,3 +148,9 @@ class WheelController:
         return Shared.wheels_with_gyro(WheelController.__left_motor, WheelController.__right_motor,
                                        WheelController.__wheel_diameter_in_mm,
                                        WheelController.__axle_track_in_mm)
+
+    @staticmethod
+    def __object_slow_turn() -> DriveBase:
+        return Shared.wheels_with_gyro(WheelController.__left_motor, WheelController.__right_motor,
+                                       WheelController.__wheel_diameter_in_mm,
+                                       WheelController.__axle_track_in_mm, 90)

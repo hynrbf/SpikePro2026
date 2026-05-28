@@ -3,7 +3,7 @@ from handcontroller import HandController
 from shared import Speed
 from wheelcontroller import WheelController
 from pybricks import version
-from pybricks.tools import run_task, wait  # , multitask
+from pybricks.tools import run_task, wait, multitask
 
 
 async def test_gripper():
@@ -18,10 +18,14 @@ async def test_gripper():
 
 
 async def test_wheel():
-    await WheelController.move_forward(float(100), Speed.Fast)
-    await WheelController.right_turn()
-    await WheelController.left_turn()
-    await WheelController.move_backward(float(100), Speed.Fast)
+    # await WheelController.move_forward(float(100), Speed.Fast)
+    # await WheelController.right_turn()
+    # await WheelController.left_turn()
+    # await WheelController.move_backward(float(100), Speed.Fast)
+
+    await multitask(HandController.lift_left(speed=Speed.Slow), HandController.lift_right(speed=Speed.Slow))
+    await WheelController.move_forward(float(200), Speed.Fast)
+    await wait(2000)
 
 
 async def test_element_color():
@@ -39,10 +43,10 @@ async def main():
         await HandController.reset()
         await WheelController.reset()
 
-        await test_gripper()
+        # await test_gripper()
         await test_wheel()
-        await test_element_color()
-        await test_mat_color()
+        # await test_element_color()
+        # await test_mat_color()
     finally:
         await HandController.reset()
         await WheelController.reset()
