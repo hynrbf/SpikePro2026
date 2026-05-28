@@ -22,7 +22,7 @@ async def main():
         # await MissionRandomized.exec_mission()
         await WheelController.move_backward(220)
         await WheelController.left_turn()
-        await WheelController.move_forward(700)
+        await WheelController.move_forward(750)
         await WheelController.move_towards_mat_color(210, Speed.Medium)
         await WheelController.move_backward(190)
         await WheelController.left_turn()
@@ -39,9 +39,9 @@ async def main():
         await WheelController.move_backward(70, Speed.Medium)
         await WheelController.right_turn(180)
         await WheelController.move_backward(240, Speed.Medium, with_brake=True)
-        await WheelController.move_forward(220, Speed.Medium)
+        await WheelController.move_forward(200, Speed.Medium)
         await WheelController.left_turn()
-        await WheelController.move_forward(500)
+        await WheelController.move_forward(580)
         await WheelController.move_towards_mat_color(210, Speed.Slow)
         await WheelController.move_forward(300)
         await WheelController.right_turn()
@@ -56,9 +56,13 @@ async def main():
         await WheelController.move_backward(230, Speed.Medium)
         await WheelController.move_forward(230, Speed.Medium)
         await WheelController.right_turn(180)
-        await WheelController.move_backward(700, Speed.Medium, with_brake=True)
-
-
+        await WheelController.move_backward(760, Speed.Medium, with_brake=True)
+        await WheelController.move_forward(230, Speed.Medium)
+        await WheelController.right_turn()
+        await HandController.lift_right(85, speed=Speed.Slow)
+        await WheelController.move_forward(95, Speed.Slow)
+        await HandController.lift_right(40, speed=Speed.Slow)
+        await WheelController.move_backward(115, Speed.Slow)
 
     finally:
         # await wait(2000)
