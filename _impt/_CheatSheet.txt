@@ -1,0 +1,28 @@
+getting red tower, good
+	await WheelController.move_forward(float(140), speed=Speed.Slow, with_brake=True)
+	await multitask(HandController.lift_right(speed=Speed.Slow), HandController.lift_left(speed=Speed.Slow))
+	await WheelController.move_backward(float(110), speed=Speed.Slow)
+	await wait(1000)
+
+getting artifact, bad
+    await WheelController.move_towards_mat_color(175)
+    await WheelController.move_forward(float(110), speed=Speed.Slow, with_brake=True)
+    await wait(500)
+    await multitask(WheelController.move_backward(30), HandController.lift_left(speed=Speed.Slow),
+                        HandController.lift_right(speed=Speed.Slow))
+    await wait(1000)
+    await WheelController.move_backward(float(110), speed=Speed.Slow)
+
+getting artifact, bad
+    await multitask(HandController.lift_right(), HandController.lift_left())
+    await WheelController.move_towards_mat_color(175)
+    await WheelController.move_forward(float(90), speed=Speed.Slow, with_brake=True)
+    await multitask(HandController.lift_right(20), HandController.lift_left(20))
+    await wait(1000)
+    await WheelController.move_backward(float(110), speed=Speed.Slow)
+
+issues:
+1. yung rubber pag kuha yellow, sasabit sa gilid ng rubber
+2. yung red sakto. so mas maige sa red and yellow wala rubber. if me rubber sa taas lang
+3. yung artefact yung distance to each item iba, so hirap kunin
+   kahit patalikod

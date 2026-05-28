@@ -2,7 +2,8 @@ from pybricks.tools import run_task
 from pybricks import version
 from pybricks.tools import multitask  # wait
 
-from grippercontroller import GripperController
+from handcontroller import HandController
+from shared import Speed
 from wheelcontroller import WheelController
 
 
@@ -10,15 +11,25 @@ async def main():
     print("\nStart, pb version: ", version)
 
     try:
-        await WheelController.move_backward(380, with_brake=True)
-        await WheelController.move_forward(220)
-        await multitask(WheelController.left_turn(), GripperController.close())
-        await multitask(WheelController.move_forward(370, with_brake=True), GripperController.down(20))
-        await GripperController.opening()
-        await WheelController.move_backward(355)
+        await WheelController.move_forward(450)
+        await WheelController.left_turn()
+        await WheelController.move_backward(520, with_brake=True)
+        await WheelController.move_forward(180)
         await WheelController.right_turn()
-        await WheelController.move_forward(330)
-
+        await WheelController.move_forward(230)
+        await WheelController.move_forward(125)
+        await WheelController.move_backward(355)
+        await WheelController.left_turn()
+        await WheelController.move_forward(120)
+        await WheelController.right_turn()
+        await WheelController.move_forward(258)
+        await WheelController.right_turn()
+        await WheelController.move_forward(260, Speed.Slow, with_brake=True)
+        await multitask(WheelController.move_backward(30), HandController.lift_left(speed=Speed.Slow),
+                        HandController.lift_right(speed=Speed.Slow))
+        await WheelController.move_backward(200)
+        await WheelController.left_turn()
+        await WheelController.move_backward(120)
         # await WheelController.move_backward(float(500))
         # await WheelController.move_forward(float(390))
         # await WheelController.left_turn(float(83))

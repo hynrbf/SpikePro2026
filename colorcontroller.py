@@ -8,12 +8,21 @@ class MatColor:
     Others = -1
 
 
+class ElementColor:
+    Blue = 0
+    Yellow = 1
+    Red = 2
+    Green = 3
+    Black = 4
+
+
 class ColorController:
-    __mat_sensor = ColorSensor(Port.C)
+    mat_sensor = ColorSensor(Port.C)
+    __side_sensor = ColorSensor(Port.D)
 
     @staticmethod
     async def get_mat_color() -> int:
-        color = await ColorController.__mat_sensor.hsv()
+        color = await ColorController.mat_sensor.hsv()
         color_int = color.h
         print("mat color: ", color_int)
 
@@ -31,3 +40,28 @@ class ColorController:
 
         # when it detects outside the above, just treat it as White so wheels move straight
         return MatColor.White
+
+    @staticmethod
+    async def get_element_color() -> int:
+        color = await ColorController.__side_sensor.hsv()
+        color_int = color.h
+        print("side color: ", color_int)
+
+        # when it detects blue
+        if 223 <= color_int <= 224:
+            return ElementColor.Blue
+
+        # when it detects yellow
+        if 209 <= color_int <= 221:
+            return ElementColor.Yellow
+
+        # when detects red
+        if color_int <= 204:
+            return ElementColor.Red
+
+        # when detects green
+        if color_int <= 204:
+            return ElementColor.Green
+
+        # when it detects outside the above, just treat it as White so wheels move straight
+        return ElementColor.Black

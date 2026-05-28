@@ -12,13 +12,13 @@ ruff check . --fix
 winget search --id Microsoft.PowerShell
 winget install --id Microsoft.PowerShell --source winget
 
-5. Ports from back view or button at below
-    A=left motor
+5. Ports from back view
+    A=left hand
     B=right motor
-    C=
-    D=
-    E=front grip
-    F=back lifter
+    C=color mat
+    D=color side
+    E=right hand
+    F=left motor
 
 6. basic test in actual mat
 a. color values
