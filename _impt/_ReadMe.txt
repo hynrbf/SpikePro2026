@@ -27,6 +27,11 @@ a. color values
     # when it detects black return 1, swerving to the right
     if 165 <= color_int <= 199:
 
+7.
+color = await ColorController.mat_sensor.hsv()
+color_int = color.h
+print(color_int)
+
  == ToDo==
  1. coach Mike, to make front to bangga
     likod to check if ok

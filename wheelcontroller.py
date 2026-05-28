@@ -92,7 +92,7 @@ class WheelController:
             color = await ColorController.mat_sensor.hsv()
             color_int = color.h
 
-            if ((mat_color_range - 5) <= color_int <= (mat_color_range + 5)) or count > 1000:
+            if ((mat_color_range - 2) <= color_int <= (mat_color_range + 2)) or count > 1000:
                 wheel_controller.stop()
                 break
             else:
