@@ -35,6 +35,29 @@ async def main():
                         HandController.lift_right(speed=Speed.Slow))
         await WheelController.move_forward(200, speed=Speed.Slow)
         await wait(500)
+        await WheelController.move_backward(900, with_brake=True)
+        await WheelController.move_forward(180)
+        await WheelController.right_turn()
+        await WheelController.move_forward(265)
+        await WheelController.move_forward(135)
+        await WheelController.move_backward(100)
+        await multitask(HandController.lift_left(speed=Speed.Slow),
+                        HandController.lift_right(speed=Speed.Slow))
+        await WheelController.right_turn()
+        await WheelController.move_forward(130, speed=Speed.Slow)
+        await multitask(HandController.lift_left(30, speed=Speed.Slow),
+                        HandController.lift_right(30, speed=Speed.Slow))
+        await multitask(WheelController.move_backward(100, speed=Speed.Slow),
+                        HandController.lift_left(17, speed=Speed.Slow),
+                        HandController.lift_right(17, speed=Speed.Slow))
+        await WheelController.move_backward(850, with_brake=True)
+        await WheelController.move_forward(350)
+        await WheelController.left_turn()
+        await WheelController.move_forward(95)
+        await WheelController.left_turn()
+        await multitask(HandController.lift_left(speed=Speed.Slow),
+                        HandController.lift_right(speed=Speed.Slow))
+        await WheelController.move_forward(275, speed=Speed.Slow)
 
         # done only, do not remove
     finally:
