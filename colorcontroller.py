@@ -60,7 +60,7 @@ class ColorController:
             return ElementColor.Red
 
         # when detects green
-        if 150 <= color_int <= 154:
+        if 150 <= color_int <= 157:
             return ElementColor.Green
 
         # when it detects outside the above or 240, just treat it as Black

@@ -1,3 +1,4 @@
+from colorcontroller import ColorController
 from handcontroller import HandController
 from shared import Speed
 from wheelcontroller import WheelController
@@ -13,7 +14,11 @@ class MissionRandomized:
         await WheelController.move_forward(150, speed=Speed.Slow)
         await WheelController.right_turn()
         await WheelController.move_forward(230, speed=Speed.Medium)
-        # await WheelController.move_forward(125)
+        await wait(500)
+        await ColorController.get_element_color()
+        await WheelController.move_forward(125, speed=Speed.Medium)
+        await wait(500)
+        await ColorController.get_element_color()
         # await WheelController.move_backward(120)
         # await multitask(HandController.lift_left(speed=Speed.Slow),
         #                 HandController.lift_right(speed=Speed.Slow))
