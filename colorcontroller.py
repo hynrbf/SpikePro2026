@@ -68,3 +68,9 @@ class ColorController:
             return MatColor.Black
 
         return ElementColor.Black
+
+    @staticmethod
+    async def print_mat_color():
+        color = await ColorController.mat_sensor.hsv()
+        color_int = color.h
+        print("mat color: ", color_int)
