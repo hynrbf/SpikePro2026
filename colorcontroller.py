@@ -48,20 +48,23 @@ class ColorController:
         print("side color: ", color_int)
 
         # when it detects blue
-        if 223 <= color_int <= 224:
+        if 218 <= color_int <= 220:
             return ElementColor.Blue
 
         # when it detects yellow
-        if 209 <= color_int <= 221:
+        if 40 <= color_int <= 41:
             return ElementColor.Yellow
 
         # when detects red
-        if color_int <= 204:
+        if 348 <= color_int <= 356:
             return ElementColor.Red
 
         # when detects green
-        if color_int <= 204:
+        if 150 <= color_int <= 154:
             return ElementColor.Green
 
-        # when it detects outside the above, just treat it as White so wheels move straight
+        # when it detects outside the above or 240, just treat it as Black
+        if color_int == 240:
+            return MatColor.Black
+
         return ElementColor.Black
