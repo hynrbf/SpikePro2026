@@ -17,12 +17,22 @@ class MissionRandomized:
         await WheelController.move_forward(230, speed=Speed.Medium)
         await wait(500)
         await ColorController.get_element_color()
+
         await WheelController.move_forward(125, speed=Speed.Medium)
         await wait(500)
         await ColorController.get_element_color()
+
+        await WheelController.move_forward(127, speed=Speed.Medium)
+        await wait(500)
+        await ColorController.get_element_color()
+
+        await WheelController.move_forward(125, speed=Speed.Medium)
+        await wait(500)
+        await ColorController.get_element_color()
+
         await multitask(WheelController.move_backward(110), HandController.lift_left(),
                         HandController.lift_right())
-        await WheelController.left_turn(turn_speed=90)
+        await WheelController.left_turn()
         await WheelController.move_forward(70)
         await multitask(WheelController.right_turn(180), HandController.lift_left(0),
                         HandController.lift_right(0))
@@ -30,7 +40,7 @@ class MissionRandomized:
         await WheelController.move_backward(25)
         await MissionRandomized.slowly_turning()
         await multitask(WheelController.move_forward(100), HandController.reset())
-        await multitask(WheelController.move_forward(600), HandController.lift_left(10),
+        await multitask(WheelController.move_forward(550), HandController.lift_left(10),
                         HandController.lift_right(10))
         await wait(3000)
 
