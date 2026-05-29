@@ -1,4 +1,4 @@
-from pybricks.tools import multitask
+from pybricks.tools import multitask, wait
 
 from handcontroller import HandController
 from shared import Speed
@@ -51,3 +51,4 @@ class MissionYellowTower:
         await WheelController.move_forward(95, Speed.Slow)
         await HandController.lift_right(40, speed=Speed.Slow)
         await WheelController.move_backward(115, Speed.Slow)
+        await wait(500)
