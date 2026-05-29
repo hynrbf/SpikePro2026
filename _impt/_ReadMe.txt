@@ -21,16 +21,14 @@ winget install --id Microsoft.PowerShell --source winget
     F=left motor
 
 6. basic test in actual mat
-a. color values
-    if 200 <= color_int <= 205:
-
-    # when it detects black return 1, swerving to the right
-    if 165 <= color_int <= 199:
-
-7.
 color = await ColorController.mat_sensor.hsv()
 color_int = color.h
 print(color_int)
+
+7. getting red tower
+await WheelController.move_forward(100, Speed.Slow, with_brake=True)
+await HandController.lift_right(30,speed=Speed.Slow)
+await WheelController.left_turn(180, turn_speed=90)
 
  == ToDo==
  1. coach Mike, to make front to bangga

@@ -2,7 +2,6 @@ from handcontroller import HandController
 from wheelcontroller import WheelController
 from pybricks import version
 from pybricks.tools import run_task
-from pybricks.tools import multitask
 
 
 async def main():
@@ -10,8 +9,6 @@ async def main():
 
     await HandController.reset()
     await WheelController.reset()
-    await multitask(HandController.lift_left(80),
-                    HandController.lift_right(80))
     print("DONE!")
 
 
