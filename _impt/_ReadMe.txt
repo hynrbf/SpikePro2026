@@ -27,8 +27,9 @@ print(color_int)
 
 7. getting red tower
 await WheelController.move_forward(100, Speed.Slow, with_brake=True)
-await HandController.lift_right(30,speed=Speed.Slow)
-await WheelController.left_turn(180, turn_speed=90)
+await multitask(HandController.lift_right(35,speed=Speed.Slow), HandController.lift_left(35,speed=Speed.Slow))
+await WheelController.left_turn(180, turn_speed=80)
+await WheelController.move_forward(500, speed=Speed.Medium)
 
  == ToDo==
  1. coach Mike, to make front to bangga

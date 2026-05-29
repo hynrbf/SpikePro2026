@@ -18,13 +18,10 @@ async def test_gripper():
 
 
 async def test_wheel():
-    # await WheelController.move_forward(float(100), Speed.Fast)
-    # await WheelController.right_turn()
-    # await WheelController.left_turn()
-    # await WheelController.move_backward(float(100), Speed.Fast)
-
-    await WheelController.move_forward(float(200), Speed.Slow)
-    await WheelController.right_turn(turn_speed=90)
+    await WheelController.move_forward(float(100), Speed.Fast)
+    await WheelController.right_turn()
+    await WheelController.left_turn()
+    await WheelController.move_backward(float(100), Speed.Fast)
     await wait(2000)
 
 
@@ -43,13 +40,13 @@ async def main():
         # await HandController.reset()
         # await WheelController.reset()
 
-        # await test_gripper()
+        await test_gripper()
         await test_wheel()
-        # await test_element_color()
+        await test_element_color()
         # await test_mat_color()
     finally:
-        # await HandController.reset()
-        # await WheelController.reset()
+        await HandController.reset()
+        await WheelController.reset()
         pass
 
     print("DONE!")

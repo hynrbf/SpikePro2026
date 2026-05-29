@@ -21,6 +21,13 @@ getting artifact, bad
     await wait(1000)
     await WheelController.move_backward(float(110), speed=Speed.Slow)
 
+
+    await WheelController.move_forward(150, Speed.Slow, with_brake=True)
+    await WheelController.move_backward(40)
+    await multitask(HandController.lift_right(20,speed=Speed.Slow), HandController.lift_left(20,speed=Speed.Slow))
+    await WheelController.right_turn(180, turn_speed=50)
+    await WheelController.move_forward(500, speed=Speed.Medium)
+
 issues:
 1. yung rubber pag kuha yellow, sasabit sa gilid ng rubber
 2. yung red sakto. so mas maige sa red and yellow wala rubber. if me rubber sa taas lang
