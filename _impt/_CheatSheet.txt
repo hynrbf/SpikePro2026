@@ -22,11 +22,27 @@ getting artifact, bad
     await WheelController.move_backward(float(110), speed=Speed.Slow)
 
 
-    await WheelController.move_forward(150, Speed.Slow, with_brake=True)
-    await WheelController.move_backward(40)
-    await multitask(HandController.lift_right(20,speed=Speed.Slow), HandController.lift_left(20,speed=Speed.Slow))
-    await WheelController.right_turn(180, turn_speed=50)
-    await WheelController.move_forward(500, speed=Speed.Medium)
+
+@staticmethod
+async def get_mat_color() -> int:
+    color = await ColorController.mat_sensor.hsv()
+    color_int = color.h
+    print("mat color: ", color_int)
+
+    # when it detects white then 0, which is center
+    if 223 <= color_int <= 224:
+        return MatColor.White
+
+    # when it detects black return 1, swerving to the right
+    if 209 <= color_int <= 221:
+        return MatColor.Black
+
+    # when detects other color return -1, swerving to the left
+    if color_int <= 204:
+        return MatColor.Others
+
+    # when it detects outside the above, just treat it as White so wheels move straight
+    return MatColor.White
 
 issues:
 1. yung rubber pag kuha yellow, sasabit sa gilid ng rubber
