@@ -44,11 +44,17 @@ class MissionRandomized:
         #                 HandController.lift_right(10))
         # await WheelController.move_towards_mat_color(MatColor.Maroon)
         # await WheelController.move_backward(10)
-        await multitask(HandController.lift_left(10),
+        await multitask(HandController.lift_left(15),
                         HandController.lift_right(10))
         await wait(500)
         await WheelController.right_turn(turn_speed=50)
         await WheelController.move_towards_mat_color(MatColor.Green)
+        await WheelController.right_turn(turn_speed=50)
+        await WheelController.move_backward(150, with_brake=True)
+        await WheelController.move_forward(135, speed=Speed.Medium)
+        await WheelController.right_turn(turn_speed=50)
+        await WheelController.move_forward(135, speed=Speed.Medium)
+        await WheelController.right_turn(turn_speed=50)
 
     @staticmethod
     async def slowly_turning():
