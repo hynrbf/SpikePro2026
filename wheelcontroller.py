@@ -18,9 +18,6 @@ class WheelController:
     async def reset():
         await WheelController.__left_motor.run_target(Speed.Fast, 0)
         await WheelController.__right_motor.run_target(Speed.Fast, 0)
-        await wait(100)
-
-        state = WheelController.__object().state()
 
     @staticmethod
     async def move_forward(distance_in_mm: float, speed: float = Speed.Fast,
