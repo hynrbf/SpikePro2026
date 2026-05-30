@@ -26,11 +26,12 @@ class MissionYellowTower:
         await WheelController.move_forward(580)
         await WheelController.move_towards_mat_color(221, Speed.Slow)
         await WheelController.right_turn(turn_speed=120)
-        await WheelController.move_backward(300, with_brake=True)
+        await WheelController.move_backward(300, speed=Speed.Medium, with_brake=True)
         await WheelController.move_forward(230)
         await WheelController.left_turn(turn_speed=120)
-        await WheelController.move_forward(420, speed=Speed.Medium)
+        await multitask(HandController.lift_left(80), WheelController.move_forward(420, speed=Speed.Medium))
         await HandController.lift_left(50)
+        await WheelController.move_backward(100, speed=Speed.Medium)
 
         return
         await WheelController.move_backward(230, Speed.Medium)
