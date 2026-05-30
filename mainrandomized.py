@@ -53,8 +53,10 @@ class MissionRandomized:
         await WheelController.move_backward(150, with_brake=True)
         await WheelController.move_forward(135, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=50)
-        await WheelController.move_forward(135, speed=Speed.Medium)
+        await WheelController.move_forward(170, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=50)
+        await HandController.reset()
+        await WheelController.move_backward(100)
 
     @staticmethod
     async def slowly_turning():
