@@ -40,7 +40,7 @@ class MissionRandomized:
         await WheelController.move_backward(25)
         await MissionRandomized.slowly_turning()
         await multitask(WheelController.move_forward(100), HandController.reset())
-        await multitask(WheelController.move_forward(550), HandController.lift_left(10),
+        await multitask(WheelController.move_forward(550), HandController.lift_left(15),
                         HandController.lift_right(10))
         await WheelController.move_towards_mat_color(MatColor.Maroon)
         await WheelController.move_backward(10)

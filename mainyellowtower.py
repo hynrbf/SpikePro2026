@@ -8,7 +8,6 @@ from wheelcontroller import WheelController
 class MissionYellowTower:
     @staticmethod
     async def exec_mission():
-        await WheelController.move_backward(220)
         await WheelController.left_turn()
         await WheelController.move_forward(750)
         await WheelController.move_towards_mat_color(210, Speed.Medium)
