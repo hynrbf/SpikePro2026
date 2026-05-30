@@ -21,14 +21,18 @@ class MissionYellowTower:
         await multitask(HandController.reset(), WheelController.move_forward(100, Speed.Slow, with_brake=True))
         await multitask(HandController.lift_left(60, speed=Speed.Slow),
                         HandController.lift_right(60, speed=Speed.Slow))
-        await WheelController.move_backward(70, Speed.Medium)
+        await WheelController.move_backward(90, Speed.Medium)
         await WheelController.right_turn(turn_speed=90)
         await WheelController.move_forward(580)
+        await WheelController.move_towards_mat_color(221, Speed.Slow)
+        await WheelController.right_turn(turn_speed=90)
+        await WheelController.move_backward(300, with_brake=True)
+        await WheelController.move_forward(230)
+        await WheelController.left_turn(turn_speed=90)
+        await multitask(WheelController.move_forward(400, speed=Speed.Medium), HandController.lift_left(80))
+        await HandController.lift_left(50)
 
         return
-        await WheelController.move_towards_mat_color(210, Speed.Slow)
-        await WheelController.move_forward(300)
-        await WheelController.right_turn()
         await WheelController.move_backward(230, Speed.Medium)
         await WheelController.move_forward(230, Speed.Medium)
         await WheelController.left_turn()

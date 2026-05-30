@@ -14,16 +14,10 @@ from mainyellowtower import MissionYellowTower
 async def main():
     print("\nStart, pb version: ", version)
 
-    try:
-        # await MissionRandomized.exec_mission()
-        await MissionYellowTower.exec_mission()
-        # await MissionRedTower.exec_mission()
-        print("DONE!")
-    finally:
-        # await wait(2000)
-        # await HandController.reset()
-        # await WheelController.reset()
-        pass
+    # await MissionRandomized.exec_mission()
+    await MissionYellowTower.exec_mission()
+    # await MissionRedTower.exec_mission()
+    print("DONE!")
 
 
 run_task(main())
