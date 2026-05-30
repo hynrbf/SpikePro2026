@@ -15,16 +15,19 @@ async def test_gripper():
     await wait(1000)
     await HandController.lift_left(30)
     await wait(1000)
+    await HandController.lift_right(-10)
+    await wait(1000)
+    await HandController.lift_left(-10)
+    await wait(1000)
+    await HandController.reset()
 
 
 async def test_wheel():
-    # await WheelController.move_forward(float(100), Speed.Fast)
-    # await WheelController.right_turn()
-    # await WheelController.left_turn()
-    # await WheelController.move_backward(float(100), Speed.Fast)
-    # await wait(2000)
-    await HandController.lift_left(80)
-    await HandController.down_right(-20)
+    await WheelController.move_forward(float(100), Speed.Fast)
+    await WheelController.right_turn()
+    await WheelController.left_turn()
+    await WheelController.move_backward(float(100), Speed.Fast)
+    await wait(2000)
     pass
 
 
@@ -44,8 +47,8 @@ async def main():
         # await HandController.reset()
         # await WheelController.reset()
 
-        # await test_gripper()
-        await test_wheel()
+        await test_gripper()
+        # await test_wheel()
         # await test_element_color()
         # await test_mat_color()
     finally:
