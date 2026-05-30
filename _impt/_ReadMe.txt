@@ -20,10 +20,10 @@ winget install --id Microsoft.PowerShell --source winget
     E=right hand
     F=left motor
 
-6. basic test in actual mat
-color = await ColorController.mat_sensor.hsv()
-color_int = color.h
-print(color_int)
+6. Checklist
+   check the wheels palagi natatangalan
+   stabilize the hand
+   do basic test _tester.py
 
 7. getting red tower
 await WheelController.move_forward(100, Speed.Slow, with_brake=True)
