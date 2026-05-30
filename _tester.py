@@ -30,8 +30,8 @@ async def test_element_color():
 
 
 async def test_mat_color():
-    # await ColorController.print_mat_color()
-    await WheelController.move_towards_mat_color(348)
+    await ColorController.print_mat_color()
+    # await WheelController.move_towards_mat_color(348)
 
 
 async def main():
@@ -43,8 +43,8 @@ async def main():
 
         # await test_gripper()
         # await test_wheel()
-        await test_element_color()
-        # await test_mat_color()
+        # await test_element_color()
+        await test_mat_color()
     finally:
         # await HandController.reset()
         # await WheelController.reset()

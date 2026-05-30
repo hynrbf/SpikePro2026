@@ -21,7 +21,6 @@ class WheelController:
         await wait(100)
 
         state = WheelController.__object().state()
-        print("State of robot is: ", state)
 
     @staticmethod
     async def move_forward(distance_in_mm: float, speed: float = Speed.Fast,
