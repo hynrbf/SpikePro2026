@@ -14,10 +14,14 @@ class HandController:
 
     @staticmethod
     async def lift_left(degree: float = 80, speed: float = Speed.Fast):
-        degree = degree if degree >= 0 else 0
+        degree = degree if degree >= -10 else -10
         await HandController.__left_motor.run_target(speed, degree, Stop.HOLD)
 
     @staticmethod
     async def lift_right(degree: float = 80, speed: float = Speed.Fast):
-        degree = degree if degree <= 0 else degree * -1
+        if -10 <= degree < 0:
+            degree = abs(degree)
+        else:
+            degree = -abs(degree)  # same as * -1
+
         await HandController.__right_motor.run_target(speed, degree, Stop.HOLD)

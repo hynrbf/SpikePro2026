@@ -1,5 +1,5 @@
 from pybricks.pupdevices import Motor
-from pybricks.parameters import Port, Direction, Icon, Stop
+from pybricks.parameters import Port, Direction, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 
@@ -18,15 +18,10 @@ class WheelController:
     async def reset():
         await WheelController.__left_motor.run_target(Speed.Fast, 0)
         await WheelController.__right_motor.run_target(Speed.Fast, 0)
-        await wait(100)
-
-        state = WheelController.__object().state()
-        print("State of robot is: ", state)
 
     @staticmethod
     async def move_forward(distance_in_mm: float, speed: float = Speed.Fast,
                            with_brake: bool = False):
-        Shared.hub().display.icon(Icon.ARROW_DOWN)
         wheel_controller = WheelController.__object()
 
         if speed == Speed.Straight:
@@ -48,7 +43,6 @@ class WheelController:
     @staticmethod
     async def move_backward(distance_in_mm: float, speed: float = Speed.Fast,
                             with_brake: bool = False):
-        Shared.hub().display.icon(Icon.ARROW_UP)
         distance_in_mm = distance_in_mm * -1
         wheel_controller = WheelController.__object()
 
@@ -68,19 +62,17 @@ class WheelController:
             await wheel_controller.straight(distance_in_mm)
 
     @staticmethod
-    async def right_turn(angle_degrees: float = 90):
+    async def right_turn(angle_degrees: float = 90, turn_speed: float = 180):
         if angle_degrees < 0:
             angle_degrees = angle_degrees * -1
 
-        Shared.hub().display.icon(Icon.ARROW_LEFT)
-        wheel_controller = WheelController.__object()
+        wheel_controller = WheelController.__object(turn_speed=turn_speed)
         await wheel_controller.turn(angle_degrees)
 
     @staticmethod
-    async def left_turn(angle_degrees: float = 90):
+    async def left_turn(angle_degrees: float = 90, turn_speed: float = 180):
         angle_degrees = angle_degrees * -1
-        Shared.hub().display.icon(Icon.ARROW_RIGHT)
-        wheel_controller = WheelController.__object()
+        wheel_controller = WheelController.__object(turn_speed=turn_speed)
         await wheel_controller.turn(angle_degrees)
 
     @staticmethod
@@ -91,8 +83,9 @@ class WheelController:
         while True:
             color = await ColorController.mat_sensor.hsv()
             color_int = color.h
+            print("mat color: ", color_int)
 
-            if ((mat_color_range - 5) <= color_int <= (mat_color_range + 5)) or count > 1000:
+            if ((mat_color_range - 1) <= color_int <= (mat_color_range + 1)) or count > 1000:
                 wheel_controller.stop()
                 break
             else:
@@ -144,7 +137,7 @@ class WheelController:
     #         await wait(10)
 
     @staticmethod
-    def __object() -> DriveBase:
+    def __object(turn_speed: float = 180) -> DriveBase:
         return Shared.wheels_with_gyro(WheelController.__left_motor, WheelController.__right_motor,
                                        WheelController.__wheel_diameter_in_mm,
-                                       WheelController.__axle_track_in_mm)
+                                       WheelController.__axle_track_in_mm, turn_speed)

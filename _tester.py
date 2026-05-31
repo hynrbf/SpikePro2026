@@ -15,6 +15,11 @@ async def test_gripper():
     await wait(1000)
     await HandController.lift_left(30)
     await wait(1000)
+    await HandController.lift_right(-10)
+    await wait(1000)
+    await HandController.lift_left(-10)
+    await wait(1000)
+    await HandController.reset()
 
 
 async def test_wheel():
@@ -22,6 +27,8 @@ async def test_wheel():
     await WheelController.right_turn()
     await WheelController.left_turn()
     await WheelController.move_backward(float(100), Speed.Fast)
+    await wait(2000)
+    pass
 
 
 async def test_element_color():
@@ -29,23 +36,24 @@ async def test_element_color():
 
 
 async def test_mat_color():
-    await WheelController.move_towards_mat_color(175)
+    await ColorController.print_mat_color()
+    # await WheelController.move_towards_mat_color(348)
 
 
 async def main():
     print("Start, pb version: ", version)
 
     try:
-        await HandController.reset()
-        await WheelController.reset()
+        # await HandController.reset()
+        # await WheelController.reset()
 
         await test_gripper()
-        await test_wheel()
-        await test_element_color()
-        await test_mat_color()
+        # await test_wheel()
+        # await test_element_color()
+        # await test_mat_color()
     finally:
-        await HandController.reset()
-        await WheelController.reset()
+        # await HandController.reset()
+        # await WheelController.reset()
         pass
 
     print("DONE!")

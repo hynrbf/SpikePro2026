@@ -20,12 +20,16 @@ winget install --id Microsoft.PowerShell --source winget
     E=right hand
     F=left motor
 
-6. basic test in actual mat
-a. color values
-    if 200 <= color_int <= 205:
+6. Checklist
+   check the wheels palagi natatangalan
+   stabilize the hand
+   do basic test _tester.py
 
-    # when it detects black return 1, swerving to the right
-    if 165 <= color_int <= 199:
+7. getting red tower
+await WheelController.move_forward(100, Speed.Slow, with_brake=True)
+await multitask(HandController.lift_right(35,speed=Speed.Slow), HandController.lift_left(35,speed=Speed.Slow))
+await WheelController.left_turn(180, turn_speed=80)
+await WheelController.move_forward(500, speed=Speed.Medium)
 
  == ToDo==
  1. coach Mike, to make front to bangga
