@@ -7,6 +7,25 @@ from pybricks.tools import multitask, wait
 
 class MissionRandomized:
     @staticmethod
+    async def yellow_blue():
+        await WheelController.left_turn(turn_speed=60)
+        await WheelController.move_backward(150, with_brake=True)
+        await WheelController.move_forward(135, speed=Speed.Medium)
+        await WheelController.left_turn(turn_speed=60)
+        await WheelController.move_forward(160, speed=Speed.Medium)
+        await WheelController.left_turn(turn_speed=60)
+        await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
+        await WheelController.move_backward(100)
+        await WheelController.left_turn()
+        await WheelController.move_forward(770)
+        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
+        await wait(500)
+
+    @staticmethod
+    async def blue_yellow():
+        pass
+
+    @staticmethod
     async def exec_mission():
         await multitask(WheelController.move_forward(450), HandController.lift_left(),
                         HandController.lift_right())
@@ -29,7 +48,6 @@ class MissionRandomized:
         await WheelController.move_forward(125, speed=Speed.Medium)
         await wait(500)
         await ColorController.get_element_color()
-
         await multitask(WheelController.move_backward(110), HandController.lift_left(),
                         HandController.lift_right())
         await WheelController.left_turn()
@@ -50,18 +68,9 @@ class MissionRandomized:
         await WheelController.move_forward(130, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_towards_mat_color(MatColor.Black)
-        await WheelController.left_turn(turn_speed=60)
-        await WheelController.move_backward(150, with_brake=True)
-        await WheelController.move_forward(135, speed=Speed.Medium)
-        await WheelController.left_turn(turn_speed=60)
-        await WheelController.move_forward(160, speed=Speed.Medium)
-        await WheelController.left_turn(turn_speed=60)
-        await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_backward(100)
-        await WheelController.left_turn()
-        await WheelController.move_forward(770)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
-        await wait(500)
+
+        # await MissionRandomized.yellow_blue()
+        await MissionRandomized.blue_yellow()
 
     @staticmethod
     async def slowly_turning():
