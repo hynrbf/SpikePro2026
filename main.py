@@ -5,7 +5,7 @@ from pybricks import version
 from mainrandomized import MissionRandomized
 
 # from mainredtower import MissionRedTower
-from mainyellowtower import MissionYellowTower
+# from mainyellowtower import MissionYellowTower
 
 
 # from wheelcontroller import WheelController

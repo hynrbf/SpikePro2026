@@ -1,7 +1,7 @@
 from handcontroller import HandController
 from wheelcontroller import WheelController
 from pybricks import version
-from pybricks.tools import run_task, multitask
+from pybricks.tools import run_task #, multitask
 
 
 async def main():
