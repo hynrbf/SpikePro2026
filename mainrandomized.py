@@ -58,6 +58,9 @@ class MissionRandomized:
         await WheelController.left_turn(turn_speed=60)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
         await WheelController.move_backward(100)
+        await WheelController.left_turn()
+        await WheelController.move_forward(770)
+        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
         await wait(500)
 
     @staticmethod
