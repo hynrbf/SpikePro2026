@@ -41,21 +41,24 @@ class MissionRandomized:
         await MissionRandomized.slowly_turning()
         await multitask(WheelController.move_forward(100), HandController.lift_right(-10),
                         HandController.lift_left(-10))
-        await multitask(WheelController.move_forward(550), HandController.lift_left(5),
-                        HandController.lift_right(0))
+        await multitask(WheelController.move_forward(550), HandController.lift_left(10),
+                        HandController.lift_right(5))
         await WheelController.move_towards_mat_color(MatColor.Maroon)
-        await WheelController.move_backward(10)
-        await multitask(HandController.lift_left(5), HandController.lift_right(0))
-        await WheelController.right_turn(turn_speed=50)
+
+        await multitask(HandController.lift_left(10), HandController.lift_right(5))
+        await WheelController.right_turn(180, turn_speed=50)
+        await WheelController.move_backward(150, speed=Speed.Medium, with_brake=True)
+        await WheelController.move_forward(130, speed=Speed.Medium)
+        await WheelController.left_turn(turn_speed=50)
         await WheelController.move_towards_mat_color(MatColor.Green)
-        await WheelController.move_backward(50)
+        await WheelController.move_backward(100)
         await WheelController.right_turn(turn_speed=50)
         await WheelController.move_backward(150, with_brake=True)
         await WheelController.move_forward(135, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=50)
-        await WheelController.move_forward(120, speed=Speed.Medium)
+        await WheelController.move_forward(70, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=50)
-        await HandController.reset()
+        await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
         await WheelController.move_backward(100)
         await wait(500)
 
