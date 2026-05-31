@@ -42,12 +42,10 @@ class MissionRandomized:
         await WheelController.move_backward(200, speed=Speed.Medium)
         await multitask(HandController.lift_right(-10), HandController.lift_left(80, speed=Speed.Slow))
         await WheelController.move_forward(180, speed=80, with_brake=True)
-        await WheelController.move_backward(15, speed=Speed.Slow)
-        await multitask(HandController.lift_right(15, speed=Speed.Slow),
+        await WheelController.move_backward(20, speed=Speed.Slow)
+        await multitask(HandController.lift_right(10, speed=Speed.Slow),
                         HandController.lift_left(15, speed=Speed.Slow))
         await MissionRandomized.__slowly_turning()
-
-        return
         await multitask(WheelController.move_forward(100), HandController.lift_right(-10),
                         HandController.lift_left(-10))
         await multitask(WheelController.move_forward(550), HandController.lift_left(10),
