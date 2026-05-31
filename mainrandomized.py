@@ -95,6 +95,28 @@ class MissionRandomized:
         await wait(500)
 
     @staticmethod
+    async def green_black():
+        await multitask(HandController.lift_left(15), HandController.lift_right(10))
+
+        await WheelController.move_forward(215)
+        await WheelController.right_turn(turn_speed=60)
+        await WheelController.move_forward(100, speed=Speed.Medium, with_brake=True)
+        await WheelController.move_backward(35)
+        await HandController.lift_right(-10)
+        await WheelController.move_backward(125)
+        await WheelController.right_turn(turn_speed=60)
+        await WheelController.move_forward(275)
+        await WheelController.left_turn(turn_speed=60)
+        await WheelController.move_forward(200, speed=Speed.Medium, with_brake=True)
+        await WheelController.move_backward(40)
+        await HandController.lift_left(-10)
+        await WheelController.move_backward(100)
+        await WheelController.left_turn()
+        await WheelController.move_forward(700)
+        await WheelController.move_towards_mat_color(MatColor.BlackTwo, Speed.Slow)
+        await wait(500)
+
+    @staticmethod
     async def exec_mission():
         # await multitask(WheelController.move_forward(450), HandController.lift_left(),
         #                 HandController.lift_right())
@@ -144,7 +166,8 @@ class MissionRandomized:
         # await MissionRandomized.green_red()
         # await MissionRandomized.red_green()
 
-        await MissionRandomized.black_green()
+        # await MissionRandomized.black_green()
+        await MissionRandomized.green_black()
 
     @staticmethod
     async def slowly_turning():
