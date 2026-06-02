@@ -10,6 +10,10 @@ class MatColor:
     BlackTwo = 220  # 210 #216
     Others = -1
 
+class MatColor2:
+    White = 0
+    Black = 240
+
 
 class ElementColor:
     Blue = 0

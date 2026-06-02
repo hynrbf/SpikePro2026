@@ -4,8 +4,8 @@ from pybricks import version
 # from handcontroller import HandController
 from mainrandomized import MissionRandomized
 
-from mainredtower import MissionRedTower
-from mainyellowtower import MissionYellowTower
+# from mainredtower import MissionRedTower
+# from mainyellowtower import MissionYellowTower
 
 
 # from wheelcontroller import WheelController
