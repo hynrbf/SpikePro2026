@@ -1,5 +1,3 @@
-# from _testcapi import awaitType
-
 from colorcontroller import ColorController, MatColor  # , # MatColor2
 from handcontroller import HandController
 from shared import Speed
@@ -10,62 +8,62 @@ from pybricks.tools import multitask, wait
 class MissionRandomized:
     @staticmethod
     async def exec_mission():
-        # await multitask(WheelController.move_forward(450), HandController.lift_left(),
-        #                 HandController.lift_right())
-        # await WheelController.left_turn()
-        # # First Banga
-        # await WheelController.move_backward(520, with_brake=True)
-        # await WheelController.move_forward(150, speed=Speed.Slow)
-        # await WheelController.right_turn()
-        # await WheelController.move_forward(230, speed=Speed.Medium)
-        # await wait(500)
-        # await ColorController.get_element_color()
-        #
-        # await WheelController.move_forward(125, speed=Speed.Medium)
-        # await wait(500)
-        # await ColorController.get_element_color()
-        #
-        # await WheelController.move_forward(127, speed=Speed.Medium)
-        # await wait(500)
-        # await ColorController.get_element_color()
-        #
-        # await WheelController.move_forward(125, speed=Speed.Medium)
-        # await wait(500)
-        # await ColorController.get_element_color()
-        #
-        # await multitask(WheelController.move_backward(120, speed=Speed.Medium), HandController.lift_left(),
-        #                 HandController.lift_right())
-        # await WheelController.left_turn()
-        # await WheelController.move_forward(70)
-        # await multitask(WheelController.right_turn(180), HandController.lift_left(-10),
-        #                 HandController.lift_right())
-        # await WheelController.move_forward(170, speed=80, with_brake=True)
-        # await WheelController.move_backward(10)
-        # await HandController.lift_left(10)
-        # await WheelController.move_backward(160, speed=Speed.Medium)
-        # await multitask(HandController.lift_right(-10), HandController.lift_left(80, speed=Speed.Slow))
-        # await WheelController.left_turn(2)
-        # await WheelController.move_forward(140, speed=80, with_brake=True)
-        # await WheelController.move_backward(10)
-        # await HandController.lift_right(10)
-        # await WheelController.move_backward(20, speed=Speed.Slow)
-        # await multitask(HandController.lift_right(15, speed=Speed.Slow),
-        #                 HandController.lift_left(15, speed=Speed.Slow))
-        # await MissionRandomized.__slowly_turning()
-        #
-        # # 2nd bangga
-        # await WheelController.move_backward(400, with_brake=True)
-        # await multitask(WheelController.move_forward(100), HandController.lift_right(-10),
-        #                 HandController.lift_left(-10))
-        # await multitask(WheelController.move_forward(550), HandController.lift_left(10),
-        #                 HandController.lift_right(5))
-        # await WheelController.move_towards_mat_color(MatColor.Maroon)
-        # await multitask(HandController.lift_left(10), HandController.lift_right(5))
-        # await WheelController.right_turn(180, turn_speed=60)
-        # await WheelController.move_backward(150, speed=Speed.Medium, with_brake=True)
-        # await WheelController.move_forward(130, speed=Speed.Medium)
-        # await WheelController.right_turn(turn_speed=60)
-        # await WheelController.move_towards_mat_color(MatColor.Black)
+        await multitask(WheelController.move_forward(450), HandController.lift_left(),
+                        HandController.lift_right())
+        await WheelController.left_turn()
+        # First Banga
+        await WheelController.move_backward(520, with_brake=True)
+        await WheelController.move_forward(150, speed=Speed.Slow)
+        await WheelController.right_turn()
+        await WheelController.move_forward(230, speed=Speed.Medium)
+        await wait(500)
+        await ColorController.get_element_color()
+
+        await WheelController.move_forward(125, speed=Speed.Medium)
+        await wait(500)
+        await ColorController.get_element_color()
+
+        await WheelController.move_forward(127, speed=Speed.Medium)
+        await wait(500)
+        await ColorController.get_element_color()
+
+        await WheelController.move_forward(125, speed=Speed.Medium)
+        await wait(500)
+        await ColorController.get_element_color()
+
+        await multitask(WheelController.move_backward(120, speed=Speed.Medium), HandController.lift_left(),
+                        HandController.lift_right())
+        await WheelController.left_turn()
+        await WheelController.move_forward(70)
+        await multitask(WheelController.right_turn(180), HandController.lift_left(-10),
+                        HandController.lift_right())
+        await WheelController.move_forward(170, speed=80, with_brake=True)
+        await WheelController.move_backward(10)
+        await HandController.lift_left(10)
+        await WheelController.move_backward(160, speed=Speed.Medium)
+        await multitask(HandController.lift_right(-10), HandController.lift_left(80, speed=Speed.Slow))
+        await WheelController.left_turn(2)
+        await WheelController.move_forward(140, speed=80, with_brake=True)
+        await WheelController.move_backward(10)
+        await HandController.lift_right(10)
+        await WheelController.move_backward(20, speed=Speed.Slow)
+        await multitask(HandController.lift_right(15, speed=Speed.Slow),
+                        HandController.lift_left(15, speed=Speed.Slow))
+        await MissionRandomized.__slowly_turning()
+
+        # 2nd bangga
+        await WheelController.move_backward(400, with_brake=True)
+        await multitask(WheelController.move_forward(100), HandController.lift_right(-10),
+                        HandController.lift_left(-10))
+        await multitask(WheelController.move_forward(550), HandController.lift_left(10),
+                        HandController.lift_right(5))
+        await WheelController.move_towards_mat_color(MatColor.Maroon)
+        await multitask(HandController.lift_left(10), HandController.lift_right(5))
+        await WheelController.right_turn(180, turn_speed=60)
+        await WheelController.move_backward(150, speed=Speed.Medium, with_brake=True)
+        await WheelController.move_forward(130, speed=Speed.Medium)
+        await WheelController.right_turn(turn_speed=60)
+        await WheelController.move_towards_mat_color(MatColor.Black)
 
         # await MissionRandomized.__yellow_blue()
         # await MissionRandomized.__blue_yellow()

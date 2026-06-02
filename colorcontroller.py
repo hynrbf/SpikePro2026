@@ -11,7 +11,7 @@ class MatColor:
     Others = -1
 
 
-class MatColor2:
+class MatColorAlt:
     White = 0
     Black = 240
 

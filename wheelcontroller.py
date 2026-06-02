@@ -99,7 +99,7 @@ class WheelController:
         wheel_controller.stop()
 
     @staticmethod
-    async def move_towards_mat_color_2(mat_color_range: int, speed: float = Speed.Slow):
+    async def move_towards_mat_color_alt(mat_color_range: int, speed: float = Speed.Slow):
         wheel_controller = WheelController.__object()
         count = 1
 
