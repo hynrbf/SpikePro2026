@@ -3,12 +3,13 @@ from pybricks.parameters import Port
 
 
 class MatColor:
-    White = 240
+    White = 213
     Green = 114
-    Maroon = 354  # 348
-    Black = 213  # 216 #203 betty go belmonte school #when moving it makes the hsv 2 bigger than stationarynn
+    Maroon = 349
+    Black = 240
     BlackTwo = 220  # 210 #216
     Others = -1
+
 
 class MatColor2:
     White = 0
