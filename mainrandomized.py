@@ -64,7 +64,7 @@ class MissionRandomized:
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_towards_mat_color(MatColor.Black)
 
-        # await MissionRandomized.__yellow_blue()
+        await MissionRandomized.__yellow_blue()
         # await MissionRandomized.__blue_yellow()
         #
         # await MissionRandomized.__green_red()
@@ -74,7 +74,7 @@ class MissionRandomized:
         # await MissionRandomized.__green_black()
 
         # await  MissionRandomized.__red_yellow()
-        await MissionRandomized.__yellow_red()
+        # await MissionRandomized.__yellow_red()
 
         await wait(500)
 
