@@ -3,12 +3,17 @@ from pybricks.parameters import Port
 
 
 class MatColor:
-    White = 240
+    White = 213
     Green = 114
-    Maroon = 348
-    Black = 220 #216
-    BlackTwo = 216
+    Maroon = 349
+    Black = 240
+    BlackTwo = 220  # 210 #216
     Others = -1
+
+
+class MatColorAlt:
+    White = 0
+    Black = 240
 
 
 class ElementColor:

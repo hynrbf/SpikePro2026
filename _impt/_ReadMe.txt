@@ -31,6 +31,8 @@ await multitask(HandController.lift_right(35,speed=Speed.Slow), HandController.l
 await WheelController.left_turn(180, turn_speed=80)
 await WheelController.move_forward(500, speed=Speed.Medium)
 
+8. If
+
  == ToDo==
  1. coach Mike, to make front to bangga
     likod to check if ok

@@ -10,10 +10,7 @@ class MissionYellowTower:
     @staticmethod
     async def exec_mission():
         await WheelController.left_turn()
-        await WheelController.move_forward(770)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
-        await WheelController.left_turn()
-        await WheelController.move_backward(300, with_brake=True)
+        await WheelController.move_backward(350, with_brake=True)
         await WheelController.move_forward(220)
         await WheelController.right_turn()
         await WheelController.move_forward(220)
@@ -23,7 +20,7 @@ class MissionYellowTower:
         await WheelController.move_backward(90, Speed.Medium)
         await WheelController.right_turn(turn_speed=90)
         await WheelController.move_forward(580)
-        await WheelController.move_towards_mat_color(220, Speed.Slow)
+        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
         await WheelController.right_turn(turn_speed=120)
         await WheelController.move_backward(300, speed=Speed.Medium, with_brake=True)
         await WheelController.move_forward(230)
