@@ -42,7 +42,7 @@ class MissionRandomized:
         await MissionRandomized.__slowly_turning()
 
         # 2nd bangga
-        await WheelController.move_backward(400, with_brake=True)
+        await WheelController.move_backward(400, speed=Speed.Medium, with_brake=True)
         await multitask(WheelController.move_forward(100), HandController.lift_right(-10),
                         HandController.lift_left(-10))
         await multitask(WheelController.move_forward(550), HandController.lift_left(10),
@@ -55,7 +55,6 @@ class MissionRandomized:
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_backward(50, speed=Speed.Slow)
         await WheelController.move_towards_mat_color(MatColor.Black)
-        return
 
         # await MissionRandomized.__yellow_blue()
         # await MissionRandomized.__blue_yellow()
