@@ -1,14 +1,14 @@
 from pybricks.tools import run_task  # , wait
 from pybricks import version
 
-# from handcontroller import HandController
+from handcontroller import HandController
 from mainrandomized import MissionRandomized
 
 # from mainredtower import MissionRedTower
 # from mainyellowtower import MissionYellowTower
 
 
-# from wheelcontroller import WheelController
+from wheelcontroller import WheelController
 
 
 async def main():

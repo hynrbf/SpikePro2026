@@ -6,7 +6,7 @@ class MatColor:
     White = 240
     Green = 114
     Maroon = 354  # 348
-    Black = 207  # 216 #203 betty go belmonte school
+    Black = 213  # 216 #203 betty go belmonte school #when moving it makes the hsv 2 bigger than stationarynn
     BlackTwo = 220  # 210 #216
     Others = -1
 
