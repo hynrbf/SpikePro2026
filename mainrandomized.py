@@ -81,8 +81,9 @@ class MissionRandomized:
         #
         # await MissionRandomized.__black_yellow()
         # await MissionRandomized.__yellow_black()
-
-        await MissionRandomized.__black_red()
+        #
+        # await MissionRandomized.__black_red()
+        await MissionRandomized.__red_black()
 
         await wait(500)
 
@@ -284,19 +285,34 @@ class MissionRandomized:
         await HandController.lift_left(-10)
         await WheelController.move_backward(100, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
-        await WheelController.move_forward(385, speed=Speed.Medium)
+        await WheelController.move_forward(395, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_forward(150, speed=Speed.Medium)
         await WheelController.move_backward(45, speed=Speed.Medium)
         await HandController.lift_right(-10)
         await WheelController.move_backward(100, speed=Speed.Medium)
         await WheelController.left_turn()
-        await WheelController.move_forward(275)
+        await WheelController.move_forward(265)
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __red_black():
-        pass
+        await multitask(HandController.lift_left(15), HandController.lift_right(5))
+        await WheelController.move_forward(80, speed=Speed.Medium)
+        await WheelController.right_turn(turn_speed=60)
+        await WheelController.move_backward(15, speed=Speed.Medium)
+        await HandController.lift_right(-10)
+        await WheelController.move_backward(100, speed=Speed.Medium)
+        await WheelController.left_turn(turn_speed=60)
+        await WheelController.move_forward(115, speed=Speed.Medium)
+        await WheelController.right_turn(turn_speed=60)
+        await WheelController.move_forward(165, speed=Speed.Medium)
+        await WheelController.move_backward(40, speed=Speed.Medium)
+        await HandController.lift_left(-10)
+        await WheelController.move_backward(120, speed=Speed.Medium)
+        await WheelController.left_turn()
+        await WheelController.move_forward(440, speed=Speed.Medium)
+        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __slowly_turning():
