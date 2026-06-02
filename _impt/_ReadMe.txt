@@ -34,6 +34,7 @@ await WheelController.move_forward(500, speed=Speed.Medium)
 8. If
 
  == ToDo==
- 1. coach Mike, to make front to bangga
-    likod to check if ok
- 2. to tidy up
+ 1.issues to fix
+   black red - dapat front bangga the black to accurate
+   all random - review all and fix accuracy
+              - also fix if kabaliktad
