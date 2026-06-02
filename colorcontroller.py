@@ -6,7 +6,7 @@ class MatColor:
     White = 240
     Green = 114
     Maroon = 348
-    Black = 220 #216
+    Black = 207 #216 #203 betty go belmonte school
     BlackTwo = 220 #210 #216
     Others = -1
 

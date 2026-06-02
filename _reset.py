@@ -9,7 +9,6 @@ async def main():
 
     await HandController.reset()
     await WheelController.reset()
-    await multitask(HandController.lift_left(15), HandController.lift_right(10))
     print("DONE!")
 
 
