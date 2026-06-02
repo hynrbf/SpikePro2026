@@ -80,7 +80,9 @@ class MissionRandomized:
         # await MissionRandomized.__yellow_red()
         #
         # await MissionRandomized.__black_yellow()
-        await MissionRandomized.__yellow_black()
+        # await MissionRandomized.__yellow_black()
+
+        await MissionRandomized.__black_red()
 
         await wait(500)
 
@@ -272,6 +274,29 @@ class MissionRandomized:
         await WheelController.left_turn()
         await WheelController.move_forward(770)
         await WheelController.move_towards_mat_color(MatColor.BlackTwo, Speed.Slow)
+
+    @staticmethod
+    async def __black_red():
+        await multitask(HandController.lift_left(20), HandController.lift_right(5))
+        await WheelController.move_backward(50, speed=Speed.Medium)
+        await WheelController.right_turn(turn_speed=60)
+        await WheelController.move_backward(5, speed=Speed.Medium)
+        await HandController.lift_left(-10)
+        await WheelController.move_backward(100, speed=Speed.Medium)
+        await WheelController.left_turn(turn_speed=60)
+        await WheelController.move_forward(385, speed=Speed.Medium)
+        await WheelController.right_turn(turn_speed=60)
+        await WheelController.move_forward(150, speed=Speed.Medium)
+        await WheelController.move_backward(45, speed=Speed.Medium)
+        await HandController.lift_right(-10)
+        await WheelController.move_backward(100, speed=Speed.Medium)
+        await WheelController.left_turn()
+        await WheelController.move_forward(275)
+        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
+
+    @staticmethod
+    async def __red_black():
+        pass
 
     @staticmethod
     async def __slowly_turning():
