@@ -62,17 +62,15 @@ class MissionRandomized:
         # await MissionRandomized.__black_green()
         # await MissionRandomized.__green_black()
         #
-        # Not swapped
-        # await MissionRandomized.__yellow_red()
+        await MissionRandomized.__yellow_red()
         # await MissionRandomized.__red_yellow()
-        #Not swapped
+        # Not swapped
         # await MissionRandomized.__black_yellow()
         # await MissionRandomized.__yellow_black()
         # Not swaped
         # await MissionRandomized.__red_black()
         # await MissionRandomized.__black_red()
 
-        # ToDo. to complete
         # Not swapped
         # await MissionRandomized.__yellow_green()
         # await MissionRandomized.__green_yellow()
@@ -216,7 +214,6 @@ class MissionRandomized:
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(850)
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
-
 
     @staticmethod
     async def __yellow_red():
@@ -427,7 +424,6 @@ class MissionRandomized:
         await WheelController.move_forward(700, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
-
     @staticmethod
     async def __blue_red():
         await multitask(HandController.lift_left(15), HandController.lift_right(5))
@@ -447,7 +443,6 @@ class MissionRandomized:
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(480, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
-
 
     @staticmethod
     async def __red_blue():
@@ -469,11 +464,10 @@ class MissionRandomized:
         await WheelController.move_forward(900, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
-
     @staticmethod
     async def __slowly_turning():
         await multitask(HandController.lift_right(10, speed=Speed.Slow),
-                    HandController.lift_left(10, speed=Speed.Slow))
+                        HandController.lift_left(10, speed=Speed.Slow))
         await WheelController.right_turn(5, turn_speed=50)
         await WheelController.move_backward(10)
         await WheelController.right_turn(175, turn_speed=90)
