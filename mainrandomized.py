@@ -53,16 +53,16 @@ class MissionRandomized:
         await WheelController.move_backward(80, speed=Speed.Slow)
         await WheelController.move_towards_mat_color(MatColor.Black)
 
-        # await MissionRandomized.__yellow_blue()
+        await MissionRandomized.__yellow_blue()
         # await MissionRandomized.__blue_yellow()
-        #
+        #Not swapped
         # await MissionRandomized.__green_red()
         # await MissionRandomized.__red_green()
-        #
+        #Not swapped
         # await MissionRandomized.__black_green()
         # await MissionRandomized.__green_black()
-        #
-        await MissionRandomized.__yellow_red()
+        #Not swapped
+        # await MissionRandomized.__yellow_red()
         # await MissionRandomized.__red_yellow()
         # Not swapped
         # await MissionRandomized.__black_yellow()
