@@ -38,3 +38,6 @@ await WheelController.move_forward(500, speed=Speed.Medium)
    black red - dapat front bangga the black to accurate
    all random - review all and fix accuracy
               - also fix if kabaliktad
+   red pagkuha sa tower na stuck
+   red malapit sa artifact na placing na, nausog
+

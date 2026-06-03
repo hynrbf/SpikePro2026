@@ -9,7 +9,7 @@ class MissionRedTower:
     @staticmethod
     async def exec_mission():
         await WheelController.left_turn()
-        await WheelController.move_backward(300, with_brake=True)
+        await WheelController.move_backward(360, with_brake=True)
         await WheelController.move_forward(200)
         await WheelController.right_turn()
         await WheelController.move_forward(315, speed=Speed.Medium)
