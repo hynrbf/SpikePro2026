@@ -71,8 +71,21 @@ class MissionRandomized:
         # await MissionRandomized.__black_yellow()
         # await MissionRandomized.__yellow_black()
         #
-        await MissionRandomized.__red_black()
+        # await MissionRandomized.__red_black()
         # await MissionRandomized.__black_red()
+
+        # ToDo. to complete
+        await MissionRandomized.__yellow_green()
+        await MissionRandomized.__green_yellow()
+
+        await MissionRandomized.__green_blue()
+        await MissionRandomized.__blue_green()
+
+        await MissionRandomized.__black_blue()
+        await MissionRandomized.__blue_black()
+
+        await MissionRandomized.__blue_red()
+        await MissionRandomized.__red_blue()
 
         await wait(500)
 
@@ -302,6 +315,38 @@ class MissionRandomized:
         await WheelController.left_turn()
         await WheelController.move_forward(440, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
+
+    @staticmethod
+    async def __yellow_green():
+        pass
+
+    @staticmethod
+    async def __green_yellow():
+        pass
+
+    @staticmethod
+    async def __green_blue():
+        pass
+
+    @staticmethod
+    async def __blue_green():
+        pass
+
+    @staticmethod
+    async def __black_blue():
+        pass
+
+    @staticmethod
+    async def __blue_black():
+        pass
+
+    @staticmethod
+    async def __blue_red():
+        pass
+
+    @staticmethod
+    async def __red_blue():
+        pass
 
     @staticmethod
     async def __slowly_turning():
