@@ -1,9 +1,11 @@
 from pybricks.tools import run_task  # , wait
 from pybricks import version
 
-from mainrandomized import MissionRandomized
+# from mainrandomized import MissionRandomized
 from mainredtower import MissionRedTower
-from mainyellowtower import MissionYellowTower
+
+
+# from mainyellowtower import MissionYellowTower
 
 
 async def main():
