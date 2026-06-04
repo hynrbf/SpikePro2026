@@ -8,6 +8,7 @@ class MatColor:
     Maroon = 349
     Black = 240
     BlackTwo = 220  # 210 #216
+    Red = 349
     Others = -1
 
 
