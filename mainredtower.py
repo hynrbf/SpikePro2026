@@ -8,11 +8,8 @@ from pybricks.tools import multitask, wait
 class MissionRedTower:
     @staticmethod
     async def exec_mission():
-        await WheelController.right_turn(180)
-        await WheelController.move_forward(850)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo)
         await WheelController.left_turn()
-        await WheelController.move_backward(300, with_brake=True)
+        await WheelController.move_backward(360, with_brake=True)
         await WheelController.move_forward(200)
         await WheelController.right_turn()
         await WheelController.move_forward(315, speed=Speed.Medium)
