@@ -12,8 +12,8 @@ class MissionRedTower:
         await WheelController.move_backward(360, with_brake=True)
         await WheelController.move_forward(200)
         await WheelController.right_turn()
-        await WheelController.move_forward(315, speed=Speed.Medium)
-        await multitask(HandController.lift_left(30, speed=Speed.Slow),
+        await WheelController.move_forward(285, speed=Speed.Medium, with_brake=True)
+        await multitask(HandController.lift_left(32, speed=Speed.Slow),
                         HandController.lift_right(26, speed=Speed.Slow))
         await WheelController.left_turn(180, turn_speed=Speed.Slow)
         await multitask(HandController.lift_left(0, speed=Speed.Slow),
@@ -33,14 +33,14 @@ class MissionRedTower:
                         HandController.lift_right(26, speed=Speed.Slow))
         await WheelController.move_forward(378)
         await WheelController.right_turn(turn_speed=Speed.Slow)
-        await WheelController.move_forward(116, speed=Speed.Slow)
+        await WheelController.move_forward(115, speed=Speed.Slow)
         await multitask(HandController.lift_left(30, speed=Speed.Slow),
                         HandController.lift_right(0, speed=Speed.Slow))
         await WheelController.move_backward(120, speed=Speed.Slow)
         await WheelController.left_turn(turn_speed=Speed.Slow)
         await WheelController.move_forward(185)
         await WheelController.right_turn(turn_speed=Speed.Slow)
-        await WheelController.move_forward(116, speed=Speed.Slow)
+        await WheelController.move_forward(120, speed=Speed.Slow)
         await HandController.lift_left(0, speed=Speed.Slow)
-        await WheelController.move_backward(120, speed=Speed.Slow)
+        await WheelController.move_backward(125, speed=Speed.Slow)
         await wait(500)
