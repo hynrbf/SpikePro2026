@@ -27,7 +27,7 @@ class MissionRandomized:
         MissionRandomized.box4_color = await ColorController.get_element_color()
         print(f"Box3 color: {MissionRandomized.box3_color}. Box 4 color: {MissionRandomized.box4_color}")
 
-        await multitask(WheelController.move_backward(117, speed=Speed.Medium), HandController.lift_left(),
+        await multitask(WheelController.move_backward(116, speed=Speed.Medium), HandController.lift_left(),
                         HandController.lift_right())
         await WheelController.left_turn()
         await WheelController.move_forward(100)

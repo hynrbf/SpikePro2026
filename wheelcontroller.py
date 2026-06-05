@@ -88,14 +88,16 @@ class WheelController:
         await wheel_controller.turn(angle_degrees)
 
     @staticmethod
-    async def move_towards_mat_color(mat_color_range: int, speed: float = Speed.Slow):
+    async def move_towards_mat_color(mat_color_range: int, speed: float = Speed.Slow, is_print: bool = False):
         wheel_controller = WheelController.__object()
         count = 1
 
         while True:
             color = await ColorController.mat_sensor.hsv()
             color_int = color.h
-            print("mat color: ", color_int)
+
+            if is_print:
+                print("mat color: ", color_int)
 
             if ((mat_color_range - 1) <= color_int <= (mat_color_range + 1)) or count > 1000:
                 wheel_controller.stop()
