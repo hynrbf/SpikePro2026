@@ -20,11 +20,12 @@ class MissionRandomized:
         await WheelController.right_turn()
         await WheelController.move_forward(482, speed=Speed.Medium)
         await wait(500)
-        await ColorController.get_element_color()
+        MissionRandomized.box3_color = await ColorController.get_element_color()
 
         await WheelController.move_forward(125, speed=Speed.Medium)
         await wait(500)
-        await ColorController.get_element_color()
+        MissionRandomized.box4_color = await ColorController.get_element_color()
+        print(f"Box3 color: {MissionRandomized.box3_color}. Box 4 color: {MissionRandomized.box4_color}")
 
         await multitask(WheelController.move_backward(120, speed=Speed.Medium), HandController.lift_left(),
                         HandController.lift_right())
@@ -55,9 +56,6 @@ class MissionRandomized:
                         WheelController.left_turn(turn_speed=90))
         await WheelController.move_backward(80, speed=Speed.Slow)
         await WheelController.move_towards_mat_color(MatColor.Black)
-
-        MissionRandomized.box3_color = ColorController.get_element_color()
-        MissionRandomized.box4_color = ColorController.get_element_color()
 
         if MissionRandomized.box3_color == ElementColor.Yellow and MissionRandomized.box4_color == ElementColor.Blue:
             await MissionRandomized.__yellow_blue()
