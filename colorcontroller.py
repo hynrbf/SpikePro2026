@@ -53,7 +53,7 @@ class ColorController:
             return ElementColor.Blue
 
         # when it detects yellow
-        if 40 <= color_int <= 42:
+        if 38 <= color_int <= 42:
             return ElementColor.Yellow
 
         # when detects red
