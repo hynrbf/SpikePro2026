@@ -1,4 +1,4 @@
-from colorcontroller import ColorController, MatColor  # , # MatColor2
+from colorcontroller import ColorController, MatColor, ElementColor
 from handcontroller import HandController
 from shared import Speed
 from wheelcontroller import WheelController
@@ -6,6 +6,9 @@ from pybricks.tools import multitask, wait
 
 
 class MissionRandomized:
+    box3_color = None
+    box4_color = None
+
     @staticmethod
     async def exec_mission():
         await multitask(WheelController.move_forward(450), HandController.lift_left(),
@@ -53,39 +56,51 @@ class MissionRandomized:
         await WheelController.move_backward(80, speed=Speed.Slow)
         await WheelController.move_towards_mat_color(MatColor.Black)
 
-        await MissionRandomized.__yellow_blue()
-        # await MissionRandomized.__blue_yellow()
-        # Not swapped
-        # await MissionRandomized.__green_red()
-        # await MissionRandomized.__red_green()
-        # Not swapped
-        # await MissionRandomized.__black_green()
-        # await MissionRandomized.__green_black()
-        # Not swapped
-        # await MissionRandomized.__yellow_red()
-        # await MissionRandomized.__red_yellow()
-        # Not swapped
-        # await MissionRandomized.__black_yellow()
-        # await MissionRandomized.__yellow_black()
-        # Not swaped
-        # await MissionRandomized.__red_black()
-        # await MissionRandomized.__black_red()
+        MissionRandomized.box3_color = ColorController.get_element_color()
+        MissionRandomized.box4_color = ColorController.get_element_color()
 
-        # Not swapped
-        # await MissionRandomized.__yellow_green()
-        # await MissionRandomized.__green_yellow()
-
-        # Not swapped
-        # await MissionRandomized.__green_blue()
-        # await MissionRandomized.__blue_green()
-
-        # not swapped
-        # await MissionRandomized.__blue_black()
-        # await MissionRandomized.__black_blue()
-
-        # Not swapped
-        # await MissionRandomized.__blue_red()
-        # await MissionRandomized.__red_blue()
+        if MissionRandomized.box3_color == ElementColor.Yellow and MissionRandomized.box4_color == ElementColor.Blue:
+            await MissionRandomized.__yellow_blue()
+        elif MissionRandomized.box3_color == ElementColor.Blue and MissionRandomized.box4_color == ElementColor.Yellow:
+            await MissionRandomized.__blue_yellow()
+        elif MissionRandomized.box3_color == ElementColor.Green and MissionRandomized.box4_color == ElementColor.Red:
+            await MissionRandomized.__green_red()
+        elif MissionRandomized.box3_color == ElementColor.Red and MissionRandomized.box4_color == ElementColor.Green:
+            await MissionRandomized.__red_green()
+        elif MissionRandomized.box3_color == ElementColor.Black and MissionRandomized.box4_color == ElementColor.Green:
+            await MissionRandomized.__black_green()
+        elif MissionRandomized.box3_color == ElementColor.Green and MissionRandomized.box4_color == ElementColor.Black:
+            await MissionRandomized.__green_black()
+        elif MissionRandomized.box3_color == ElementColor.Yellow and MissionRandomized.box4_color == ElementColor.Red:
+            await MissionRandomized.__yellow_red()
+        elif MissionRandomized.box3_color == ElementColor.Red and MissionRandomized.box4_color == ElementColor.Yellow:
+            await MissionRandomized.__red_yellow()
+        elif MissionRandomized.box3_color == ElementColor.Black and MissionRandomized.box4_color == ElementColor.Yellow:
+            await MissionRandomized.__black_yellow()
+        elif MissionRandomized.box3_color == ElementColor.Yellow and MissionRandomized.box4_color == ElementColor.Black:
+            await MissionRandomized.__yellow_black()
+        elif MissionRandomized.box3_color == ElementColor.Red and MissionRandomized.box4_color == ElementColor.Black:
+            await MissionRandomized.__red_black()
+        elif MissionRandomized.box3_color == ElementColor.Black and MissionRandomized.box4_color == ElementColor.Red:
+            await MissionRandomized.__black_red()
+        elif MissionRandomized.box3_color == ElementColor.Yellow and MissionRandomized.box4_color == ElementColor.Green:
+            await MissionRandomized.__yellow_green()
+        elif MissionRandomized.box3_color == ElementColor.Green and MissionRandomized.box4_color == ElementColor.Yellow:
+            await MissionRandomized.__green_yellow()
+        elif MissionRandomized.box3_color == ElementColor.Green and MissionRandomized.box4_color == ElementColor.Blue:
+            await MissionRandomized.__green_blue()
+        elif MissionRandomized.box3_color == ElementColor.Blue and MissionRandomized.box4_color == ElementColor.Green:
+            await MissionRandomized.__blue_green()
+        elif MissionRandomized.box3_color == ElementColor.Blue and MissionRandomized.box4_color == ElementColor.Black:
+            await MissionRandomized.__blue_black()
+        elif MissionRandomized.box3_color == ElementColor.Black and MissionRandomized.box4_color == ElementColor.Blue:
+            await MissionRandomized.__black_blue()
+        elif MissionRandomized.box3_color == ElementColor.Blue and MissionRandomized.box4_color == ElementColor.Red:
+            await MissionRandomized.__blue_red()
+        elif MissionRandomized.box3_color == ElementColor.Red and MissionRandomized.box4_color == ElementColor.Blue:
+            await MissionRandomized.__red_blue()
+        else:
+            print("No color combination detected")
 
         await wait(500)
 
