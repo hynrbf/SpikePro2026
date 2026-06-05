@@ -18,11 +18,11 @@ class MatColorAlt:
 
 
 class ElementColor:
-    Blue = 0
-    Yellow = 1
-    Red = 2
-    Green = 3
-    Black = 4
+    Blue = "Blue"
+    Yellow = "Yellow"
+    Red = "Red"
+    Green = "Green"
+    Black = "Black"
 
 
 class ColorController:
@@ -30,7 +30,7 @@ class ColorController:
     __side_sensor = ColorSensor(Port.D)
 
     @staticmethod
-    async def get_element_color() -> int:
+    async def get_element_color() -> str:
         color = await ColorController.__side_sensor.hsv()
         color_int = color.h
         print("side color: ", color_int)
@@ -53,7 +53,7 @@ class ColorController:
 
         # when it detects outside the above or 240, just treat it as Black
         if color_int == 240:
-            return MatColor.Black
+            return ElementColor.Black
 
         return ElementColor.Black
 
