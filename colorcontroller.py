@@ -64,10 +64,7 @@ class ColorController:
         if 150 <= color_int <= 157:
             return ElementColor.Green
 
-        # when it detects outside the above or 240, just treat it as Black
-        if color_int == 240:
-            return ElementColor.Black
-
+        # when it detects outside just treat it as Black
         return ElementColor.Black
 
     @staticmethod
@@ -77,23 +74,20 @@ class ColorController:
         print("side color: ", color_int)
 
         # when it detects blue
-        if 216 <= color_int <= 220:
+        if color_int == 240:
             return ElementColor.Blue
 
         # when it detects yellow
-        if 40 <= color_int <= 42:
+        if color_int == 60:
             return ElementColor.Yellow
 
         # when detects red
-        if 348 <= color_int <= 356:
+        if color_int == 0:
             return ElementColor.Red
 
         # when detects green
-        if 150 <= color_int <= 157:
+        if color_int == 120:
             return ElementColor.Green
 
-        # when it detects outside the above or 240, just treat it as Black
-        if color_int == 240:
-            return ElementColor.Black
-
+        # when it detects outside just treat it as Black
         return ElementColor.Black
