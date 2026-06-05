@@ -37,10 +37,12 @@ class ColorController:
         return await ColorController.__get_element_color_non_hsv()
 
     @staticmethod
-    async def print_mat_color():
+    async def print_mat_color(is_print: bool = False):
         color = await ColorController.mat_sensor.hsv()
         color_int = color.h
-        print("mat color: ", color_int)
+
+        if is_print:
+            print("mat color: ", color_int)
 
     @staticmethod
     async def __get_element_color_hsv() -> str:

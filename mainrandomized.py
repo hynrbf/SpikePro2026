@@ -16,7 +16,7 @@ class MissionRandomized:
         await WheelController.left_turn()
         # First Banga
         await WheelController.move_backward(520, with_brake=True)
-        await WheelController.move_forward(150, speed=Speed.Slow)
+        await WheelController.move_forward(145, speed=Speed.Slow)
         await WheelController.right_turn()
         await WheelController.move_forward(482, speed=Speed.Medium)
         await wait(500)
@@ -27,7 +27,7 @@ class MissionRandomized:
         MissionRandomized.box4_color = await ColorController.get_element_color()
         print(f"Box3 color: {MissionRandomized.box3_color}. Box 4 color: {MissionRandomized.box4_color}")
 
-        await multitask(WheelController.move_backward(120, speed=Speed.Medium), HandController.lift_left(),
+        await multitask(WheelController.move_backward(117, speed=Speed.Medium), HandController.lift_left(),
                         HandController.lift_right())
         await WheelController.left_turn()
         await WheelController.move_forward(100)
