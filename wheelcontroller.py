@@ -48,6 +48,7 @@ class WheelController:
                     wheel_controller.stop()
                     break
 
+            await wait(100)
             # await wheel_controller.straight(distance=distance_in_mm, then=Stop.BRAKE)
         else:
             await wheel_controller.straight(distance_in_mm)
