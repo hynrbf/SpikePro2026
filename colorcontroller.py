@@ -36,11 +36,11 @@ class ColorController:
         print("side color: ", color_int)
 
         # when it detects blue
-        if 218 <= color_int <= 220:
+        if 216 <= color_int <= 220:
             return ElementColor.Blue
 
         # when it detects yellow
-        if 40 <= color_int <= 41:
+        if 40 <= color_int <= 42:
             return ElementColor.Yellow
 
         # when detects red
