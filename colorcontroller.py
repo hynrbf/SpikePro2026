@@ -30,10 +30,23 @@ class ColorController:
     __side_sensor = ColorSensor(Port.D)
 
     @staticmethod
-    async def get_element_color() -> str:
+    async def get_element_color(is_hsv: bool = True) -> str:
+        if is_hsv:
+            return await ColorController.__get_element_color_hsv()
+
+        return await ColorController.__get_element_color_non_hsv()
+
+    @staticmethod
+    async def print_mat_color():
+        color = await ColorController.mat_sensor.hsv()
+        color_int = color.h
+        print("mat color: ", color_int)
+
+    @staticmethod
+    async def __get_element_color_hsv() -> str:
         color = await ColorController.__side_sensor.hsv()
         color_int = color.h
-        print("side color: ", color_int)
+        print("side color hsv: ", color_int)
 
         # when it detects blue
         if 216 <= color_int <= 220:
@@ -58,7 +71,29 @@ class ColorController:
         return ElementColor.Black
 
     @staticmethod
-    async def print_mat_color():
-        color = await ColorController.mat_sensor.hsv()
+    async def __get_element_color_non_hsv() -> str:
+        color = await ColorController.__side_sensor.color()
         color_int = color.h
-        print("mat color: ", color_int)
+        print("side color: ", color_int)
+
+        # when it detects blue
+        if 216 <= color_int <= 220:
+            return ElementColor.Blue
+
+        # when it detects yellow
+        if 40 <= color_int <= 42:
+            return ElementColor.Yellow
+
+        # when detects red
+        if 348 <= color_int <= 356:
+            return ElementColor.Red
+
+        # when detects green
+        if 150 <= color_int <= 157:
+            return ElementColor.Green
+
+        # when it detects outside the above or 240, just treat it as Black
+        if color_int == 240:
+            return ElementColor.Black
+
+        return ElementColor.Black
