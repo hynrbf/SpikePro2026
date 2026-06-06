@@ -20,16 +20,14 @@ class MissionRandomized:
         await WheelController.right_turn()
         await WheelController.move_forward(468, speed=Speed.Medium)
         await wait(500)
-        MissionRandomized.box3_color = await ColorController.get_element_color()
+        MissionRandomized.box3_color = await ColorController.get_element_color(False)
 
-        await WheelController.move_forward(121, speed=Speed.Medium)
+        await WheelController.move_forward(122, speed=Speed.Medium)
         await wait(500)
-        MissionRandomized.box4_color = await ColorController.get_element_color()
+        MissionRandomized.box4_color = await ColorController.get_element_color(False)
         print(f"Box3 color: {MissionRandomized.box3_color}. Box 4 color: {MissionRandomized.box4_color}")
 
-        return
-
-        await multitask(WheelController.move_backward(116, speed=Speed.Medium), HandController.lift_left(),
+        await multitask(WheelController.move_backward(113, speed=Speed.Medium), HandController.lift_left(),
                         HandController.lift_right())
         await WheelController.left_turn()
         await WheelController.move_forward(100)
@@ -216,13 +214,13 @@ class MissionRandomized:
         await WheelController.move_backward(45)
         # Placing red relic
         await HandController.lift_right(-10)
-        await WheelController.move_backward(130, speed=Speed.Medium)
+        await WheelController.move_backward(180, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_forward(250, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
         await WheelController.move_forward(375, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
-        await WheelController.move_forward(185, speed=Speed.Medium)
+        await WheelController.move_forward(235, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(25)
         await HandController.lift_left(0)
         await WheelController.move_backward(105)
