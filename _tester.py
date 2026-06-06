@@ -40,6 +40,11 @@ async def test_mat_color():
     # await WheelController.move_towards_mat_color(348)
 
 
+async def get_element_color():
+    el_color = await ColorController.get_element_color()
+    print(f"Box3 color: {el_color}.")
+
+
 async def main():
     print("Start, pb version: ", version)
 
@@ -48,9 +53,10 @@ async def main():
         # await WheelController.reset()
 
         # await test_gripper()
-        await test_wheel()
+        # await test_wheel()
         # await test_element_color()
         # await test_mat_color()
+        await get_element_color()
     finally:
         # await HandController.reset()
         # await WheelController.reset()
