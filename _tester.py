@@ -36,7 +36,7 @@ async def test_element_color():
 
 
 async def test_mat_color():
-    await ColorController.print_mat_color()
+    await ColorController.print_mat_color(True)
     # await WheelController.move_towards_mat_color(348)
 
 

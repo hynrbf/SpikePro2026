@@ -18,11 +18,11 @@ class MatColorAlt:
 
 
 class ElementColor:
-    Blue = 0
-    Yellow = 1
-    Red = 2
-    Green = 3
-    Black = 4
+    Blue = "Blue"
+    Yellow = "Yellow"
+    Red = "Red"
+    Green = "Green"
+    Black = "Black"
 
 
 class ColorController:
@@ -30,17 +30,32 @@ class ColorController:
     __side_sensor = ColorSensor(Port.D)
 
     @staticmethod
-    async def get_element_color() -> int:
+    async def get_element_color(is_hsv: bool = True) -> str:
+        if is_hsv:
+            return await ColorController.__get_element_color_hsv()
+
+        return await ColorController.__get_element_color_non_hsv()
+
+    @staticmethod
+    async def print_mat_color(is_print: bool = False):
+        color = await ColorController.mat_sensor.hsv()
+        color_int = color.h
+
+        if is_print:
+            print("mat color: ", color_int)
+
+    @staticmethod
+    async def __get_element_color_hsv() -> str:
         color = await ColorController.__side_sensor.hsv()
         color_int = color.h
-        print("side color: ", color_int)
+        print("side color hsv: ", color_int)
 
         # when it detects blue
-        if 218 <= color_int <= 220:
+        if 216 <= color_int <= 220:
             return ElementColor.Blue
 
         # when it detects yellow
-        if 40 <= color_int <= 41:
+        if 38 <= color_int <= 42:
             return ElementColor.Yellow
 
         # when detects red
@@ -51,14 +66,30 @@ class ColorController:
         if 150 <= color_int <= 157:
             return ElementColor.Green
 
-        # when it detects outside the above or 240, just treat it as Black
-        if color_int == 240:
-            return MatColor.Black
-
+        # when it detects outside just treat it as Black
         return ElementColor.Black
 
     @staticmethod
-    async def print_mat_color():
-        color = await ColorController.mat_sensor.hsv()
+    async def __get_element_color_non_hsv() -> str:
+        color = await ColorController.__side_sensor.color()
         color_int = color.h
-        print("mat color: ", color_int)
+        print("side color: ", color_int)
+
+        # when it detects blue
+        if color_int == 240:
+            return ElementColor.Blue
+
+        # when it detects yellow
+        if color_int == 60:
+            return ElementColor.Yellow
+
+        # when detects red
+        if color_int == 0:
+            return ElementColor.Red
+
+        # when detects green
+        if color_int == 120:
+            return ElementColor.Green
+
+        # when it detects outside just treat it as Black
+        return ElementColor.Black
