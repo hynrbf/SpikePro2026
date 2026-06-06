@@ -22,7 +22,7 @@ class MissionYellowTower:
         await WheelController.move_backward(30, speed=Speed.Medium)
         await multitask(HandController.lift_right(55), HandController.lift_left(55))
         await WheelController.move_backward(300, with_brake=True, speed=Speed.Medium)
-        await multitask(HandController.lift_left(35), HandController.lift_left(35))
+        await multitask(HandController.lift_left(35), HandController.lift_right(32))
         # positioning to prep for another bangga
         await WheelController.right_turn(140, turn_speed=90)
         await WheelController.move_forward(400, speed=Speed.Medium)
@@ -32,7 +32,7 @@ class MissionYellowTower:
         await WheelController.move_forward(150, speed=Speed.Medium)
         # 2nd bangga
         await WheelController.left_turn(turn_speed=90)
-        await multitask(HandController.lift_left(40), HandController.lift_right(55))
+        await multitask(HandController.lift_left(40), HandController.lift_right(40))
         await WheelController.move_backward(400, with_brake=True)
         # Straightening of yellow towers
         await multitask(HandController.lift_right(-10, speed=Speed.Slow),
@@ -43,7 +43,7 @@ class MissionYellowTower:
         await WheelController.move_forward(170, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=Speed.Slow)
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
-        await WheelController.right_turn(180)
+        await WheelController.right_turn(180, turn_speed=90)
         # placing 1st tower
         await WheelController.move_forward(275, speed=Speed.Medium)
         await HandController.lift_right(80, speed=Speed.Slow)

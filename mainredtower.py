@@ -27,9 +27,9 @@ class MissionRedTower:
         await multitask(HandController.lift_left(30, speed=Speed.Slow),
                         HandController.lift_right(29, speed=Speed.Slow))
         await WheelController.right_turn(50, turn_speed=90)
-        await WheelController.move_forward(600)
+        await WheelController.move_forward(600, speed=Speed.Medium)
         await WheelController.left_turn(50, turn_speed=90)
-        await WheelController.move_forward(500)
+        await WheelController.move_forward(500, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow)
         await WheelController.move_forward(100)
         await WheelController.right_turn(turn_speed=90)
