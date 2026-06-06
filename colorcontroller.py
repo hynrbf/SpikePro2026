@@ -12,9 +12,9 @@ class MatColor:
     Others = -1
 
 
-class MatColorAlt:
-    White = 0
-    Black = 240
+class MatColorNonHsv:
+    White = 240
+    Black = 0
 
 
 class ElementColor:
@@ -45,6 +45,14 @@ class ColorController:
             print("mat color: ", color_int)
 
     @staticmethod
+    async def print_mat_color_non_hsv(is_print: bool = False):
+        color = await ColorController.mat_sensor.color()
+        color_int = color.h
+
+        if is_print:
+            print("mat color: ", color_int)
+
+    @staticmethod
     async def __get_element_color_hsv() -> str:
         color = await ColorController.__side_sensor.hsv()
         color_int = color.h
@@ -55,7 +63,7 @@ class ColorController:
             return ElementColor.Blue
 
         # when it detects yellow
-        if 38 <= color_int <= 42:
+        if 40 <= color_int <= 46:
             return ElementColor.Yellow
 
         # when detects red

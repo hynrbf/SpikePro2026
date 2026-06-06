@@ -11,34 +11,35 @@ class MissionRandomized:
 
     @staticmethod
     async def exec_mission():
-        await multitask(WheelController.move_forward(450), HandController.lift_left(),
+        await multitask(WheelController.move_forward(425), HandController.lift_left(),
                         HandController.lift_right())
         await WheelController.left_turn()
         # First Banga
         await WheelController.move_backward(520, with_brake=True)
-        await WheelController.move_forward(145, speed=Speed.Slow)
+        await WheelController.move_forward(137, speed=Speed.Slow)
         await WheelController.right_turn()
-        await WheelController.move_forward(462, speed=Speed.Medium)
+        await WheelController.move_forward(468, speed=Speed.Medium)
         await wait(500)
-        MissionRandomized.box3_color = await ColorController.get_element_color()
+        MissionRandomized.box3_color = await ColorController.get_element_color(False)
 
-        await WheelController.move_forward(125, speed=Speed.Medium)
+        await WheelController.move_forward(122, speed=Speed.Medium)
         await wait(500)
-        MissionRandomized.box4_color = await ColorController.get_element_color()
+        MissionRandomized.box4_color = await ColorController.get_element_color(False)
         print(f"Box3 color: {MissionRandomized.box3_color}. Box 4 color: {MissionRandomized.box4_color}")
 
-        await multitask(WheelController.move_backward(116, speed=Speed.Medium), HandController.lift_left(),
+        await multitask(WheelController.move_backward(111, speed=Speed.Medium), HandController.lift_left(),
                         HandController.lift_right())
         await WheelController.left_turn()
         await WheelController.move_forward(100)
         await multitask(WheelController.right_turn(180), HandController.lift_left(-10),
                         HandController.lift_right())
+        await WheelController.left_turn(5)
         await WheelController.move_forward(170, speed=80, with_brake=True)
         await WheelController.move_backward(10)
         await HandController.lift_left(10)
         await WheelController.move_backward(160, speed=Speed.Slow)
         await multitask(HandController.lift_right(-10), HandController.lift_left(80, speed=Speed.Slow))
-        await WheelController.left_turn(2)
+        await WheelController.left_turn(4)
         await WheelController.move_forward(140, speed=80, with_brake=True)
         await WheelController.move_backward(10)
         await HandController.lift_right(10)
@@ -98,24 +99,31 @@ class MissionRandomized:
         elif MissionRandomized.box3_color == ElementColor.Red and MissionRandomized.box4_color == ElementColor.Blue:
             await MissionRandomized.__red_blue()
         else:
-            print("No color combination detected")
+            print("No color combination detected, so just assume yellow blue")
+            await  MissionRandomized.__yellow_blue()
 
-        await wait(500)
+        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
+        await wait(100)
 
     @staticmethod
     async def __yellow_blue():
         await multitask(HandController.lift_left(15), HandController.lift_right(10))
         await WheelController.left_turn(turn_speed=60)
-        await WheelController.move_backward(150, with_brake=True)
+        await WheelController.move_backward(150, with_brake=True, speed=Speed.Medium)
         await WheelController.move_forward(135, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(160, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
         await WheelController.move_backward(100)
+        # long drive before detecting black line
         await WheelController.left_turn()
-        await WheelController.move_forward(770)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
+        await WheelController.move_forward(670)
+        await WheelController.left_turn()
+        await WheelController.move_backward(400, with_brake=True)
+        await WheelController.move_forward(300)
+        await WheelController.right_turn()
+        await WheelController.move_forward(100)
 
     @staticmethod
     async def __blue_yellow():
@@ -132,9 +140,14 @@ class MissionRandomized:
         await WheelController.move_backward(35)
         await HandController.lift_left(-10)
         await WheelController.move_backward(100)
+        # long drive before detecting black line
         await WheelController.left_turn()
-        await WheelController.move_forward(900)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo, Speed.Slow)
+        await WheelController.move_forward(700)
+        await WheelController.left_turn()
+        await WheelController.move_backward(400, with_brake=True)
+        await WheelController.move_forward(300)
+        await WheelController.right_turn()
+        await WheelController.move_forward(200)
 
     @staticmethod
     async def __green_red():
@@ -147,7 +160,6 @@ class MissionRandomized:
         await WheelController.move_backward(100)
         await WheelController.left_turn()
         await WheelController.move_forward(500)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo, Speed.Slow)
 
     @staticmethod
     async def __red_green():
@@ -167,7 +179,6 @@ class MissionRandomized:
         await WheelController.move_backward(100)
         await WheelController.left_turn()
         await WheelController.move_forward(600)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo, Speed.Slow)
 
     @staticmethod
     async def __black_green():
@@ -181,7 +192,6 @@ class MissionRandomized:
         await WheelController.move_backward(100)
         await WheelController.left_turn()
         await WheelController.move_forward(500)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo, Speed.Slow)
 
     @staticmethod
     async def __green_black():
@@ -202,31 +212,37 @@ class MissionRandomized:
         await WheelController.move_backward(100)
         await WheelController.left_turn()
         await WheelController.move_forward(700)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo, Speed.Slow)
 
     @staticmethod
     async def __red_yellow():
         await multitask(HandController.lift_left(15), HandController.lift_right(5))
-        await WheelController.move_forward(355, speed=Speed.Medium)
+        await WheelController.move_forward(352, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_forward(50, speed=Speed.Medium)
         await HandController.lift_right(0)
         await WheelController.move_backward(45)
         # Placing red relic
         await HandController.lift_right(-10)
-        await WheelController.move_backward(130, speed=Speed.Medium)
+        await WheelController.move_backward(230, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_forward(250, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
-        await WheelController.move_forward(375, speed=Speed.Medium)
-        await WheelController.left_turn(turn_speed=60)
-        await WheelController.move_forward(185, speed=Speed.Medium)
+        # Placing yellow
+        await WheelController.right_turn(180, turn_speed=90)
+        await WheelController.move_backward(385)
+        await WheelController.right_turn(turn_speed=60)
+        await WheelController.move_forward(285, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(25)
-        await HandController.lift_left(0)
+        await HandController.lift_left(-10)
         await WheelController.move_backward(105)
         await WheelController.left_turn(turn_speed=60)
-        await WheelController.move_forward(850)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
+
+        await WheelController.move_forward(300)
+        await WheelController.left_turn()
+        await WheelController.move_backward(350, with_brake=True)
+        await WheelController.move_forward(300)
+        await WheelController.right_turn()
+        await WheelController.move_forward(600)
 
     @staticmethod
     async def __yellow_red():
@@ -247,7 +263,6 @@ class MissionRandomized:
         await WheelController.move_backward(130, speed=Speed.Medium)
         await WheelController.left_turn()
         await WheelController.move_forward(770)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo, Speed.Slow)
 
     @staticmethod
     async def __black_yellow():
@@ -266,7 +281,6 @@ class MissionRandomized:
         await WheelController.move_backward(130)
         await WheelController.left_turn()
         await WheelController.move_forward(770)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo, Speed.Slow)
 
     @staticmethod
     async def __yellow_black():
@@ -284,7 +298,6 @@ class MissionRandomized:
         await WheelController.move_backward(130)
         await WheelController.left_turn()
         await WheelController.move_forward(770)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo, Speed.Slow)
 
     @staticmethod
     async def __red_black():
@@ -303,7 +316,6 @@ class MissionRandomized:
         await WheelController.move_backward(100, speed=Speed.Medium)
         await WheelController.left_turn()
         await WheelController.move_forward(265)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __black_red():
@@ -342,7 +354,6 @@ class MissionRandomized:
         await WheelController.move_backward(100, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(550, speed=Speed.Medium)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __green_yellow():
@@ -362,7 +373,6 @@ class MissionRandomized:
         await WheelController.move_backward(80, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(1000, speed=Speed.Medium)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __green_blue():
@@ -382,7 +392,6 @@ class MissionRandomized:
         await WheelController.move_backward(80, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(880, speed=Speed.Medium)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __blue_green():
@@ -402,7 +411,6 @@ class MissionRandomized:
         await WheelController.move_backward(100, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(580, speed=Speed.Medium)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __black_blue():
@@ -422,7 +430,6 @@ class MissionRandomized:
         await WheelController.move_backward(100, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(830, speed=Speed.Medium)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __blue_black():
@@ -435,19 +442,18 @@ class MissionRandomized:
         await WheelController.move_backward(80, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(700, speed=Speed.Medium)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __blue_red():
         await multitask(HandController.lift_left(15), HandController.lift_right(5))
-        await WheelController.move_backward(40, speed=Speed.Medium)
+        await WheelController.move_backward(25, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_forward(100, with_brake=True)
         await WheelController.move_backward(45, speed=Speed.Medium)
         await HandController.lift_right(-10)
         await WheelController.move_backward(80, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
-        await WheelController.move_forward(250, speed=Speed.Medium)
+        await WheelController.move_forward(225, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_forward(200, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(35, speed=Speed.Medium)
@@ -455,7 +461,6 @@ class MissionRandomized:
         await WheelController.move_backward(100, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(480, speed=Speed.Medium)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __red_blue():
@@ -475,7 +480,6 @@ class MissionRandomized:
         await WheelController.move_backward(80, speed=Speed.Medium)
         await WheelController.left_turn()
         await WheelController.move_forward(900, speed=Speed.Medium)
-        await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
 
     @staticmethod
     async def __slowly_turning():
