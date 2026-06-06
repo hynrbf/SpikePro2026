@@ -70,7 +70,21 @@ class WheelController:
                                       turn_acceleration=None)
 
         if with_brake:
-            await wheel_controller.straight(distance=distance_in_mm, then=Stop.BRAKE)
+            #await wheel_controller.straight(distance=distance_in_mm, then=Stop.BRAKE)
+
+            wheel_controller.reset()
+            wheel_controller.drive(speed=-speed, turn_rate=0)
+
+            while True:
+                if WheelController.__left_motor.stalled() or WheelController.__right_motor.stalled():
+                    wheel_controller.stop()
+                    break
+
+                if wheel_controller.distance() <= distance_in_mm:
+                    wheel_controller.stop()
+                    break
+
+            await wait(100)
         else:
             await wheel_controller.straight(distance_in_mm)
 
