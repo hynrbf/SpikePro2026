@@ -33,7 +33,7 @@ class MissionRandomized:
         await WheelController.move_forward(100)
         await multitask(WheelController.right_turn(180), HandController.lift_left(-10),
                         HandController.lift_right())
-        await WheelController.left_turn(3)
+        await WheelController.left_turn(5)
         await WheelController.move_forward(170, speed=80, with_brake=True)
         await WheelController.move_backward(10)
         await HandController.lift_left(10)
@@ -208,7 +208,7 @@ class MissionRandomized:
     @staticmethod
     async def __red_yellow():
         await multitask(HandController.lift_left(15), HandController.lift_right(5))
-        await WheelController.move_forward(355, speed=Speed.Medium)
+        await WheelController.move_forward(352, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_forward(50, speed=Speed.Medium)
         await HandController.lift_right(0)
@@ -221,7 +221,7 @@ class MissionRandomized:
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
         # Placing yellow
         await WheelController.right_turn(180, turn_speed=60)
-        await WheelController.move_backward(355)
+        await WheelController.move_backward(370)
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_forward(285, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(25)
