@@ -1,3 +1,4 @@
+import wheelcontroller
 from colorcontroller import ColorController, MatColor, ElementColor
 from handcontroller import HandController
 from shared import Speed
@@ -134,7 +135,13 @@ class MissionRandomized:
         await HandController.lift_left(-10)
         await WheelController.move_backward(100)
         await WheelController.left_turn()
-        await WheelController.move_forward(900)
+        await WheelController.move_forward(700)
+        await WheelController.left_turn()
+        # long drive before detecting black line
+        await WheelController.move_backward(400, with_brake=True)
+        await WheelController.move_forward(300)
+        await WheelController.right_turn()
+        await WheelController.move_forward(200)
 
     @staticmethod
     async def __green_red():

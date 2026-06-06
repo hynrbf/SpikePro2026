@@ -13,7 +13,7 @@ class MissionYellowTower:
         await WheelController.left_turn()
         # 1st bangga
         await WheelController.move_backward(350, with_brake=True)
-        await WheelController.move_forward(250, speed=Speed.Medium)
+        await WheelController.move_forward(265, speed=Speed.Medium)
         await WheelController.left_turn()
         await WheelController.move_backward(260)
         await WheelController.left_turn()
