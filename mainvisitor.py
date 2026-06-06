@@ -33,8 +33,9 @@ class MissionVisitor:
         await HandController.lift_left(30)
         await WheelController.move_forward(100, speed=Speed.Slow)
         await WheelController.right_turn(40, turn_speed=30)
-        await WheelController.move_forward(200, speed=Speed.Medium)
+        await multitask(WheelController.move_forward(200, speed=Speed.Medium),
+                        HandController.lift_left(20))
         await WheelController.right_turn(40, turn_speed=30)
-        await WheelController.move_forward(100, speed=Speed.Medium)
+        await WheelController.move_forward(120, speed=Speed.Medium)
         await HandController.lift_right(0)
-        await WheelController.move_backward(150, speed=Speed.Slow)
+        await WheelController.move_backward(140, speed=Speed.Slow)
