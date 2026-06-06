@@ -48,7 +48,7 @@ class MissionRedTower:
         # placing 1st red tower
         await WheelController.right_turn(turn_speed=90)
         await WheelController.move_forward(142)
-        await HandController.lift_right(-10, speed=Speed.Slow)
+        await multitask(HandController.lift_right(-10, speed=Speed.Slow), HandController.lift_left(45))
 
         # placing 2nd red tower
         await WheelController.move_backward(200, speed=Speed.Medium)

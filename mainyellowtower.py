@@ -46,10 +46,10 @@ class MissionYellowTower:
         await wait(500)
         # placing 1st tower
         await WheelController.move_forward(275, speed=Speed.Medium)
-        await HandController.lift_right(80)
+        await HandController.lift_right(80, speed=Speed.Slow)
         await HandController.lift_left(-10)
         await WheelController.move_forward(70)
-        await HandController.lift_right(40)
+        await HandController.lift_right(40, speed=Speed.Slow)
         # placing 2nd tower
         await HandController.lift_left(35, speed=Speed.Slow)
         await WheelController.move_backward(120, speed=Speed.Slow)
