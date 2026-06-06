@@ -11,7 +11,6 @@ async def main():
 
     await MissionRandomized.exec_mission()
     await MissionYellowTower.exec_mission()
-    return
     await MissionRedTower.exec_mission()
     print("DONE!")
 

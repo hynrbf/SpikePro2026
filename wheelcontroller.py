@@ -1,5 +1,5 @@
 from pybricks.pupdevices import Motor
-from pybricks.parameters import Port, Direction, Stop
+from pybricks.parameters import Port, Direction
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 
@@ -70,7 +70,7 @@ class WheelController:
                                       turn_acceleration=None)
 
         if with_brake:
-            #await wheel_controller.straight(distance=distance_in_mm, then=Stop.BRAKE)
+            # await wheel_controller.straight(distance=distance_in_mm, then=Stop.BRAKE)
 
             wheel_controller.reset()
             wheel_controller.drive(speed=-speed, turn_rate=0)
@@ -103,12 +103,17 @@ class WheelController:
         await wheel_controller.turn(angle_degrees)
 
     @staticmethod
-    async def move_towards_mat_color(mat_color_range: int, speed: float = Speed.Slow, is_print: bool = False):
+    async def move_towards_mat_color(mat_color_range: int, speed: float = Speed.Slow, is_print: bool = False,
+                                     is_hsv: bool = True):
         wheel_controller = WheelController.__object()
         count = 1
 
         while True:
-            color = await ColorController.mat_sensor.hsv()
+            if is_hsv:
+                color = await ColorController.mat_sensor.hsv()
+            else:
+                color = await ColorController.mat_sensor.color()
+
             color_int = color.h
 
             if is_print:
