@@ -28,11 +28,17 @@ class MissionYellowTower:
         await HandController.lift_left(55)
         await WheelController.move_backward(300, with_brake=True, speed=Speed.Medium)
         await HandController.lift_left(35)
-        await WheelController.right_turn()
-        await WheelController.move_forward(1050, speed=Speed.Medium)
+        # positioning to prep for another bangga
+        await WheelController.right_turn(140)
+        await WheelController.move_forward(400, speed=Speed.Medium)
+        await WheelController.left_turn(40)
+        await WheelController.move_forward(600, speed=Speed.Medium)
+        await WheelController.move_towards_mat_color(MatColor.Black)
+        await WheelController.move_forward(150, speed=Speed.Medium)
+        # 2nd bangga
         await WheelController.left_turn()
         await multitask(HandController.lift_left(40), HandController.lift_right(55))
-        await WheelController.move_backward(670, with_brake=True)
+        await WheelController.move_backward(400, with_brake=True)
         # Straightening of yellow towers
         await multitask(HandController.lift_right(-10, speed=Speed.Slow),
                         HandController.lift_left(-10, speed=Speed.Slow))

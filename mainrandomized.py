@@ -100,7 +100,8 @@ class MissionRandomized:
         elif MissionRandomized.box3_color == ElementColor.Red and MissionRandomized.box4_color == ElementColor.Blue:
             await MissionRandomized.__red_blue()
         else:
-            print("No color combination detected")
+            print("No color combination detected, so just assume yellow blue")
+            await  MissionRandomized.__yellow_blue()
 
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
         await wait(500)
