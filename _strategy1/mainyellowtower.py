@@ -26,7 +26,7 @@ class MissionYellowTower:
         # positioning to prep for another bangga
         await WheelController.right_turn(140, turn_speed=90)
         await WheelController.move_forward(400, speed=Speed.Medium)
-        await WheelController.left_turn(40, turn_speed=90)
+        await WheelController.left_turn(50, turn_speed=90)
         await WheelController.move_forward(600, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black)
         await WheelController.move_forward(150, speed=Speed.Medium)
