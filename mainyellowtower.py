@@ -11,13 +11,14 @@ class MissionYellowTower:
     async def exec_mission():
         await WheelController.move_backward(70)
         await WheelController.left_turn()
+        # 1st bangga
         await WheelController.move_backward(350, with_brake=True)
-        await WheelController.move_forward(400, speed=Speed.Medium)
-        await WheelController.right_turn(turn_speed=90)
-        await WheelController.move_forward(265)
-        await WheelController.right_turn(turn_speed=90)
+        await WheelController.move_forward(250, speed=Speed.Medium)
+        await WheelController.left_turn()
+        await WheelController.move_backward(265)
+        await WheelController.left_turn()
         # Picking up 1st tower
-        await WheelController.move_forward(310, speed=Speed.Medium)
+        await WheelController.move_forward(310, speed=Speed.Slow, with_brake=True)
         await WheelController.move_backward(30, speed=Speed.Medium)
         await HandController.lift_right(55)
         await WheelController.move_backward(50, speed=Speed.Medium)
@@ -42,7 +43,7 @@ class MissionYellowTower:
         await WheelController.move_forward(70)
         await HandController.lift_right(40)
         # placing 2nd tower
-        await HandController.lift_left(35)
+        await HandController.lift_left(35, speed=Speed.Slow)
         await WheelController.move_backward(120, speed=Speed.Slow)
         await HandController.lift_right(-10)
         await WheelController.left_turn(turn_speed=Speed.Slow)

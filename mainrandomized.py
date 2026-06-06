@@ -16,7 +16,7 @@ class MissionRandomized:
         await WheelController.left_turn()
         # First Banga
         await WheelController.move_backward(520, with_brake=True)
-        await WheelController.move_forward(130, speed=Speed.Slow)
+        await WheelController.move_forward(137, speed=Speed.Slow)
         await WheelController.right_turn()
         await WheelController.move_forward(468, speed=Speed.Medium)
         await wait(500)
@@ -27,7 +27,7 @@ class MissionRandomized:
         MissionRandomized.box4_color = await ColorController.get_element_color(False)
         print(f"Box3 color: {MissionRandomized.box3_color}. Box 4 color: {MissionRandomized.box4_color}")
 
-        await multitask(WheelController.move_backward(113, speed=Speed.Medium), HandController.lift_left(),
+        await multitask(WheelController.move_backward(111, speed=Speed.Medium), HandController.lift_left(),
                         HandController.lift_right())
         await WheelController.left_turn()
         await WheelController.move_forward(100)
@@ -214,13 +214,13 @@ class MissionRandomized:
         await WheelController.move_backward(45)
         # Placing red relic
         await HandController.lift_right(-10)
-        await WheelController.move_backward(180, speed=Speed.Medium)
+        await WheelController.move_backward(230, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=60)
         await WheelController.move_forward(250, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, Speed.Slow)
         await WheelController.move_forward(375, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
-        await WheelController.move_forward(235, speed=Speed.Medium, with_brake=True)
+        await WheelController.move_forward(285, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(25)
         await HandController.lift_left(0)
         await WheelController.move_backward(105)
