@@ -15,10 +15,10 @@ class MissionYellowTower:
         await WheelController.move_backward(350, with_brake=True)
         await WheelController.move_forward(250, speed=Speed.Medium)
         await WheelController.left_turn()
-        await WheelController.move_backward(265)
+        await WheelController.move_backward(235)
         await WheelController.left_turn()
         # Picking up 1st tower
-        await WheelController.move_forward(310, speed=Speed.Slow, with_brake=True)
+        await WheelController.move_forward(270, speed=Speed.Slow, with_brake=True)
         await WheelController.move_backward(30, speed=Speed.Medium)
         await HandController.lift_right(55)
         await WheelController.move_backward(50, speed=Speed.Medium)

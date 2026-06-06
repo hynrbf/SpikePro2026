@@ -33,6 +33,7 @@ class MissionRandomized:
         await WheelController.move_forward(100)
         await multitask(WheelController.right_turn(180), HandController.lift_left(-10),
                         HandController.lift_right())
+        await WheelController.left_turn(2)
         await WheelController.move_forward(170, speed=80, with_brake=True)
         await WheelController.move_backward(10)
         await HandController.lift_left(10)
