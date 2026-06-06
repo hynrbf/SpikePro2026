@@ -108,7 +108,7 @@ class MissionRandomized:
     async def __yellow_blue():
         await multitask(HandController.lift_left(15), HandController.lift_right(10))
         await WheelController.left_turn(turn_speed=60)
-        await WheelController.move_backward(150, with_brake=True)
+        await WheelController.move_backward(150, with_brake=True, speed=Speed.Medium)
         await WheelController.move_forward(135, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=60)
         await WheelController.move_forward(160, speed=Speed.Medium)
