@@ -11,10 +11,10 @@ class MissionYellowTower:
     async def exec_mission():
         await WheelController.move_backward(70)
         await WheelController.left_turn()
-        await WheelController.move_backward(320, with_brake=True)
+        await WheelController.move_backward(350, with_brake=True)
         await WheelController.move_forward(400, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=90)
-        await WheelController.move_forward(280)
+        await WheelController.move_forward(265)
         await WheelController.right_turn(turn_speed=90)
         # Picking up 1st tower
         await WheelController.move_forward(310, speed=Speed.Medium)

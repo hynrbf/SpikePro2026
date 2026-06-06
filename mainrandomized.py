@@ -18,7 +18,7 @@ class MissionRandomized:
         await WheelController.move_backward(520, with_brake=True)
         await WheelController.move_forward(145, speed=Speed.Slow)
         await WheelController.right_turn()
-        await WheelController.move_forward(482, speed=Speed.Medium)
+        await WheelController.move_forward(462, speed=Speed.Medium)
         await wait(500)
         MissionRandomized.box3_color = await ColorController.get_element_color()
 
