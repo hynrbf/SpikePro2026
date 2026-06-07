@@ -55,7 +55,7 @@ class MissionYellowTower:
         await WheelController.right_turn(turn_speed=90)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
         await WheelController.move_forward(60, speed=Speed.Slow)
-        await WheelController.move_towards_mat_color(MatColor.Black)
+        await WheelController.move_towards_mat_color(MatColor.Black, is_print=True)
         await multitask(HandController.lift_left(32), HandController.lift_right(26))
         await WheelController.left_turn(180, turn_speed=90)
         await multitask(HandController.lift_right(-10, speed=Speed.Slow),
