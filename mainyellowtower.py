@@ -86,13 +86,13 @@ class MissionYellowTower:
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
         await WheelController.move_towards_mat_color(MatColor.LightGreen)
         await HandController.lift_right(26)
-        await WheelController.move_forward(77, speed=Speed.Slow)
+        await WheelController.move_forward(75, speed=Speed.Slow)
         await multitask(WheelController.left_turn(turn_speed=90), HandController.lift_left())
         await WheelController.move_towards_mat_color(MatColor.Black)
         # placing the 2nd yellow tower
         await WheelController.right_turn(180, turn_speed=90)
         await multitask(HandController.lift_left(-10), HandController.lift_right(80, speed=Speed.Slow))
-        await WheelController.move_forward(349, speed=Speed.Slow)
+        await WheelController.move_forward(347, speed=Speed.Slow)
         await HandController.lift_right(32, speed=Speed.Slow)
         await WheelController.move_backward(120, speed=Speed.Slow)
         # positioning for visitors mission

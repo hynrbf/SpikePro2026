@@ -12,7 +12,7 @@ class MissionVisitor:
                         HandController.lift_right(), HandController.lift_left())
         await WheelController.left_turn()
         await  WheelController.move_backward(450, with_brake=True)
-        await multitask(WheelController.move_forward(70), HandController.lift_right(),
+        await multitask(WheelController.move_forward(68), HandController.lift_right(),
                         HandController.lift_left())
         await WheelController.right_turn()
         await multitask(HandController.lift_left(10), HandController.lift_right(10))
