@@ -25,7 +25,7 @@ winget install --id Microsoft.PowerShell --source winget
    stabilize the hand
    do basic test _tester.py
       check matcolor number darkgree, black
-      
+
 8. If
 
  == ToDo==
