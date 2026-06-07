@@ -96,7 +96,8 @@ class MissionYellowTower:
         await HandController.lift_right(32, speed=Speed.Slow)
         await WheelController.move_backward(120, speed=Speed.Slow)
         # positioning for visitors mission
-        await WheelController.move_backward(400)
+        await multitask(HandController.lift_left(-10), HandController.lift_right(-10),
+            WheelController.move_backward(400))
         await WheelController.left_turn(210)
         await WheelController.right_turn(60)
         await WheelController.move_forward(250)
