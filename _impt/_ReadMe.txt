@@ -24,13 +24,8 @@ winget install --id Microsoft.PowerShell --source winget
    check the wheels palagi natatangalan
    stabilize the hand
    do basic test _tester.py
-
-7. getting red tower
-await WheelController.move_forward(100, Speed.Slow, with_brake=True)
-await multitask(HandController.lift_right(35,speed=Speed.Slow), HandController.lift_left(35,speed=Speed.Slow))
-await WheelController.left_turn(180, turn_speed=80)
-await WheelController.move_forward(500, speed=Speed.Medium)
-
+      check matcolor number darkgree, black
+      
 8. If
 
  == ToDo==
