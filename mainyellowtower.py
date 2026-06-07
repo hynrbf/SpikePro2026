@@ -22,7 +22,7 @@ class MissionYellowTower:
         await WheelController.move_backward(350, with_brake=True)
         await WheelController.move_forward(215, speed=Speed.Medium)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10), WheelController.left_turn())
-        await WheelController.move_backward(260, speed=Speed.Medium)
+        await WheelController.move_backward(258, speed=Speed.Medium)
         await multitask(WheelController.left_turn(), HandController.lift_left(-10),
                         HandController.lift_right(-10))
         # Picking up 2 yellow towers
@@ -54,7 +54,7 @@ class MissionYellowTower:
         # placing 1st yellow tower
         await WheelController.right_turn(turn_speed=90)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_forward(60, speed=Speed.Slow)
+        await WheelController.move_forward(40, speed=Speed.Slow)
         await WheelController.move_towards_mat_color(MatColor.Black, is_print=True)
         await multitask(HandController.lift_left(32), HandController.lift_right(26))
         await WheelController.left_turn(180, turn_speed=90)
@@ -88,13 +88,13 @@ class MissionYellowTower:
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
         await WheelController.move_towards_mat_color(MatColor.LightGreen)
         await HandController.lift_right(26)
-        await WheelController.move_forward(75, speed=Speed.Slow)
+        await WheelController.move_forward(70, speed=Speed.Slow)
         await multitask(WheelController.left_turn(turn_speed=90), HandController.lift_left())
         await WheelController.move_towards_mat_color(MatColor.Black)
         # placing the 2nd yellow tower
         await WheelController.right_turn(180, turn_speed=90)
         await multitask(HandController.lift_left(-10), HandController.lift_right(80, speed=Speed.Slow))
-        await WheelController.move_forward(347, speed=Speed.Slow)
+        await WheelController.move_forward(342, speed=Speed.Slow)
         await HandController.lift_right(32, speed=Speed.Slow)
         await WheelController.move_backward(120, speed=Speed.Slow)
         # positioning for visitors mission
