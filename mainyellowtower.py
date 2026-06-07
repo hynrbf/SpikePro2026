@@ -22,7 +22,7 @@ class MissionYellowTower:
         await WheelController.move_backward(350, with_brake=True)
         await WheelController.move_forward(215, speed=Speed.Medium)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10), WheelController.left_turn())
-        await WheelController.move_backward(262, speed=Speed.Medium)
+        await WheelController.move_backward(260, speed=Speed.Medium)
         await multitask(WheelController.left_turn(), HandController.lift_left(-10),
                         HandController.lift_right(-10))
         # Picking up 2 yellow towers
@@ -53,7 +53,7 @@ class MissionYellowTower:
         await WheelController.move_forward(80, speed=Speed.Slow)
         # placing 1st yellow tower
         await WheelController.right_turn(turn_speed=90)
-        await WheelController.move_forward(25, speed=Speed.Medium)
+        await WheelController.move_forward(45, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black)
         await WheelController.left_turn(180, turn_speed=90)
         await multitask(HandController.lift_right(-10, speed=Speed.Slow),

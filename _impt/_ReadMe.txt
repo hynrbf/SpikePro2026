@@ -21,10 +21,19 @@ winget install --id Microsoft.PowerShell --source winget
     F=left motor
 
 6. Checklist
-   check the wheels palagi natatangalan
-   stabilize the hand
-   do basic test _tester.py
-      check matcolor number darkgree, black
+   do basic test _tester.py - Alfeo
+      check matcolor number: green,lightgreen,darkgreen,black
+
+   when placing - Alfeo
+      stabilize the hand
+      check the wheels palagi natatangalan
+      review - JL
+
+   Check all elaments go around and complain to staff - Zuvel
+      review - JL
+
+   once all good above JL adn Zuvel to tap Alfeo ok
+      then Alfeo signal the staff ok na
 
 8. If
 
