@@ -45,19 +45,14 @@ async def get_element_color():
 async def main():
     print("Start, pb version: ", version)
 
-    try:
-        # await HandController.reset()
-        # await WheelController.reset()
+    # await HandController.reset()
+    # await WheelController.reset()
 
-        # await test_gripper()
-        # await test_wheel()
-        # await test_element_color()
-        await test_mat_color()
-        # await get_element_color()
-    finally:
-        # await HandController.reset()
-        # await WheelController.reset()
-        pass
+    # await test_gripper()
+    # await test_wheel()
+    # await test_element_color()
+    await test_mat_color()
+    # await get_element_color()
 
     print("DONE!")
 
