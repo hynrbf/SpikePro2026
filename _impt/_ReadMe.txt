@@ -22,7 +22,7 @@ winget install --id Microsoft.PowerShell --source winget
 
 6. Checklist
    do basic test _tester.py - Zuvel
-      check matcolor number (see mapstrat image):
+      check matcolor number (see map.strat.jpg):
       1 and 2 MatColor.Black
       3 MatColor.DarkGreen
       4 MatColor.Green
@@ -37,6 +37,12 @@ winget install --id Microsoft.PowerShell --source winget
    Check all elaments go around and complain to staff - Zuvel
 
    once all good above Ram to tap on
+
+ 7. important distance, see mapdistance.jpg
+    1 16 n 18 maroon
+    2 16 n 18 green
+    3 28 edge to red
+    4 9.5 another edge to red
 
  == ToDo==
  1.issues to fix
