@@ -32,8 +32,8 @@ async def test_wheel():
 
 
 async def test_mat_color():
-    # await ColorController.print_mat_color(True)
-    await ColorController.print_mat_color_non_hsv(True)
+    await ColorController.print_mat_color(True)
+    # await ColorController.print_mat_color_non_hsv(True)
     # await WheelController.move_towards_mat_color(348)
 
 
@@ -45,19 +45,14 @@ async def get_element_color():
 async def main():
     print("Start, pb version: ", version)
 
-    try:
-        # await HandController.reset()
-        # await WheelController.reset()
+    # await HandController.reset()
+    # await WheelController.reset()
 
-        # await test_gripper()
-        # await test_wheel()
-        # await test_element_color()
-        await test_mat_color()
-        # await get_element_color()
-    finally:
-        # await HandController.reset()
-        # await WheelController.reset()
-        pass
+    # await test_gripper()
+    # await test_wheel()
+    # await test_element_color()
+    await test_mat_color()
+    # await get_element_color()
 
     print("DONE!")
 

@@ -21,17 +21,28 @@ winget install --id Microsoft.PowerShell --source winget
     F=left motor
 
 6. Checklist
-   check the wheels palagi natatangalan
-   stabilize the hand
-   do basic test _tester.py
+   do basic test _tester.py - Zuvel
+      check matcolor number (see map.strat.jpg):
+      1 and 2 MatColor.Black
+      3 MatColor.DarkGreen
+      4 MatColor.Green
+      5 MatColor.LightGreen
+      6 MatColor.Black
 
-7. getting red tower
-await WheelController.move_forward(100, Speed.Slow, with_brake=True)
-await multitask(HandController.lift_right(35,speed=Speed.Slow), HandController.lift_left(35,speed=Speed.Slow))
-await WheelController.left_turn(180, turn_speed=80)
-await WheelController.move_forward(500, speed=Speed.Medium)
+   when placing - Ram
+      stabilize the hand
+      check the wheels palagi natatangalan
+      review - Zuvel
 
-8. If
+   Check all elaments go around and complain to staff - Zuvel
+
+   once all good above Ram to tap on
+
+ 7. important distance, see mapdistance.jpg
+    1 16 n 18 maroon
+    2 16 n 18 green
+    3 28 edge to red
+    4 9.5 another edge to red
 
  == ToDo==
  1.issues to fix
