@@ -100,10 +100,10 @@ class MissionYellowTower:
         await WheelController.move_backward(120, speed=Speed.Slow)
         # positioning for visitors mission
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10),
-                        WheelController.move_backward(400))
+                        WheelController.move_backward(400, speed=Speed.Fastest))
         await WheelController.left_turn(210)
         await WheelController.right_turn(60)
-        await WheelController.move_forward(250)
+        await WheelController.move_forward(250, speed=Speed.Fastest)
         await WheelController.right_turn(150)
-        await WheelController.move_backward(900, with_brake=True)
+        await WheelController.move_backward(900, with_brake=True, speed=Speed.Fastest)
         await wait(100)
