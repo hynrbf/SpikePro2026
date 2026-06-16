@@ -31,13 +31,13 @@ class MissionVisitor:
         await WheelController.move_backward(90, speed=Speed.Slow)
         await multitask(HandController.lift_right(10),
                         HandController.lift_left())
-        await WheelController.move_forward(120, speed=Speed.Slow)
-        await HandController.lift_left(30)
+        await WheelController.move_forward(145, speed=Speed.Slow)
+        await HandController.lift_left(15)
         # putting green vistor
         await WheelController.move_forward(100, speed=Speed.Slow)
         await WheelController.right_turn(40, turn_speed=30)
         await multitask(WheelController.move_forward(200, speed=Speed.Medium),
-                        HandController.lift_left(20))
+                        HandController.lift_left(15))
         await WheelController.right_turn(40, turn_speed=30)
         await WheelController.move_forward(120, speed=Speed.Medium)
         await HandController.lift_right(0)
