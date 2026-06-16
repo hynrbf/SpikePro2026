@@ -29,14 +29,13 @@ winget install --id Microsoft.PowerShell --source winget
       5 MatColor.LightGreen
       6 MatColor.Black
 
-   when placing - Ram
-      stabilize the hand
+   when placing - Nat
+      stabilize the hand, see tighten.jpg
       check the wheels palagi natatangalan
-      review - Zuvel
 
-   Check all elaments go around and complain to staff - Zuvel
+   Check all elements go around and complain to staff - Zuvel
 
-   once all good above Ram to tap on
+   once all good above Nat to Ok signal
 
  7. important distance, see mapdistance.jpg
     1 16 n 18 maroon
@@ -45,10 +44,3 @@ winget install --id Microsoft.PowerShell --source winget
     4 9.5 another edge to red
 
  == ToDo==
- 1.issues to fix
-   black red - dapat front bangga the black to accurate
-   all random - review all and fix accuracy
-              - also fix if kabaliktad
-   red pagkuha sa tower na stuck
-   red malapit sa artifact na placing na, nausog
-
