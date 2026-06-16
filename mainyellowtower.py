@@ -72,7 +72,7 @@ class MissionYellowTower:
         await HandController.lift_right(10)
         await WheelController.move_towards_mat_color(MatColor.Green)
         # clear the artifacts
-        await WheelController.right_turn(turn_speed=90)
+        await WheelController.right_turn(turn_speed=80)
         await HandController.lift_right(28)
         await WheelController.move_forward(170)
         await multitask(HandController.lift_left(), HandController.lift_right(80, speed=Speed.Slow))
