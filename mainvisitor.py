@@ -11,10 +11,12 @@ class MissionVisitor:
         await multitask(WheelController.move_forward(40),
                         HandController.lift_right(), HandController.lift_left())
         await WheelController.left_turn()
+        #1st bangga
         await  WheelController.move_backward(450, with_brake=True)
         await multitask(WheelController.move_forward(73), HandController.lift_right(),
                         HandController.lift_left())
         await WheelController.right_turn()
+        # getting 2 vistors slowly
         await multitask(HandController.lift_left(10), HandController.lift_right(10))
         await WheelController.move_forward(40, speed=Speed.Slow)
         await WheelController.left_turn(32, turn_speed=30)
@@ -25,12 +27,13 @@ class MissionVisitor:
         await WheelController.left_turn(30, turn_speed=30)
         await WheelController.move_forward(250, speed=Speed.Slow)
         await multitask(HandController.lift_right(-10, speed=Speed.Slow),
-                        HandController.lift_left(0, speed=Speed.Slow))
+                        HandController.lift_left(-3, speed=Speed.Slow))
         await WheelController.move_backward(90, speed=Speed.Slow)
         await multitask(HandController.lift_right(10),
                         HandController.lift_left())
         await WheelController.move_forward(120, speed=Speed.Slow)
         await HandController.lift_left(30)
+        # putting green vistor
         await WheelController.move_forward(100, speed=Speed.Slow)
         await WheelController.right_turn(40, turn_speed=30)
         await multitask(WheelController.move_forward(200, speed=Speed.Medium),
@@ -39,11 +42,15 @@ class MissionVisitor:
         await WheelController.move_forward(120, speed=Speed.Medium)
         await HandController.lift_right(0)
         await WheelController.move_backward(140, speed=Speed.Slow)
+        # going to the other side
         await WheelController.left_turn(140, turn_speed=90)
         await WheelController.move_forward(500)
+        #2nd bangga
         await WheelController.move_forward(200, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(50, speed=Speed.Medium)
+        # putting the red visitor
         await WheelController.right_turn(turn_speed=90)
         await WheelController.move_forward(100)
         await WheelController.left_turn(40)
         await WheelController.move_forward(60)
+        await HandController.lift_left(speed=Speed.Slow)
