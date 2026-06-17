@@ -6,8 +6,8 @@ class MatColor:
     Black = 240
     DarkGreen = 140
     Green = 180
-    LightGreen = 153
-    BlackTwo = 220  # 210 #216
+    LightGreen = 152
+    BlackTwo = 255  # 210 #216
     Maroon = 349
     Red = 349
     White = 213

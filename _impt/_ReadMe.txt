@@ -29,13 +29,13 @@ winget install --id Microsoft.PowerShell --source winget
       5 MatColor.LightGreen
       6 MatColor.Black
 
-   when placing - Nat
+   when placing - Aron
       stabilize the hand, see tighten.jpg
       check the wheels palagi natatangalan
 
    Check all elements go around and complain to staff - Zuvel
 
-   once all good above Nat to Ok signal
+   once all good above Aron to Ok signal
 
  7. important distance, see mapdistance.jpg
     1 16 n 18 maroon
