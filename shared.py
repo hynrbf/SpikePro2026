@@ -9,6 +9,7 @@ class Speed:
     Medium = float(250)
     # 600 is max, but sometimes gyro make mistakes so, I guess 500 makes little mistake so 450 is sweet spot
     Fast = float(400)
+    Fastest = float(600)
 
 
 # inspiration https://github.com/FLL-Team-24277/FLL-Fall-2023-Masterpiece/blob/main/samples/base_robot.py
