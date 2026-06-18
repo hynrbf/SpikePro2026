@@ -3,7 +3,9 @@ from pybricks import version
 
 from mainredtower import MissionRedTower
 from mainyellowtower import MissionYellowTower
-from mainvisitor import MissionVisitor
+
+
+# from mainvisitor import MissionVisitor
 
 
 # from mainyellowtower import MissionYellowTower
