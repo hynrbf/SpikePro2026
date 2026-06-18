@@ -9,14 +9,14 @@ class MissionRedTower:
     @staticmethod
     async def exec_mission():
         await multitask(HandController.lift_left(), HandController.lift_right(),
-                        WheelController.move_forward(160))
+                        WheelController.move_forward(250))
         await WheelController.left_turn()
-        await WheelController.move_backward(360, with_brake=True)
-        await WheelController.move_forward(209)
+        await WheelController.move_forward(285)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10),
-                        WheelController.right_turn())
+                       WheelController.left_turn())
+
         # get the red towers
-        await WheelController.move_forward(170, speed=Speed.Medium, with_brake=True)
+        await WheelController.move_forward(209, with_brake=True)
         await WheelController.move_backward(27, speed=Speed.Slow)
         await multitask(HandController.lift_left(32, speed=Speed.Slow),
                         HandController.lift_right(26, speed=Speed.Slow))
