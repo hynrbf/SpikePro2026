@@ -103,7 +103,6 @@ class MissionYellowTower:
         await WheelController.left_turn(210)
         await WheelController.right_turn(60)
         await WheelController.move_forward(670, speed=Speed.Fastest)
-        await WheelController.move_forward(420, speed=Speed.Fastest)
         await WheelController.right_turn(150)
         await WheelController.move_backward(430, with_brake=True)
         await wait(100)
