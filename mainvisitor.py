@@ -52,5 +52,6 @@ class MissionVisitor:
         await WheelController.right_turn(turn_speed=90)
         await WheelController.move_forward(100)
         await WheelController.left_turn(40)
-        await WheelController.move_forward(60)
+        await WheelController.move_forward(60, with_brake=True)
+        await WheelController.move_backward(8)
         await HandController.lift_left(speed=Speed.Slow)
