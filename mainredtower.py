@@ -11,12 +11,12 @@ class MissionRedTower:
         await multitask(HandController.lift_left(), HandController.lift_right(),
                         WheelController.move_forward(250))
         await WheelController.left_turn()
-        await WheelController.move_forward(285)
+        await WheelController.move_forward(305)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10),
                        WheelController.left_turn())
 
         # get the red towers
-        await WheelController.move_forward(209, with_brake=True)
+        await WheelController.move_forward(209, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(27, speed=Speed.Slow)
         await multitask(HandController.lift_left(32, speed=Speed.Slow),
                         HandController.lift_right(26, speed=Speed.Slow))
@@ -31,31 +31,45 @@ class MissionRedTower:
         await WheelController.left_turn(50, turn_speed=90)
         await WheelController.move_forward(500, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow)
-        await WheelController.move_forward(100)
+        await WheelController.move_forward(150)
         await WheelController.right_turn(turn_speed=90)
-        await WheelController.move_forward(380, speed=Speed.Medium, with_brake=True)
+        await WheelController.move_forward(400, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(30, speed=Speed.Slow)
         await WheelController.right_turn(180, turn_speed=90)
+        await WheelController.move_backward(150, speed=Speed.Slow, with_brake=True)
         await multitask(HandController.lift_left(-10),
                         HandController.lift_right(-10))
-        await WheelController.move_forward(25, speed=Speed.Medium)
-        await WheelController.move_backward(180, with_brake=True)
-        await WheelController.move_forward(300, speed=Speed.Slow)
-        await multitask(WheelController.move_forward(114, speed=Speed.Slow),
+        await WheelController.move_forward(320, speed=Speed.Medium)
+        await WheelController.move_towards_mat_color(MatColor.BlackTwo)
+        await multitask(HandController.lift_left(32, speed=Speed.Slow),
+                        HandController.lift_right(26, speed=Speed.Slow))
+        await WheelController.right_turn(60, turn_speed=90)
+        await WheelController.move_forward(165, speed=Speed.Slow)
+        await multitask(HandController.lift_left(-10, speed=Speed.Slow),
+                        HandController.lift_right(26, speed=Speed.Slow))
+        await WheelController.move_backward(165, speed=Speed.Slow)
+        await multitask(HandController.lift_left(speed=Speed.Slow),
+                        HandController.lift_right(26, speed=Speed.Slow))
+        await WheelController.right_turn(42, turn_speed=90)
+        await multitask(HandController.lift_left(-10, speed=Speed.Slow),
+                        HandController.lift_right(-10, speed=Speed.Slow))
+        await WheelController.move_forward(115, speed=Speed.Slow)
+        await WheelController.move_backward(115, speed=Speed.Slow)
+        await multitask(WheelController.move_forward(120, speed=Speed.Slow),
                         HandController.lift_left(30, speed=Speed.Slow),
-                        HandController.lift_right(30, speed=Speed.Slow))
+                        HandController.lift_right(40, speed=Speed.Slow))
 
         # placing 1st red tower
         await WheelController.right_turn(turn_speed=90)
-        await WheelController.move_forward(142)
+        await WheelController.move_forward(65)
         await multitask(HandController.lift_right(-10, speed=Speed.Slow), HandController.lift_left(45))
 
         # placing 2nd red tower
         await WheelController.move_backward(200, speed=Speed.Medium)
         await WheelController.left_turn(turn_speed=90)
-        await WheelController.move_forward(170, speed=Speed.Medium)
+        await WheelController.move_forward(195, speed=Speed.Medium)
         await WheelController.right_turn(turn_speed=90)
-        await WheelController.move_forward(228, speed=Speed.Slow)
+        await WheelController.move_forward(200, speed=Speed.Slow)
         await HandController.lift_left(-10, speed=Speed.Slow)
         await WheelController.move_backward(200, speed=Speed.Slow)
         await wait(500)
