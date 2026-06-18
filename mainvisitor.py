@@ -27,7 +27,7 @@ class MissionVisitor:
         await WheelController.left_turn(30, turn_speed=30)
         await WheelController.move_forward(250, speed=Speed.Slow)
         await multitask(HandController.lift_right(-10, speed=Speed.Slow),
-                        HandController.lift_left(-3, speed=Speed.Slow))
+                        HandController.lift_left(-2, speed=Speed.Slow))
         await WheelController.move_backward(90, speed=Speed.Slow)
         await multitask(HandController.lift_right(10),
                         HandController.lift_left())
@@ -39,9 +39,9 @@ class MissionVisitor:
         await multitask(WheelController.move_forward(200, speed=Speed.Medium),
                         HandController.lift_left(15))
         await WheelController.right_turn(40, turn_speed=30)
-        await WheelController.move_forward(120, speed=Speed.Medium)
+        await WheelController.move_forward(125, speed=Speed.Medium)
         await HandController.lift_right(0)
-        await WheelController.move_backward(140, speed=Speed.Slow)
+        await WheelController.move_backward(145, speed=Speed.Slow)
         # going to the other side
         await WheelController.left_turn(140, turn_speed=90)
         await WheelController.move_forward(500)
