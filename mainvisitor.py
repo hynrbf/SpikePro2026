@@ -11,11 +11,13 @@ class MissionVisitor:
         await multitask(WheelController.move_forward(40),
                         HandController.lift_right(), HandController.lift_left())
         await WheelController.left_turn()
+
         # 1st bangga
         await  WheelController.move_backward(450, with_brake=True)
         await multitask(WheelController.move_forward(73), HandController.lift_right(),
                         HandController.lift_left())
         await WheelController.right_turn()
+
         # getting 2 visitors slowly
         await multitask(HandController.lift_left(10), HandController.lift_right(10))
         await WheelController.move_forward(40, speed=Speed.Slow)
@@ -33,6 +35,7 @@ class MissionVisitor:
                         HandController.lift_left())
         await WheelController.move_forward(145, speed=Speed.Slow)
         await HandController.lift_left(15)
+
         # putting green visitor
         await WheelController.move_forward(100, speed=Speed.Slow)
         await WheelController.right_turn(40, turn_speed=30)
@@ -42,12 +45,15 @@ class MissionVisitor:
         await WheelController.move_forward(125, speed=Speed.Medium)
         await HandController.lift_right(0)
         await WheelController.move_backward(145, speed=Speed.Slow)
+
         # going to the other side
         await WheelController.left_turn(140, turn_speed=90)
         await WheelController.move_forward(500)
+
         # 2nd bangga
         await WheelController.move_forward(190, speed=Speed.Slow, with_brake=True)
         await WheelController.move_backward(50, speed=Speed.Medium)
+
         # putting the red visitor
         await WheelController.right_turn(turn_speed=90)
         await WheelController.move_forward(100)
