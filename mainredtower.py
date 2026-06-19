@@ -22,8 +22,8 @@ class MissionRedTower:
         # get the red towers
         await WheelController.move_forward(209, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(27, speed=Speed.Slow)
-        await multitask(HandController.lift_left(32, speed=Speed.Slow),
-                        HandController.lift_right(32, speed=Speed.Slow))
+        await multitask(HandController.lift_left(30, speed=Speed.Slow),
+                        HandController.lift_right(30, speed=Speed.Slow))
         await WheelController.left_turn(180, turn_speed=60)
         await multitask(HandController.lift_left(0, speed=Speed.Slow),
                         HandController.lift_right(0, speed=Speed.Slow))
@@ -31,7 +31,8 @@ class MissionRedTower:
         await multitask(HandController.lift_left(30, speed=Speed.Slow),
                         HandController.lift_right(30, speed=Speed.Slow))
         await WheelController.right_turn(50, turn_speed=90)
-        await WheelController.move_forward(600, speed=Speed.Medium)
+        # moving towards other side
+        await WheelController.move_forward(800, speed=Speed.Medium)
         await WheelController.left_turn(50, turn_speed=90)
         await WheelController.move_forward(500, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow)
@@ -70,6 +71,3 @@ class MissionRedTower:
         await WheelController.right_turn(177)
         await WheelController.move_backward(500, with_brake= True)
         await wait(100)
-        
-        
-        

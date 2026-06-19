@@ -1,4 +1,4 @@
-from pybricks.tools import multitask
+from pybricks.tools import multitask, wait
 
 from handcontroller import HandController
 from shared import Speed
@@ -56,3 +56,4 @@ class MissionVisitor:
         await WheelController.move_backward(15, speed=Speed.Medium)
         await HandController.lift_left(speed=Speed.Slow)
         await WheelController.move_forward(15, speed=Speed.Slow)
+        await wait(100)
