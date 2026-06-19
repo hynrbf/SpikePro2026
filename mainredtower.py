@@ -69,5 +69,5 @@ class MissionRedTower:
         await WheelController.left_turn(183)
         await WheelController.move_forward(1000, speed=Speed.Fastest)
         await WheelController.right_turn(177)
-        await WheelController.move_backward(500, with_brake= True)
+        await WheelController.move_backward(500, with_brake=True)
         await wait(100)
