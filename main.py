@@ -5,8 +5,6 @@ from mainredtower import MissionRedTower
 from mainyellowtower import MissionYellowTower
 from mainvisitor import MissionVisitor
 
-
-# from mainvisitor import MissionVisitor
 async def main():
     print("\nStart, pb version: ", version)
 
