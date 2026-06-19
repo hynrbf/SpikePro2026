@@ -2,18 +2,22 @@ from colorcontroller import MatColor
 from handcontroller import HandController
 from shared import Speed
 from wheelcontroller import WheelController
-from pybricks.tools import multitask  # , wait
+from pybricks.tools import multitask, wait
 
 
 class MissionRedTower:
     @staticmethod
     async def exec_mission():
-        await multitask(HandController.lift_left(), HandController.lift_right(),
-                        WheelController.move_forward(250))
+        await WheelController.right_turn(35)
+        await WheelController.move_forward(750, speed=Speed.Fastest)
+        await WheelController.right_turn(180)
+        await WheelController.move_backward(350, with_brake=True)
+        await WheelController.move_forward(275)
         await WheelController.left_turn()
-        await WheelController.move_forward(305)
-        await multitask(HandController.lift_left(-10), HandController.lift_right(-10),
-                        WheelController.left_turn())
+        await WheelController.move_forward(475)
+        await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow)
+        await WheelController.move_forward(40)
+        await WheelController.left_turn()
 
         # get the red towers
         await WheelController.move_forward(209, speed=Speed.Medium, with_brake=True)
@@ -40,7 +44,7 @@ class MissionRedTower:
         await multitask(HandController.lift_left(-10),
                         HandController.lift_right(-10))
         await WheelController.move_forward(320, speed=Speed.Medium)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo)
+        await WheelController.move_towards_mat_color(MatColor.Black)
         await multitask(HandController.lift_left(32, speed=Speed.Slow),
                         HandController.lift_right(32, speed=Speed.Slow))
 
