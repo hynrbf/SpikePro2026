@@ -50,7 +50,7 @@ winget install --id Microsoft.PowerShell --source winget
   strategy 1, 2
 
 2. distance to measure
-   the edge to yellow base placement is 19.8
+   the edge to yellow base placement is 19.8 and other side is 19.3
 
 3. practice strategy 3
    all about ranmdon of placement so code fast and execute
