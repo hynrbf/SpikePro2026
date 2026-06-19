@@ -14,7 +14,7 @@ class MissionRedTower:
         await WheelController.move_backward(350, with_brake=True)
         await WheelController.move_forward(275)
         await WheelController.left_turn()
-        await WheelController.move_forward(475)
+        await WheelController.move_forward(370)
         await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow)
         await WheelController.move_forward(40)
         await WheelController.left_turn()
@@ -32,7 +32,7 @@ class MissionRedTower:
                         HandController.lift_right(30, speed=Speed.Slow))
         await WheelController.right_turn(50, turn_speed=90)
         # moving towards other side
-        await WheelController.move_forward(800, speed=Speed.Medium)
+        await WheelController.move_forward(750, speed=Speed.Medium)
         await WheelController.left_turn(50, turn_speed=90)
         await WheelController.move_forward(500, speed=Speed.Medium)
         await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow)
@@ -41,7 +41,7 @@ class MissionRedTower:
         await WheelController.move_forward(400, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(30, speed=Speed.Slow)
         await WheelController.right_turn(180, turn_speed=90)
-        await WheelController.move_backward(165, speed=Speed.Slow, with_brake=True)
+        await WheelController.move_backward(165, speed=Speed.Medium, with_brake=True)
         await multitask(HandController.lift_left(-10),
                         HandController.lift_right(-10))
         await WheelController.move_forward(320, speed=Speed.Medium)

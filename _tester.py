@@ -23,12 +23,13 @@ async def test_gripper():
 
 
 async def test_wheel():
-    await WheelController.move_forward(float(900), Speed.Fast)
+    await WheelController.move_towards_mat_color(-133, speed=Speed.Slow, is_print=True)
+    # await WheelController.move_forward(float(900), Speed.Fast)
     # await WheelController.right_turn()
     # await WheelController.left_turn()
     # await WheelController.move_backward(float(100), Speed.Fast)
     # await wait(2000)
-    # pass
+    pass
 
 
 async def test_mat_color():
@@ -49,9 +50,9 @@ async def main():
     # await WheelController.reset()
 
     # await test_gripper()
-    # await test_wheel()
+    await test_wheel()
     # await test_element_color()
-    await test_mat_color()
+    # await test_mat_color()
     # await get_element_color()
 
     print("DONE!")
