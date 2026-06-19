@@ -63,3 +63,4 @@ class MissionRedTower:
                         HandController.lift_right(-10, speed=Speed.Slow))
         await WheelController.move_forward(117, speed=Speed.Slow)
         await WheelController.move_backward(117, speed=Speed.Slow)
+        await wait(100)
