@@ -9,26 +9,15 @@ from wheelcontroller import WheelController
 class MissionYellowTower:
     @staticmethod
     async def exec_mission():
-        # finding black line
-        await multitask(WheelController.move_forward(160), HandController.lift_left(),
-                        HandController.lift_right())
-        await WheelController.left_turn()
-        await WheelController.move_forward(180)
-        await WheelController.left_turn()
-        await WheelController.move_towards_mat_color(MatColor.Black)
-        await WheelController.move_backward(70)
-        await WheelController.left_turn()
-
         # 1st bangga
-        await WheelController.move_backward(350, with_brake=True)
-        await WheelController.move_forward(215, speed=Speed.Medium)
-        await multitask(HandController.lift_left(-10), HandController.lift_right(-10), WheelController.left_turn())
-        await WheelController.move_backward(256, speed=Speed.Medium)
-        await multitask(WheelController.left_turn(), HandController.lift_left(-10),
-                        HandController.lift_right(-10))
+        await WheelController.move_backward(600, with_brake=True)
+        await WheelController.move_forward(225)
+        await WheelController.left_turn()
+        await WheelController.move_forward(200)
+        await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow)
 
         # Picking up 2 yellow towers
-        await WheelController.move_forward(200, speed=Speed.Slow, with_brake=True)
+        await WheelController.move_forward(200, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(30, speed=Speed.Medium)
         await multitask(HandController.lift_left(40), HandController.lift_right(40))
 
