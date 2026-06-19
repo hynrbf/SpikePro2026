@@ -2,7 +2,7 @@ from colorcontroller import MatColor
 from handcontroller import HandController
 from shared import Speed
 from wheelcontroller import WheelController
-from pybricks.tools import multitask, wait
+from pybricks.tools import multitask  # , wait
 
 
 class MissionRedTower:
