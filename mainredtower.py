@@ -2,7 +2,7 @@ from colorcontroller import MatColor
 from handcontroller import HandController
 from shared import Speed
 from wheelcontroller import WheelController
-from pybricks.tools import multitask  # , wait
+from pybricks.tools import wait, multitask  # multitask
 
 
 class MissionRedTower:
@@ -63,4 +63,13 @@ class MissionRedTower:
                         HandController.lift_right(-10, speed=Speed.Slow))
         await WheelController.move_forward(117, speed=Speed.Slow)
         await WheelController.move_backward(117, speed=Speed.Slow)
+
+        # positioning going to visitors
+        await WheelController.left_turn(183)
+        await WheelController.move_forward(1000, speed=Speed.Fastest)
+        await WheelController.right_turn(177)
+        await WheelController.move_backward(500, with_brake= True)
         await wait(100)
+        
+        
+        
