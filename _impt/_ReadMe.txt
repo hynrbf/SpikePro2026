@@ -48,3 +48,9 @@ winget install --id Microsoft.PowerShell --source winget
   queue line
   focus
   strategy 1, 2
+
+2. distance to measure
+   the edge to yellow base placement is 19.8
+
+3. practice strategy 3
+   all about ranmdon of placement so code fast and execute
