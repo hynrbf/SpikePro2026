@@ -43,4 +43,8 @@ winget install --id Microsoft.PowerShell --source winget
     3 28 edge to red
     4 9.5 another edge to red
 
- == ToDo==
+== ToDo==
+1. create hand signals
+  queue line
+  focus
+  strategy 1, 2
