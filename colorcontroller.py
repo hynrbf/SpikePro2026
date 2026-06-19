@@ -8,9 +8,9 @@ class MatColor:
     Green = 180
     LightGreen = 153  # 152
     BlackTwo = 228  # 210 #216
+    White = 228
     Maroon = 349
     Red = 349
-    White = 213
     Others = -1
 
 

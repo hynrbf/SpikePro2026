@@ -66,7 +66,7 @@ class MissionYellowTower:
         await WheelController.right_turn(turn_speed=90)
         await WheelController.move_forward(520)
         await HandController.lift_right(80, speed=Speed.Slow)
-        await WheelController.move_towards_mat_color(MatColor.Green)
+        await WheelController.move_towards_mat_color(MatColor.White) #MatColor.Green
 
         # clear the artifacts
         await WheelController.right_turn(turn_speed=80)
