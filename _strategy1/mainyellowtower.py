@@ -35,9 +35,9 @@ class MissionYellowTower:
         # adjust tower holding
         await WheelController.right_turn(120, turn_speed=90)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_forward(100, speed=Speed.Medium)
+        await WheelController.move_forward(100, speed=Speed.Slow)
         await multitask(HandController.lift_left(32), HandController.lift_right(28))
-        await WheelController.move_forward(150)
+        await WheelController.move_forward(150, speed=Speed.Medium)
         await WheelController.left_turn(30, turn_speed=90)
 
         # long drive
@@ -60,7 +60,7 @@ class MissionYellowTower:
         # placing 1st yellow tower
         await WheelController.right_turn(turn_speed=90)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_forward(40, speed=Speed.Medium)
+        await WheelController.move_forward(40, speed=Speed.Slow)
         await WheelController.move_towards_mat_color(MatColor.Black)
         await multitask(HandController.lift_left(32), HandController.lift_right(28))
         await WheelController.left_turn(180, turn_speed=90)
@@ -70,7 +70,7 @@ class MissionYellowTower:
         await multitask(HandController.lift_left(40, speed=Speed.Slow), HandController.lift_right(28))
         await WheelController.move_backward(120, speed=Speed.Slow)
         await HandController.lift_left(-10)
-        await WheelController.move_backward(80)
+        await WheelController.move_backward(80, speed=Speed.Medium)
 
         # Moving to the other side
         await multitask(HandController.lift_left(-10, speed=Speed.Slow), HandController.lift_right(28))
@@ -83,7 +83,7 @@ class MissionYellowTower:
         await WheelController.right_turn(turn_speed=80)
         await WheelController.move_forward(170)
         await multitask(HandController.lift_left(), HandController.lift_right(80, speed=Speed.Slow))
-        await WheelController.move_backward(190)
+        await WheelController.move_backward(190, speed=Speed.Medium)
         await multitask(WheelController.left_turn(turn_speed=90), HandController.lift_left(-10))
         await WheelController.move_backward(10, speed=Speed.Slow)
         await HandController.lift_right(-10, speed=Speed.Slow)
@@ -109,8 +109,12 @@ class MissionYellowTower:
         await HandController.lift_right(32, speed=Speed.Slow)
         await WheelController.move_backward(120, speed=Speed.Slow)
 
-        # positioning for getting red towers
+        # positioning for visitors mission
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10),
                         WheelController.move_backward(400, speed=Speed.Fastest))
         await WheelController.left_turn(210)
+        await WheelController.right_turn(60)
+        await WheelController.move_forward(250, speed=Speed.Fastest)
+        await WheelController.right_turn(150)
+        await WheelController.move_backward(900, with_brake=True, speed=Speed.Fastest)
         await wait(100)

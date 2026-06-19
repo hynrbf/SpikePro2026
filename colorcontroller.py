@@ -4,10 +4,10 @@ from pybricks.parameters import Port
 
 class MatColor:
     Black = 240
-    DarkGreen = 140
+    DarkGreen = 120  # 140
     Green = 180
-    LightGreen = 152
-    BlackTwo = 255  # 210 #216
+    LightGreen = 153  # 152
+    BlackTwo = 228  # 210 #216
     Maroon = 349
     Red = 349
     White = 213
