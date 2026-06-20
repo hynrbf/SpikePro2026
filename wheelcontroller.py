@@ -119,7 +119,7 @@ class WheelController:
             if is_print:
                 print("mat color: ", color_int)
 
-            if ((mat_color_range - 1) <= color_int <= (mat_color_range + 1)) or count > 1000:
+            if ((mat_color_range - 2) <= color_int <= (mat_color_range + 2)) or count > 1000:
                 wheel_controller.stop()
                 break
             else:
