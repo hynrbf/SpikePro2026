@@ -34,10 +34,9 @@ class MissionYellowTower:
         await multitask(HandController.lift_left(30, speed=Speed.Slow),
                         HandController.lift_right(27, speed=Speed.Slow))
         await WheelController.left_turn(turn_speed=90)
-        await WheelController.move_forward(100)
 
         # LOOOOOOOONG DRIVE
-        await WheelController.move_forward(825)
+        await WheelController.move_forward(925)
         await WheelController.move_towards_mat_color(MatColor.Black)
 
         # Straightening of yellow towers
