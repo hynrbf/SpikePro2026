@@ -10,8 +10,8 @@ async def main():
     print("\nStart, pb version: ", version)
 
     await MissionYellowTower.exec_mission()
-    await MissionRedTower.exec_mission()
-    await MissionVisitor.exec_mission()
+    # await MissionRedTower.exec_mission()
+    # await MissionVisitor.exec_mission()
     print("DONE!")
 
 
