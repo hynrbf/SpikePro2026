@@ -16,7 +16,8 @@ class MissionRedTower:
         await WheelController.move_forward(275)
         await WheelController.left_turn()
         await WheelController.move_forward(335)
-        await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow)
+        await WheelController.move_towards_mat_color(MatColor.Black, mat_color_range_alt=MatColor.BlackTwo,
+                                                     speed=Speed.Slow)
         await WheelController.move_forward(40)
         await WheelController.left_turn()
 
