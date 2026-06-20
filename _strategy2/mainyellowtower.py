@@ -84,10 +84,11 @@ class MissionYellowTower:
         await WheelController.right_turn(180, turn_speed=90)
 
         # position to place the 2nd tower
+        await multitask(HandController.lift_left(-10), HandController.lift_right(28))
+        await WheelController.move_backward(150, speed=Speed.Medium, with_brake=True)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_towards_mat_color(MatColor.LightGreen)
+        await WheelController.move_forward(220, speed=Speed.Medium)  # float is: 85 in condo; 220 in BGBES
         await HandController.lift_right(28)
-        await WheelController.move_forward(69, speed=Speed.Slow)  # BGBES 70
         await multitask(WheelController.left_turn(turn_speed=90), HandController.lift_left())
         await WheelController.move_towards_mat_color(MatColor.Black)
 
