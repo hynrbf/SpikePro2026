@@ -41,10 +41,10 @@ class MissionYellowTower:
         await WheelController.move_backward(25)
         await multitask(HandController.lift_left(32), HandController.lift_right(32))
         await WheelController.right_turn(180, turn_speed=90)
+        await WheelController.move_backward(150, speed=Speed.Medium, with_brake=True)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_towards_mat_color(MatColor.DarkGreen)
+        await WheelController.move_forward(225, speed=Speed.Medium)  # float is: 85 in game map; 225 in BGBES
         await multitask(HandController.lift_left(32), HandController.lift_right(32))
-        await WheelController.move_forward(50, speed=Speed.Slow)  # float is: 85 in game map; 91 in BGBES
 
         # placing 1st yellow tower
         await WheelController.right_turn(turn_speed=90)
