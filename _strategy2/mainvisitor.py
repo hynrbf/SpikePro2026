@@ -47,19 +47,11 @@ class MissionVisitor:
         await WheelController.move_backward(145, speed=Speed.Slow)
 
         # going to the other side
-        await WheelController.left_turn(140, turn_speed=90)
-        await WheelController.move_forward(500)
-
-        # 2nd bangga
-        await WheelController.move_forward(190, speed=Speed.Slow, with_brake=True)
-        await WheelController.move_backward(50, speed=Speed.Medium)
+        await WheelController.left_turn(120, turn_speed=90)
+        await WheelController.move_forward(500, speed=Speed.Fastest)
 
         # putting the red visitor
-        await WheelController.right_turn(turn_speed=90)
-        await WheelController.move_forward(100)
-        await WheelController.left_turn(40)
-        await WheelController.move_forward(60, with_brake=True)
-        await WheelController.move_backward(15, speed=Speed.Medium)
+        await WheelController.move_forward(250, speed=Speed.Medium, with_brake=True)
+        await WheelController.move_backward(20, speed=Speed.Medium)
         await HandController.lift_left(speed=Speed.Slow)
-        await WheelController.move_forward(15, speed=Speed.Slow)
         await wait(100)
