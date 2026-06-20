@@ -1,4 +1,4 @@
-from pybricks.tools import wait, multitask  # multitask
+from pybricks.tools import multitask  # multitask, wait
 
 from colorcontroller import MatColor
 from handcontroller import HandController
