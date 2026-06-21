@@ -54,7 +54,7 @@ class MissionYellowTower:
         await multitask(HandController.lift_left(32), HandController.lift_right(28))
         await WheelController.left_turn(180, turn_speed=90)
         await multitask(HandController.lift_right(-10, speed=Speed.Slow),
-                        HandController.lift_left(90, speed=Speed.Slow))
+                        HandController.lift_left(80, speed=Speed.Slow))
         await WheelController.move_forward(355, speed=Speed.Medium)
         await multitask(HandController.lift_left(40, speed=Speed.Slow), HandController.lift_right(28))
         await WheelController.move_backward(120, speed=Speed.Slow)
@@ -64,14 +64,16 @@ class MissionYellowTower:
         # Moving to the other side
         await multitask(HandController.lift_left(-10, speed=Speed.Slow), HandController.lift_right(28))
         await WheelController.right_turn(turn_speed=90)
-        await WheelController.move_forward(520)
+        await WheelController.move_forward(540)
         await HandController.lift_right(80, speed=Speed.Slow)
-        await WheelController.move_towards_mat_color(MatColor.Green, speed=Speed.Slow, is_print=True)
+        await WheelController.move_towards_mat_color(MatColor.Brown, mat_color_range_alt=MatColor.BrownTwo,
+            speed=Speed.Slow, is_print=True)
+        await WheelController.move_backward(10, speed=Speed.Medium)
 
         # clear the artifacts
         await WheelController.right_turn(turn_speed=80)
-        await WheelController.move_forward(170)
         await multitask(HandController.lift_left(), HandController.lift_right(80, speed=Speed.Slow))
+        await WheelController.move_forward(170)
         await WheelController.move_backward(190, speed=Speed.Medium)
         await multitask(WheelController.left_turn(turn_speed=90), HandController.lift_left(-10))
         await WheelController.move_backward(10, speed=Speed.Slow)

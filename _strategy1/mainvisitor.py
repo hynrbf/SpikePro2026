@@ -39,19 +39,20 @@ class MissionVisitor:
         # putting green visitor
         await WheelController.move_forward(100, speed=Speed.Slow)
         await WheelController.right_turn(40, turn_speed=30)
-        await multitask(WheelController.move_forward(200, speed=Speed.Medium),
-                        HandController.lift_left(15))
+        await multitask(WheelController.move_forward(200, speed=Speed.Slow),
+                        HandController.lift_left(13))
         await WheelController.right_turn(40, turn_speed=30)
         await WheelController.move_forward(200, speed=Speed.Medium, with_brake=True)
         await HandController.lift_right(0)
         await WheelController.move_backward(145, speed=Speed.Slow)
 
         # going to the other side
-        await WheelController.left_turn(120, turn_speed=90)
+        await WheelController.left_turn(100, turn_speed=90)
         await WheelController.move_forward(500, speed= Speed.Fastest)
 
          # putting the red visitor
-        await WheelController.move_forward(250, speed=Speed.Medium, with_brake=True)
+        await WheelController.move_forward(300, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(20, speed=Speed.Medium)
         await HandController.lift_left(speed=Speed.Slow)
+        await WheelController.move_forward(25, speed=Speed.Slow)
         await wait(100)
