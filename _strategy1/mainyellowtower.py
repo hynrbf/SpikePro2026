@@ -9,7 +9,7 @@ from wheelcontroller import WheelController
 class MissionYellowTower:
     @staticmethod
     async def exec_mission():
-         # 1st bangga
+        # 1st bangga
         await WheelController.move_backward(500, with_brake=True)
         await WheelController.move_forward(225)
         await WheelController.left_turn()
@@ -43,7 +43,7 @@ class MissionYellowTower:
         await WheelController.right_turn(180, turn_speed=90)
         await WheelController.move_backward(225, speed=Speed.Medium, with_brake=True)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_forward(225, speed=Speed.Medium)  #ToDo.adjust. float is: 85 in condo; 225 in BGBES
+        await WheelController.move_forward(225, speed=Speed.Medium)  # ToDo.adjust. float is: 85 in condo; 225 in BGBES
         await multitask(HandController.lift_left(32), HandController.lift_right(32))
 
         # placing 1st yellow tower
@@ -70,7 +70,7 @@ class MissionYellowTower:
         await WheelController.move_forward(540)
         await HandController.lift_right(80, speed=Speed.Slow)
         await WheelController.move_towards_mat_color(MatColor.Brown, mat_color_range_alt=MatColor.BrownTwo,
-            speed=Speed.Slow, is_print=True)
+                                                     speed=Speed.Slow, is_print=True)
         await WheelController.move_backward(10, speed=Speed.Medium)
 
         # clear the artifacts
@@ -92,7 +92,7 @@ class MissionYellowTower:
         await multitask(HandController.lift_left(-10), HandController.lift_right(28))
         await WheelController.move_backward(150, speed=Speed.Medium, with_brake=True)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_forward(220, speed=Speed.Medium)  #ToDo.adjust. float is: 85 in condo; 220 in BGBES
+        await WheelController.move_forward(220, speed=Speed.Medium)  # ToDo.adjust. float is: 85 in condo; 220 in BGBES
         await HandController.lift_right(28)
         await multitask(WheelController.left_turn(turn_speed=90), HandController.lift_left())
         await WheelController.move_towards_mat_color(MatColor.Black)

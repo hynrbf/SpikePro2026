@@ -48,9 +48,9 @@ class MissionVisitor:
 
         # going to the other side
         await WheelController.left_turn(100, turn_speed=90)
-        await WheelController.move_forward(500, speed= Speed.Fastest)
+        await WheelController.move_forward(500, speed=Speed.Fastest)
 
-         # putting the red visitor
+        # putting the red visitor
         await WheelController.move_forward(300, speed=Speed.Medium, with_brake=True)
         await WheelController.move_backward(20, speed=Speed.Medium)
         await HandController.lift_left(speed=Speed.Slow)

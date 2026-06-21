@@ -23,11 +23,8 @@ winget install --id Microsoft.PowerShell --source winget
 6. Checklist
    do basic test _tester.py - Zuvel
       check matcolor number (see map.strat.jpg):
-      1 and 2 MatColor.Black
-      3 MatColor.DarkGreen
-      4 MatColor.Green
-      5 MatColor.LightGreen
-      6 MatColor.Black
+      1,2,4 MatColor.Black or MatColor.BlackTwo
+      3 MatColor.Brown or MatColor.BrownTwo
 
    when placing - Aron
       stabilize the hand, see tighten.jpg
