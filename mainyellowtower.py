@@ -15,7 +15,7 @@ class MissionYellowTower:
         await WheelController.left_turn()
         await WheelController.move_forward(175)
         await WheelController.move_towards_mat_color(MatColor.Black, mat_color_range_alt=MatColor.BlackTwo,
-                speed=Speed.Slow)
+                                                     speed=Speed.Slow)
 
         # Picking up 2 yellow towers
         await WheelController.move_forward(200, speed=Speed.Medium, with_brake=True)
@@ -44,7 +44,7 @@ class MissionYellowTower:
         await WheelController.right_turn(180, turn_speed=120)
         await WheelController.move_backward(225, speed=Speed.Medium, with_brake=True)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_forward(225, speed=Speed.Fast)  #ToDo.adjust. float is: 85 in game map; 225 in BGBES
+        await WheelController.move_forward(225, speed=Speed.Fast)  # ToDo.adjust. float is: 85 in game map; 225 in BGBES
         await multitask(HandController.lift_left(32), HandController.lift_right(32))
 
         # placing 1st yellow tower
@@ -55,7 +55,7 @@ class MissionYellowTower:
         await multitask(HandController.lift_left(32), HandController.lift_right(32))
         await WheelController.left_turn(180, turn_speed=120)
         await multitask(HandController.lift_right(-10),
-                HandController.lift_left(-10))
+                        HandController.lift_left(-10))
         await WheelController.move_forward(100, speed=Speed.Medium)
         await multitask(HandController.lift_right(-10),
                         HandController.lift_left(80, speed=Speed.Medium))
@@ -93,7 +93,7 @@ class MissionYellowTower:
         await multitask(HandController.lift_left(-10), HandController.lift_right(28))
         await WheelController.move_backward(150, speed=Speed.Fast, with_brake=True)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_forward(220, speed=Speed.Fast)  #ToDo.adjust. float is: 85 in condo; 220 in BGBES
+        await WheelController.move_forward(220, speed=Speed.Fast)  # ToDo.adjust. float is: 85 in condo; 220 in BGBES
         await HandController.lift_right(28)
         await multitask(WheelController.left_turn(turn_speed=120), HandController.lift_left())
         await WheelController.move_forward(100, speed=Speed.Fast)
