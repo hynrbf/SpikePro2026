@@ -44,4 +44,6 @@ winget install --id Microsoft.PowerShell --source winget
 
  8. remember hand signals from coach Chito, also table discord
 
+ 9. use psy tctc - bsu,mr ern,gcc
+
 == ToDo==
