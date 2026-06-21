@@ -22,7 +22,7 @@ winget install --id Microsoft.PowerShell --source winget
 
 6. Checklist
    do basic test _tester.py - Zuvel
-      check matcolor number (see map.strat.jpg):
+      check matcolor number (see map.colors.jpg):
       1,2,4 MatColor.Black or MatColor.BlackTwo
       3 MatColor.Brown or MatColor.BrownTwo
 
@@ -42,14 +42,6 @@ winget install --id Microsoft.PowerShell --source winget
     5 BGBES is 20 and other side is 19.5
     6 adjust if needed comment -> #ToDo.adjust.
 
+ 8. remember hand signals from coach Chito, also table discord
+
 == ToDo==
-1. create hand signals
-  queue line
-  focus
-  strategy 1, 2
-
-2. distance to measure
-   the edge to yellow base placement is 19.8 and other side is 19.3
-
-3. practice strategy 3
-   all about ranmdon of placement so code fast and execute
