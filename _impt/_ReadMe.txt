@@ -43,6 +43,7 @@ winget install --id Microsoft.PowerShell --source winget
     3 28 edge to red
     4 9.5 another edge to red
     5 BGBES is 20 and other side is 19.5
+    6 adjust if needed comment -> #ToDo.adjust.
 
 == ToDo==
 1. create hand signals
