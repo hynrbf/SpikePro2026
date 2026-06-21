@@ -22,12 +22,9 @@ winget install --id Microsoft.PowerShell --source winget
 
 6. Checklist
    do basic test _tester.py - Zuvel
-      check matcolor number (see map.strat.jpg):
-      1 and 2 MatColor.Black
-      3 MatColor.DarkGreen
-      4 MatColor.Green
-      5 MatColor.LightGreen
-      6 MatColor.Black
+      check matcolor number (see map.colors.jpg):
+      1,2,4 MatColor.Black or MatColor.BlackTwo
+      3 MatColor.Brown or MatColor.BrownTwo
 
    when placing - Aron
       stabilize the hand, see tighten.jpg
@@ -42,9 +39,11 @@ winget install --id Microsoft.PowerShell --source winget
     2 16 n 18 green
     3 28 edge to red
     4 9.5 another edge to red
+    5 BGBES is 20 and other side is 19.5
+    6 adjust if needed comment -> #ToDo.adjust.
+
+ 8. remember hand signals from coach Chito, also table discord
+
+ 9. use psy tctc - bsu,mr ern,gcc
 
 == ToDo==
-1. create hand signals
-  queue line
-  focus
-  strategy 1, 2
