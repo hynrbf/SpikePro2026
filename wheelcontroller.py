@@ -117,48 +117,41 @@ class WheelController:
 
             color_int = color.h
 
-            if is_print:
-                print("mat color: ", color_int)
-
             if ((mat_color_range - 2) <= color_int <= (mat_color_range + 2)) or count > 1000:
+                if is_print:
+                    print("mat color (DETECTED): ", color_int)
+                    Shared.hub().speaker.beep(frequency=1000, duration=200)
+
                 wheel_controller.stop()
                 break
             elif mat_color_range_alt > -1 and (
                     (mat_color_range_alt - 2) <= color_int <= (mat_color_range_alt + 2)) or count > 1000:
+                if is_print:
+                    print("mat color (DETECTED): ", color_int)
+                    Shared.hub().speaker.beep(frequency=1000, duration=200)
+
                 wheel_controller.stop()
                 break
             elif mat_color_range_alt_2 > -1 and (
                     (mat_color_range_alt_2 - 2) <= color_int <= (mat_color_range_alt_2 + 2)) or count > 1000:
+                if is_print:
+                    print("mat color (DETECTED): ", color_int)
+                    Shared.hub().speaker.beep(frequency=1000, duration=200)
+
                 wheel_controller.stop()
                 break
             elif mat_color_range_alt_3 > -1 and (
                     (mat_color_range_alt_3 - 2) <= color_int <= (mat_color_range_alt_3 + 2)) or count > 1000:
+                if is_print:
+                    print("mat color (DETECTED): ", color_int)
+                    Shared.hub().speaker.beep(frequency=1000, duration=200)
+
                 wheel_controller.stop()
                 break
             else:
-                # you can be fast here otherwise bump the element, same as Medium Fast
-                wheel_controller.drive(speed, 0)
+                if is_print:
+                    print("mat color: ", color_int)
 
-            # print("moving: ", count)
-            count = count + 1
-            await wait(10)
-
-        wheel_controller.stop()
-
-    @staticmethod
-    async def move_towards_mat_color_alt(mat_color_range: int, speed: float = Speed.Slow):
-        wheel_controller = WheelController.__object()
-        count = 1
-
-        while True:
-            color = await ColorController.mat_sensor.color()
-            color_int = color.h
-            print("mat color: ", color_int)
-
-            if ((mat_color_range - 0) <= color_int <= (mat_color_range + 0)) or count > 1000:
-                wheel_controller.stop()
-                break
-            else:
                 # you can be fast here otherwise bump the element, same as Medium Fast
                 wheel_controller.drive(speed, 0)
 

@@ -21,11 +21,6 @@ winget install --id Microsoft.PowerShell --source winget
     F=left motor
 
 6. Checklist
-   do basic test _tester.py - Zuvel
-      check matcolor number (see map.colors.jpg):
-      1,2,4 MatColor.Black or MatColor.BlackTwo
-      3 MatColor.Brown or MatColor.BrownTwo
-
    when placing - Aron
       stabilize the hand, see tighten.jpg
       check the wheels palagi natatangalan
@@ -33,6 +28,17 @@ winget install --id Microsoft.PowerShell --source winget
    Check all elements go around and complain to staff - Zuvel
 
    once all good above Aron to Ok signal
+
+   run na agad sa practice, strategy1
+      do not make cute faces, i want grumpy face
+      i/coach want fast and accurate execution
+      mga basics you should know already:
+         check power outlet
+         check bat phone, no excuses of low bat
+      if Grachi wants to take the laptop to code, let him
+      if Zuvel has idea listen and argue fast
+      download the strategy 1 first and execute this in mat
+      for Aaron and Zuvel, if I signal to lapit. then lapit, do not be afraid of disqualification especially if you are zero
 
  7. important distance, see mapdistance.jpg
     1 16 n 18 maroon

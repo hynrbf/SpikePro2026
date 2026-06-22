@@ -13,8 +13,9 @@ class MissionRedTower:
         await WheelController.left_turn()
         await WheelController.move_forward(400)
         await WheelController.move_towards_mat_color(MatColor.Black, mat_color_range_alt=MatColor.BlackTwo,
-                                                     speed=Speed.Slow)
-        await WheelController.move_forward(80)  # ToDo.adjust. 40 in BGBES
+                                                     mat_color_range_alt_2=MatColor.BlackThree,
+                                                     mat_color_range_alt_3=MatColor.BlackFour, speed=Speed.Slow, is_print=True)
+        await WheelController.move_forward(80)  # ToDo.adjust. 40 in BGBES (ctrl + f)
         await WheelController.left_turn()
 
         # get the red towers
@@ -34,7 +35,9 @@ class MissionRedTower:
         await WheelController.move_forward(750)
         await WheelController.left_turn(50, turn_speed=120)
         await WheelController.move_forward(350)
-        await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow)
+        await WheelController.move_towards_mat_color(MatColor.Black, mat_color_range_alt=MatColor.BlackTwo,
+                                                     mat_color_range_alt_2=MatColor.BlackThree,
+                                                     mat_color_range_alt_3=MatColor.BlackFour, speed=Speed.Slow, is_print=True)
         await WheelController.move_forward(145)
         await WheelController.right_turn(turn_speed=120)
         await WheelController.move_forward(400, with_brake=True)
@@ -44,7 +47,9 @@ class MissionRedTower:
         await multitask(HandController.lift_left(-10),
                         HandController.lift_right(-10))
         await WheelController.move_forward(320, speed=Speed.Fast)
-        await WheelController.move_towards_mat_color(MatColor.Black)
+        await WheelController.move_towards_mat_color(MatColor.Black, mat_color_range_alt=MatColor.BlackTwo,
+                                                     mat_color_range_alt_2=MatColor.BlackThree,
+                                                     mat_color_range_alt_3=MatColor.BlackFour, speed=Speed.Slow, is_print=True)
         await multitask(HandController.lift_left(30, speed=120),
                         HandController.lift_right(27, speed=120))
 

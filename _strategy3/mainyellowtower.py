@@ -16,7 +16,7 @@ class MissionYellowTower:
         await WheelController.move_forward(250)
         await WheelController.left_turn()
         await WheelController.move_forward(200)
-        await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow)
+        await WheelController.move_towards_mat_color(MatColor.Black, speed=Speed.Slow, is_print=True)
         await WheelController.right_turn(180)
         await WheelController.move_backward(25)
         await multitask(HandController.lift_left(0), HandController.lift_right(0),
@@ -34,7 +34,7 @@ class MissionYellowTower:
         await multitask(HandController.lift_left(30, speed=Speed.Slow),
                         HandController.lift_right(27, speed=Speed.Slow))
         await WheelController.move_forward(825)
-        await WheelController.move_towards_mat_color(MatColor.Black)
+        await WheelController.move_towards_mat_color(MatColor.Black, is_print=True)
         await WheelController.move_forward(175)
 
         # Straightening of yellow towers
@@ -54,7 +54,7 @@ class MissionYellowTower:
         await WheelController.right_turn(turn_speed=90)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
         await WheelController.move_forward(40, speed=Speed.Medium)
-        await WheelController.move_towards_mat_color(MatColor.Black)
+        await WheelController.move_towards_mat_color(MatColor.Black, is_print=True)
         await multitask(HandController.lift_left(32), HandController.lift_right(32))
         await WheelController.left_turn(180, turn_speed=90)
         await multitask(HandController.lift_right(-10, speed=Speed.Slow),
@@ -70,7 +70,7 @@ class MissionYellowTower:
         await WheelController.right_turn(turn_speed=90)
         await WheelController.move_forward(520)
         await HandController.lift_right(80, speed=Speed.Slow)
-        await WheelController.move_towards_mat_color(MatColor.White) # MatColor.Green
+        await WheelController.move_towards_mat_color(MatColor.White, is_print=True) # MatColor.Green
 
         # clear the artifacts
         await WheelController.right_turn(turn_speed=80)
@@ -89,11 +89,11 @@ class MissionYellowTower:
 
         # position to place the 2nd tower
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_towards_mat_color(MatColor.LightGreen)
+        await WheelController.move_towards_mat_color(MatColor.LightGreen, is_print=True)
         await HandController.lift_right(28)
         await WheelController.move_forward(69, speed=Speed.Slow)  # BGBES 70
         await multitask(WheelController.left_turn(turn_speed=90), HandController.lift_left())
-        await WheelController.move_towards_mat_color(MatColor.Black)
+        await WheelController.move_towards_mat_color(MatColor.Black, is_print=True)
 
         # placing the 2nd yellow tower
         await WheelController.right_turn(180, turn_speed=90)
