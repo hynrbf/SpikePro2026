@@ -14,7 +14,7 @@ class MissionRedTower:
         await WheelController.move_forward(400)
         await WheelController.move_towards_mat_color(MatColor.Black, mat_color_range_alt=MatColor.BlackTwo,
                                                      mat_color_range_alt_2=MatColor.BlackThree,
-                                                     mat_color_range_alt_3=MatColor.BlackFour, speed=Speed.Slow)
+                                                     mat_color_range_alt_3=MatColor.BlackFour, speed=Speed.Slow, is_print=True)
         await WheelController.move_forward(80)  # ToDo.adjust. 40 in BGBES (ctrl + f)
         await WheelController.left_turn()
 
@@ -37,7 +37,7 @@ class MissionRedTower:
         await WheelController.move_forward(350)
         await WheelController.move_towards_mat_color(MatColor.Black, mat_color_range_alt=MatColor.BlackTwo,
                                                      mat_color_range_alt_2=MatColor.BlackThree,
-                                                     mat_color_range_alt_3=MatColor.BlackFour, speed=Speed.Slow)
+                                                     mat_color_range_alt_3=MatColor.BlackFour, speed=Speed.Slow, is_print=True)
         await WheelController.move_forward(145)
         await WheelController.right_turn(turn_speed=120)
         await WheelController.move_forward(400, with_brake=True)
@@ -49,7 +49,7 @@ class MissionRedTower:
         await WheelController.move_forward(320, speed=Speed.Fast)
         await WheelController.move_towards_mat_color(MatColor.Black, mat_color_range_alt=MatColor.BlackTwo,
                                                      mat_color_range_alt_2=MatColor.BlackThree,
-                                                     mat_color_range_alt_3=MatColor.BlackFour, speed=Speed.Slow)
+                                                     mat_color_range_alt_3=MatColor.BlackFour, speed=Speed.Slow, is_print=True)
         await multitask(HandController.lift_left(30, speed=120),
                         HandController.lift_right(27, speed=120))
 
