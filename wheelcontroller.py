@@ -161,29 +161,6 @@ class WheelController:
 
         wheel_controller.stop()
 
-    @staticmethod
-    async def move_towards_mat_color_alt(mat_color_range: int, speed: float = Speed.Slow):
-        wheel_controller = WheelController.__object()
-        count = 1
-
-        while True:
-            color = await ColorController.mat_sensor.color()
-            color_int = color.h
-            print("mat color: ", color_int)
-
-            if ((mat_color_range - 0) <= color_int <= (mat_color_range + 0)) or count > 1000:
-                wheel_controller.stop()
-                break
-            else:
-                # you can be fast here otherwise bump the element, same as Medium Fast
-                wheel_controller.drive(speed, 0)
-
-            # print("moving: ", count)
-            count = count + 1
-            await wait(10)
-
-        wheel_controller.stop()
-
     # @staticmethod
     # async def follow_the_line(count: int, kp: float = 0.30):
     #     speed = Speed.Medium
