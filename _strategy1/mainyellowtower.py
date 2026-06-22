@@ -31,7 +31,8 @@ class MissionYellowTower:
 
         # long drive
         await WheelController.move_forward(600)
-        await WheelController.move_towards_mat_color(MatColor.BlackTwo, speed=Speed.Slow)
+        await WheelController.move_towards_mat_color(MatColor.Black, mat_color_range_alt=MatColor.BlackTwo,
+                                                     speed=Speed.Slow)
         await WheelController.move_forward(175)
 
         # Straightening of yellow towers
