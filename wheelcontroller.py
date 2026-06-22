@@ -104,7 +104,8 @@ class WheelController:
 
     @staticmethod
     async def move_towards_mat_color(mat_color_range: int, mat_color_range_alt: int = -1, speed: float = Speed.Slow,
-                                     is_print: bool = False, is_hsv: bool = True):
+                                     is_print: bool = False, is_hsv: bool = True, mat_color_range_alt_2: int = -1,
+                                     mat_color_range_alt_3: int = -1):
         wheel_controller = WheelController.__object()
         count = 1
 
@@ -124,6 +125,14 @@ class WheelController:
                 break
             elif mat_color_range_alt > -1 and (
                     (mat_color_range_alt - 2) <= color_int <= (mat_color_range_alt + 2)) or count > 1000:
+                wheel_controller.stop()
+                break
+            elif mat_color_range_alt_2 > -1 and (
+                    (mat_color_range_alt_2 - 2) <= color_int <= (mat_color_range_alt_2 + 2)) or count > 1000:
+                wheel_controller.stop()
+                break
+            elif mat_color_range_alt_3 > -1 and (
+                    (mat_color_range_alt_3 - 2) <= color_int <= (mat_color_range_alt_3 + 2)) or count > 1000:
                 wheel_controller.stop()
                 break
             else:
