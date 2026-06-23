@@ -56,4 +56,8 @@ winget install --id Microsoft.PowerShell --source winget
    - practice in real map and do the same with alde to code in dry run map para sakto distance and color
    - or bili from Felta yung real map na gagamitin
 
+11. went right
+   - practice in bgbes for good robot design
+   - good atmosphere
+
 == ToDo==
