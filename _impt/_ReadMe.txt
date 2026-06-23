@@ -52,4 +52,8 @@ winget install --id Microsoft.PowerShell --source winget
 
  9. use psy tctc - bsu,mr ern,gcc
 
+10. went wrong
+   - practice in real map and do the same with alde to code in dry run map para sakto distance and color
+   - or bili from Felta yung real map na gagamitin
+
 == ToDo==
