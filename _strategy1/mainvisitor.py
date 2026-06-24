@@ -55,4 +55,9 @@ class MissionVisitor:
         await WheelController.move_backward(20, speed=Speed.Medium)
         await HandController.lift_left(speed=Speed.Slow)
         await WheelController.move_forward(25, speed=Speed.Slow)
+
+        # suprise rule
+        await WheelController.move_backward(250, speed=Speed.Slow)
+
+
         await wait(100)

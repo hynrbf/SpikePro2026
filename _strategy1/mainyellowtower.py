@@ -63,7 +63,7 @@ class MissionYellowTower:
                         HandController.lift_left(-10))
         await WheelController.move_forward(100, speed=Speed.Medium)
         await multitask(HandController.lift_right(-10, speed=Speed.Slow),
-                        HandController.lift_left(80, speed=Speed.Slow))
+                        HandController.lift_left(95, speed=Speed.Slow))
         await WheelController.move_forward(255, speed=Speed.Medium)
         await multitask(HandController.lift_left(40, speed=Speed.Slow), HandController.lift_right(28))
         await WheelController.move_backward(120, speed=Speed.Slow)
@@ -98,7 +98,7 @@ class MissionYellowTower:
         await multitask(HandController.lift_left(-10), HandController.lift_right(28))
         await WheelController.move_backward(150, speed=Speed.Medium, with_brake=True)
         await multitask(HandController.lift_left(-10), HandController.lift_right(-10))
-        await WheelController.move_forward(225, speed=Speed.Medium)  # ToDo.adjust. float is: 85 in condo; 220 in BGBES
+        await WheelController.move_forward(220, speed=Speed.Medium)  # ToDo.adjust. float is: 85 in condo; 220 in BGBES
         await HandController.lift_right(28)
         await multitask(WheelController.left_turn(turn_speed=90), HandController.lift_left())
         await WheelController.move_towards_mat_color(MatColor.Black, mat_color_range_alt=MatColor.BlackTwo,
