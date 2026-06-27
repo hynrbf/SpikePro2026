@@ -61,11 +61,13 @@ winget install --id Microsoft.PowerShell --source winget
         Grace Christian College
    - happened this year accuracy is much better but we need to practice in slow/medium speed but
         make it fast in competition because the robot move and stop in mm no matter what is the speed
+   - we need at least 2 teams this helps in practice run and coopetition
+   - need to find a way with DepEd memo
 
    went right
    - practice in bgbes for good robot design. Robot is already good pang top 8 but we need
         1 level more yung pag top 3 design
    - good competitive atmosphere
    - Grachi already has goal to be champion from self goal
-
-== ToDo==
+   - Coach Mike helping coaching, he was able to make Zuvel standup his ass and be a disciplined player. he is good,
+     disciplinarian
