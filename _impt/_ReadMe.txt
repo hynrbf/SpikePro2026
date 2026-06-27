@@ -52,13 +52,20 @@ winget install --id Microsoft.PowerShell --source winget
 
  9. use psy tctc - bsu,mr ern,gcc
 
-10. went wrong
-   - practice in real map and do the same with Coach Alde to code in dry run map para sakto distance and color at hinde sinasaway
+10. went wrong and right
+   wrong
+   - practice in real map and do the same with Coach Alde to code in dry run map para sakto distance
+        and color at hinde sinasaway
    - or bili from Felta yung real map na gagamitin
-   - schools who are topping: BSU, Marie Ernestine,KEPLER INSIGHT SCHOOL OF SCIENCE AND ART, Grace Christian College
+   - schools who are topping: BSU, Marie Ernestine,KEPLER INSIGHT SCHOOL OF SCIENCE AND ART,
+        Grace Christian College
+   - happened this year accuracy is much better but we need to practice in slow/medium speed but
+        make it fast in competition because the robot move and stop in mm no matter what is the speed
 
-11. went right
-   - practice in bgbes for good robot design. Robot is already good pang top 8 but we need 1 level more yung pag top 3 design
+   went right
+   - practice in bgbes for good robot design. Robot is already good pang top 8 but we need
+        1 level more yung pag top 3 design
    - good competitive atmosphere
+   - Grachi already has goal to be champion from self goal
 
 == ToDo==
