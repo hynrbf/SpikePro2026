@@ -63,6 +63,8 @@ winget install --id Microsoft.PowerShell --source winget
         make it fast in competition because the robot move and stop in mm no matter what is the speed
    - we need at least 2 teams this helps in practice run and coopetition
    - need to find a way with DepEd memo
+   - the balance of robot is better than previous robot but there is still a
+     mistake. the small wheel in front is not same height as the wheel (mistake.jpg)
 
    went right
    - practice in bgbes for good robot design. Robot is already good pang top 8 but we need
@@ -71,3 +73,4 @@ winget install --id Microsoft.PowerShell --source winget
    - Grachi already has goal to be champion from self goal
    - Coach Mike helping coaching, he was able to make Zuvel standup his ass and be a disciplined player. he is good,
      disciplinarian
+   - our base is already good better than previous 2 years (base1.jpg)
